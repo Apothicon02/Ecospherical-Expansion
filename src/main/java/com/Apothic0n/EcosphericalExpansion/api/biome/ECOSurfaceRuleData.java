@@ -12,7 +12,6 @@ public class ECOSurfaceRuleData {
     private static final SurfaceRules.RuleSource AMETHYST_BLOCK = makeStateRule(Blocks.AMETHYST_BLOCK);
     private static final SurfaceRules.RuleSource SMOOTH_BASALT = makeStateRule(Blocks.SMOOTH_BASALT);
 
-    private static final SurfaceRules.RuleSource RED_SAND = makeStateRule(Blocks.RED_SAND);
     private static final SurfaceRules.RuleSource MOSS_BLOCK = makeStateRule(Blocks.MOSS_BLOCK);
     private static final SurfaceRules.RuleSource ROOTED_DIRT = makeStateRule(Blocks.ROOTED_DIRT);
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
