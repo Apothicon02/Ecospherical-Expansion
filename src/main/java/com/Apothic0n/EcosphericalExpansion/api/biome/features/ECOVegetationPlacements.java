@@ -20,6 +20,8 @@ public class ECOVegetationPlacements {
     public static final PlacedFeature TREES_TALL_BIRCH = PlacementUtils.register("trees_tall_birch", ECOVegetationFeatures.TREES_TALL_BIRCH.placed(treePlacement(PlacementUtils.countExtra(3, 1F, 2))));
     public static final PlacedFeature TREES_TALL_MUSHROOMS = PlacementUtils.register("trees_tall_mushrooms", ECOVegetationFeatures.TREES_TALL_MUSHROOMS.placed(treePlacement(PlacementUtils.countExtra(1, 1F, 1))));
     public static final PlacedFeature MISC_AMETHYSTS = PlacementUtils.register("misc_amethysts", ECOVegetationFeatures.MISC_AMETHYSTS.placed(treePlacement(PlacementUtils.countExtra(3, 1F, 2))));
+    public static final PlacedFeature OAK_BUSH = PlacementUtils.register("oak_bush", ECOVegetationFeatures.OAK_BUSH.placed(treePlacement(PlacementUtils.countExtra(3, 0.2F, 1))));
+    public static final PlacedFeature TALL_CACTI = PlacementUtils.register("tall_cacti", ECOVegetationFeatures.TALL_CACTI.placed(treePlacement(PlacementUtils.countExtra(3, 0.2F, 1))));
 
     private static ImmutableList.Builder<PlacementModifier> treePlacementBase(PlacementModifier p_195485_) {
         return ImmutableList.<PlacementModifier>builder().add(p_195485_).add(InSquarePlacement.spread()).add(TREE_THRESHOLD).add(PlacementUtils.HEIGHTMAP_OCEAN_FLOOR).add(BiomeFilter.biome());

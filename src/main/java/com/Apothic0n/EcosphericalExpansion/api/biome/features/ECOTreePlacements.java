@@ -15,6 +15,7 @@ public class ECOTreePlacements {
     public static final PlacedFeature TWISTED_OAK_CHECKED = PlacementUtils.register("twisted_oak_checked", ECOTreeFeatures.TWISTED_OAK.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
     public static final PlacedFeature TOWERING_SPRUCE_CHECKED = PlacementUtils.register("towering_spruce_checked", ECOTreeFeatures.TOWERING_SPRUCE.filteredByBlockSurvival(Blocks.SPRUCE_SAPLING));
+    public static final PlacedFeature OAK_BUSH_CHECKED = PlacementUtils.register("oak_bush_checked", ECOTreeFeatures.OAK_BUSH.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
     public static final PlacedFeature TILTED_DARK_OAK_CHECKED = PlacementUtils.register("tilted_dark_oak_checked", ECOTreeFeatures.TILTED_DARK_OAK.filteredByBlockSurvival(Blocks.DARK_OAK_SAPLING));
     public static final PlacedFeature SHORT_DARK_OAK_CHECKED = PlacementUtils.register("short_dark_oak_checked", ECOTreeFeatures.SHORT_DARK_OAK.filteredByBlockSurvival(Blocks.DARK_OAK_SAPLING));
@@ -24,16 +25,16 @@ public class ECOTreePlacements {
     public static final PlacedFeature NORMAL_TALL_BIRCH_CHECKED = PlacementUtils.register("normal_tall_birch_checked", ECOTreeFeatures.NORMAL_TALL_BIRCH.filteredByBlockSurvival(Blocks.BIRCH_SAPLING));
     public static final PlacedFeature BIG_TALL_BIRCH_CHECKED = PlacementUtils.register("big_tall_birch_checked", ECOTreeFeatures.BIG_TALL_BIRCH.filteredByBlockSurvival(Blocks.BIRCH_SAPLING));
 
-    public static final PlacedFeature MEGA_ACACIA_CHECKED = PlacementUtils.register("mega_acacia_checked", ECOTreeFeatures.MEGA_ACACIA.filteredByBlockSurvival(Blocks.ACACIA_SAPLING));
-    public static final PlacedFeature MULTI_ACACIA_CHECKED = PlacementUtils.register("multi_acacia_checked", ECOTreeFeatures.MULTI_ACACIA.filteredByBlockSurvival(Blocks.ACACIA_SAPLING));
+    public static final PlacedFeature MEGA_ACACIA_CHECKED = PlacementUtils.register("mega_acacia_checked", ECOTreeFeatures.MEGA_ACACIA.filteredByBlockSurvival(Blocks.DEAD_BUSH));
+    public static final PlacedFeature MULTI_ACACIA_CHECKED = PlacementUtils.register("multi_acacia_checked", ECOTreeFeatures.MULTI_ACACIA.filteredByBlockSurvival(Blocks.DEAD_BUSH));
 
     public static final PlacedFeature MEGA_SWAMP_BIG_CHECKED = PlacementUtils.register("mega_swamp_big_checked", ECOTreeFeatures.MEGA_SWAMP_BIG.filteredByBlockSurvival(Blocks.OAK_SAPLING));
     public static final PlacedFeature MEGA_SWAMP_SMALL_CHECKED = PlacementUtils.register("mega_swamp_small_checked", ECOTreeFeatures.MEGA_SWAMP_SMALL.filteredByBlockSurvival(Blocks.OAK_SAPLING));
     public static final PlacedFeature MULTI_SWAMP_CHECKED = PlacementUtils.register("multi_swamp_checked", ECOTreeFeatures.MULTI_SWAMP.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
-    public static final PlacedFeature TILTED_TALL_MUSHROOM_CHECKED = PlacementUtils.register("tilted_tall_mushroom_checked", ECOTreeFeatures.TILTED_TALL_MUSHROOM.filteredByBlockSurvival(Blocks.BROWN_MUSHROOM));
-    public static final PlacedFeature NORMAL_TALL_MUSHROOM_CHECKED = PlacementUtils.register("normal_tall_mushroom_checked", ECOTreeFeatures.NORMAL_TALL_MUSHROOM.filteredByBlockSurvival(Blocks.RED_MUSHROOM));
-    public static final PlacedFeature BIG_TALL_MUSHROOM_CHECKED = PlacementUtils.register("big_tall_mushroom_checked", ECOTreeFeatures.BIG_TALL_MUSHROOM.filteredByBlockSurvival(Blocks.RED_MUSHROOM));
+    public static final PlacedFeature TILTED_TALL_MUSHROOM_CHECKED = PlacementUtils.register("tilted_tall_mushroom_checked", ECOTreeFeatures.TILTED_TALL_MUSHROOM.filteredByBlockSurvival(Blocks.BAMBOO_SAPLING));
+    public static final PlacedFeature NORMAL_TALL_MUSHROOM_CHECKED = PlacementUtils.register("normal_tall_mushroom_checked", ECOTreeFeatures.NORMAL_TALL_MUSHROOM.filteredByBlockSurvival(Blocks.BAMBOO_SAPLING));
+    public static final PlacedFeature BIG_TALL_MUSHROOM_CHECKED = PlacementUtils.register("big_tall_mushroom_checked", ECOTreeFeatures.BIG_TALL_MUSHROOM.filteredByBlockSurvival(Blocks.BAMBOO_SAPLING));
 
     public static final PlacedFeature COPPER_DEEPSLATE_STACK = PlacementUtils.register("copper_deepslate_stack", ECOTreeFeatures.COPPER_DEEPSLATE_STACK.filteredByBlockSurvival(Blocks.GRASS_BLOCK));
     public static final PlacedFeature DEEPSLATE_BLOCK_STACK = PlacementUtils.register("deepslate_block_stack", ECOTreeFeatures.DEEPSLATE_BLOCK_STACK.filteredByBlockSurvival(Blocks.DEEPSLATE));

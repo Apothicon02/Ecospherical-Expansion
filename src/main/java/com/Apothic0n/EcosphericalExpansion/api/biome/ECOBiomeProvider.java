@@ -31,6 +31,8 @@ public class ECOBiomeProvider extends BiomeProvider {
         this.addBiomeSimilar(mapper, Biomes.GROVE, ECOBiomeCreator.MUSHROOM_GROVE);
         this.addBiomeSimilar(mapper, Biomes.STONY_PEAKS, ECOBiomeCreator.DEEPSLATE_CLIFFS);
         this.addBiomeSimilar(mapper, Biomes.JAGGED_PEAKS, ECOBiomeCreator.CALCITE_CLIFFS);
+        this.addBiomeSimilar(mapper, Biomes.PLAINS, ECOBiomeCreator.MUSHROOM_PLAINS);
+        this.addBiomeSimilar(mapper, Biomes.DESERT, ECOBiomeCreator.LUSH_DESERT);
     }
 
     @Override

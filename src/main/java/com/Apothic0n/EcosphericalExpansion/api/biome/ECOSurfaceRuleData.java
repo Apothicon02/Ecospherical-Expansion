@@ -33,6 +33,11 @@ public class ECOSurfaceRuleData {
     private static final SurfaceRules.RuleSource YELLOW_TERRACOTTA = makeStateRule(Blocks.YELLOW_TERRACOTTA);
     private static final SurfaceRules.RuleSource CYAN_TERRACOTTA = makeStateRule(Blocks.CYAN_TERRACOTTA);
     private static final SurfaceRules.RuleSource BROWN_TERRACOTTA = makeStateRule(Blocks.BROWN_TERRACOTTA);
+    private static final SurfaceRules.RuleSource RED_SAND = makeStateRule(Blocks.RED_SAND);
+    private static final SurfaceRules.RuleSource RED_SANDSTONE = makeStateRule(Blocks.RED_SANDSTONE);
+    private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
+    private static final SurfaceRules.RuleSource SANDSTONE = makeStateRule(Blocks.SANDSTONE);
+
 
     protected static SurfaceRules.RuleSource makeRules() {
         SurfaceRules.RuleSource snowyGlacialCliffs = SurfaceRules.sequence(
@@ -119,6 +124,35 @@ public class ECOSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.verticalGradient("upper_red_terracotta", VerticalAnchor.absolute(235), VerticalAnchor.absolute(304)), RED_TERRACOTTA),
                 SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(304), 15), ORANGE_TERRACOTTA));
 
+        SurfaceRules.RuleSource sandyTerracottaMesa = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, RED_SAND),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.verticalGradient("deepslate", VerticalAnchor.absolute(-63), VerticalAnchor.absolute(56)), DEEPSLATE),
+                SurfaceRules.ifTrue(SurfaceRules.verticalGradient("terracotta", VerticalAnchor.absolute(50), VerticalAnchor.absolute(60)), BROWN_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.verticalGradient("terracotta", VerticalAnchor.absolute(59), VerticalAnchor.absolute(64)), MOSS_BLOCK),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(62), 5), RED_SAND),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(67), 3), RED_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(70), 2), TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(72), 4), RED_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(76), 2), YELLOW_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(78), 6), TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(84), 4), CYAN_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(88), 7), RED_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(95), 8), TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(103), 3), YELLOW_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(106), 7), TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(113), 7), RED_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(120), 3), CYAN_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(123), 5), CYAN_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(128), 5), TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(133), 8), CYAN_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(141), 5), RED_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(146), 6), CYAN_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.verticalGradient("lower_terracotta", VerticalAnchor.absolute(149), VerticalAnchor.absolute(170)), TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.verticalGradient("rooted_dirt", VerticalAnchor.absolute(160), VerticalAnchor.absolute(300)), ROOTED_DIRT),
+                SurfaceRules.ifTrue(SurfaceRules.verticalGradient("upper_red_terracotta", VerticalAnchor.absolute(235), VerticalAnchor.absolute(304)), RED_TERRACOTTA),
+                SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.absolute(304), 15), ORANGE_TERRACOTTA));
+
         SurfaceRules.RuleSource deepslateCliffs = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SMOOTH_BASALT),
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DEEPSLATE),
@@ -166,7 +200,9 @@ public class ECOSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.MEGA_SWAMP), grassyDripstoneCliffs),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.MUSHROOM_GROVE), myceliumBlackstoneCliffs),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.DEEPSLATE_CLIFFS), deepslateCliffs),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.CALCITE_CLIFFS), calciteCliffs)
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.CALCITE_CLIFFS), calciteCliffs),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.MUSHROOM_PLAINS), grassyGraniteCliffs),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.LUSH_DESERT), sandyTerracottaMesa)
         );
     }
 

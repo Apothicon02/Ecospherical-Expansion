@@ -1,6 +1,7 @@
 package com.Apothic0n.EcosphericalExpansion.api.biome;
 
 import net.minecraft.world.level.biome.Biome;
+import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -22,5 +23,7 @@ public class ECOBiomeRegistry {
         registry.register(ECOBiomes.mushroomGrove().setRegistryName(ECOBiomeCreator.MUSHROOM_GROVE.location()));
         registry.register(ECOBiomes.deepslateCliffs().setRegistryName(ECOBiomeCreator.DEEPSLATE_CLIFFS.location()));
         registry.register(ECOBiomes.calciteCliffs().setRegistryName(ECOBiomeCreator.CALCITE_CLIFFS.location()));
+        registry.register(ECOBiomes.mushroomPlains().setRegistryName(ECOBiomeCreator.MUSHROOM_PLAINS.location()));
+        registry.register(ECOBiomes.lushDesert().setRegistryName(ECOBiomeCreator.LUSH_DESERT.location()));
     }
 }

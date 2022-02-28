@@ -145,5 +145,13 @@ public class ECOBiomeFeatureGroups {
     public static void addTallMushrooms(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_TALL_MUSHROOMS);
     }
+
+    public static void addBasicBushes(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.OAK_BUSH);
+    }
+
+    public static void addBasicDesertFoilage(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TALL_CACTI);
+    }
 }
 

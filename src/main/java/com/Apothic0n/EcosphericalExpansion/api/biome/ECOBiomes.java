@@ -12,6 +12,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraftforge.common.BiomeDictionary;
 import terrablender.worldgen.noise.LayeredNoiseUtil;
 
 import javax.annotation.Nullable;
@@ -303,7 +304,7 @@ public class ECOBiomes {
         Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_STONY_PEAKS);
         BiomeSpecialEffects specialEffects = (new BiomeSpecialEffects.Builder())
                 .fogColor(12638463).waterFogColor(329011).waterColor(4159204).skyColor(calculateSkyColor(0.1F)).build();
-        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.DESERT, 1.0F, 0.3F, spawnBuilder, biomeBuilder, music, specialEffects);
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.MOUNTAIN, 1.0F, 0.3F, spawnBuilder, biomeBuilder, music, specialEffects);
     }
 
     public static Biome calciteCliffs() {
@@ -329,6 +330,64 @@ public class ECOBiomes {
         Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_JAGGED_PEAKS);
         BiomeSpecialEffects specialEffects = (new BiomeSpecialEffects.Builder())
                 .fogColor(12638463).waterFogColor(329011).waterColor(4159204).skyColor(calculateSkyColor(0.1F)).build();
-        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.DESERT, 1.0F, 0.3F, spawnBuilder, biomeBuilder, music, specialEffects);
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.MOUNTAIN, 1.0F, 0.3F, spawnBuilder, biomeBuilder, music, specialEffects);
+    }
+
+    public static Biome mushroomPlains() {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.warmOceanSpawns(spawnBuilder, 1, 3);
+        spawnBuilder
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.SLIME, 1, 1, 1))
+                .addSpawn(MobCategory.MONSTER, new MobSpawnSettings.SpawnerData(EntityType.WITCH, 3, 1, 3))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.MOOSHROOM, 3, 2, 5));
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        ECOBiomeFeatureGroups.addTallMushrooms(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        BiomeDefaultFeatures.addPlainGrass(biomeBuilder);
+        BiomeDefaultFeatures.addPlainVegetation(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+        ECOBiomeFeatureGroups.addThinSpruceTrees(biomeBuilder);
+        BiomeDefaultFeatures.addDripstone(biomeBuilder);
+        ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
+
+        Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_MEADOW);
+        BiomeSpecialEffects specialEffects = new BiomeSpecialEffects.Builder()
+                .fogColor(12638463).waterFogColor(329011).waterColor(0x7a81e6).skyColor(calculateSkyColor(0.7F)).build();
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 0.5F, 0.4F, spawnBuilder, biomeBuilder, music, specialEffects);
+    }
+
+    public static Biome lushDesert() {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+        BiomeDefaultFeatures.warmOceanSpawns(spawnBuilder, 6, 3);
+        BiomeDefaultFeatures.desertSpawns(spawnBuilder);
+        spawnBuilder
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.LLAMA, 8, 4, 5));
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addExtraGold(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        ECOBiomeFeatureGroups.addMegaSavannaTrees(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicBushes(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicDesertFoilage(biomeBuilder);
+        BiomeDefaultFeatures.addSavannaGrass(biomeBuilder);
+        BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultFlowers(biomeBuilder);
+        ECOBiomeFeatureGroups.addGrassyTerracottaCavesVegetationFeatures(biomeBuilder);
+        BiomeDefaultFeatures.addDripstone(biomeBuilder);
+        ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
+
+        BiomeSpecialEffects specialEffects = (new BiomeSpecialEffects.Builder())
+                .fogColor(12638463).waterFogColor(329011).waterColor(0x21d9c0).skyColor(calculateSkyColor(0.1F)).build();
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.SAVANNA, 2.0F, 0.0F, spawnBuilder, biomeBuilder, NORMAL_MUSIC, specialEffects);
     }
 }

@@ -24,6 +24,7 @@ import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeature
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.feature.treedecorators.CocoaDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.LeaveVineDecorator;
@@ -44,6 +45,7 @@ public class ECOTreeFeatures {
     public static final ConfiguredFeature<TreeConfiguration, ?> BRANCHING_OAK = FeatureUtils.register("branching_oak", Feature.TREE.configured(createBranchingOak().decorators(ImmutableList.of(TrunkVineDecorator.INSTANCE, LeaveVineDecorator.INSTANCE)).build()));
 
     public static final ConfiguredFeature<TreeConfiguration, ?> TOWERING_SPRUCE = FeatureUtils.register("towering_spruce", Feature.TREE.configured(createToweringSpruce().build()));
+    public static final ConfiguredFeature<TreeConfiguration, ?> OAK_BUSH = FeatureUtils.register("oak_bush", Feature.TREE.configured(createBush().build()));
 
     public static final ConfiguredFeature<TreeConfiguration, ?> TILTED_DARK_OAK = FeatureUtils.register("tilted_dark_oak", Feature.TREE.configured(createTiltedDarkOak().build()));
     public static final ConfiguredFeature<TreeConfiguration, ?> SHORT_DARK_OAK = FeatureUtils.register("short_dark_oak", Feature.TREE.configured(createDarkOak(5).build()));
@@ -125,6 +127,13 @@ public class ECOTreeFeatures {
                 new StraightTrunkPlacer(11, 6, 1), BlockStateProvider.simple(Blocks.SPRUCE_LEAVES),
                 new SpruceFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(6)),
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))).ignoreVines();
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createBush() {
+        return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
+                new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(Blocks.OAK_LEAVES.defaultBlockState()),
+                new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
+                new TwoLayersFeatureSize(0, 0, 0))).ignoreVines();
     }
 
     private static TreeConfiguration.TreeConfigurationBuilder createToweringOak() {
