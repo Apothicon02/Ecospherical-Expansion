@@ -153,5 +153,9 @@ public class ECOBiomeFeatureGroups {
     public static void addBasicDesertFoilage(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TALL_CACTI);
     }
+
+    public static void addBasicFlowers(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.BASIC_FLOWERS);
+    }
 }
 
