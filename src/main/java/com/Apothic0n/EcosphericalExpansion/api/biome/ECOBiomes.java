@@ -348,6 +348,7 @@ public class ECOBiomes {
         ECOBiomeFeatureGroups.addTallMushrooms(biomeBuilder);
         ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
         BiomeDefaultFeatures.addSavannaGrass(biomeBuilder);
+        BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         ECOBiomeFeatureGroups.addThinSpruceTrees(biomeBuilder);
         BiomeDefaultFeatures.addDripstone(biomeBuilder);
