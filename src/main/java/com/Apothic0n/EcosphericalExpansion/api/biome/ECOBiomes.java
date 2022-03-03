@@ -4,6 +4,7 @@ import com.Apothic0n.EcosphericalExpansion.api.biome.features.ECOBiomeFeatureGro
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.data.worldgen.BiomeDefaultFeatures;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
+import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.sounds.Music;
 import net.minecraft.sounds.Musics;
 import net.minecraft.sounds.SoundEvents;
@@ -13,6 +14,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.level.biome.*;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.common.BiomeDictionary;
+import terrablender.worldgen.DefaultBiomeProvider;
 import terrablender.worldgen.noise.LayeredNoiseUtil;
 
 import javax.annotation.Nullable;
@@ -62,7 +64,9 @@ public class ECOBiomes {
         ECOBiomeFeatureGroups.addLushOakTrees(biomeBuilder);
         BiomeDefaultFeatures.addOtherBirchTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addPlainGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addOverworldMushrooms(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addFernGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         BiomeDefaultFeatures.addRareBerryBushes(biomeBuilder);
         ECOBiomeFeatureGroups.addRootedCavesVegetationFeatures(biomeBuilder);
@@ -89,8 +93,11 @@ public class ECOBiomes {
         BiomeDefaultFeatures.addLightBambooVegetation(biomeBuilder);
         ECOBiomeFeatureGroups.addLushJungleTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addAzaleaTrees(biomeBuilder);
-        ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addJungleGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addRedFlowers(biomeBuilder);
+        ECOBiomeFeatureGroups.addPurpleFlowers(biomeBuilder);
+        ECOBiomeFeatureGroups.addNetherMushrooms(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addTallGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         BiomeDefaultFeatures.addDripstone(biomeBuilder);
         ECOBiomeFeatureGroups.addTuffCavesVegetationFeatures(biomeBuilder);
@@ -117,7 +124,9 @@ public class ECOBiomes {
         ECOBiomeFeatureGroups.addNormalDarkOakTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addSmallDarkOakTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addForestGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addTallGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addFernGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         ECOBiomeFeatureGroups.addRootedCavesVegetationFeatures(biomeBuilder);
         ECOBiomeFeatureGroups.addNormalOceanVegetationFeatures(biomeBuilder);
@@ -140,6 +149,8 @@ public class ECOBiomes {
         ECOBiomeFeatureGroups.addBigDarkOakTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addNormalDarkOakTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addSmallDarkOakTrees(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addFernGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         ECOBiomeFeatureGroups.addGrassyIceCavesVegetationFeatures(biomeBuilder);
         ECOBiomeFeatureGroups.addColdOceanVegetationFeatures(biomeBuilder);
@@ -155,10 +166,13 @@ public class ECOBiomes {
         BiomeDefaultFeatures.commonSpawns(spawnBuilder);
         BiomeDefaultFeatures.snowySpawns(spawnBuilder);
         BiomeDefaultFeatures.oceanSpawns(spawnBuilder, 1, 5, 4);
+
         BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
         globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addFernGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         ECOBiomeFeatureGroups.addColdOceanVegetationFeatures(biomeBuilder);
 
@@ -180,8 +194,9 @@ public class ECOBiomes {
         BiomeDefaultFeatures.addLightBambooVegetation(biomeBuilder);
         ECOBiomeFeatureGroups.addVeryTallBirchTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addAzaleaTrees(biomeBuilder);
-        ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addForestGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addPurpleFlowers(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addTallGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         ECOBiomeFeatureGroups.addCalciteCavesVegetationFeatures(biomeBuilder);
         ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
@@ -211,9 +226,9 @@ public class ECOBiomes {
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
         ECOBiomeFeatureGroups.addMegaSavannaTrees(biomeBuilder);
-        ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addSavannaGrass(biomeBuilder);
-        BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addRedFlowers(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addTallGrass(biomeBuilder);
         ECOBiomeFeatureGroups.addGrassyTerracottaCavesVegetationFeatures(biomeBuilder);
         ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
@@ -239,7 +254,9 @@ public class ECOBiomes {
         BiomeDefaultFeatures.addSwampClayDisk(biomeBuilder);
         ECOBiomeFeatureGroups.addMegaSwampTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addTreelessSwampVegetation(biomeBuilder);
-        BiomeDefaultFeatures.addDefaultMushrooms(biomeBuilder);
+        ECOBiomeFeatureGroups.addOverworldMushrooms(biomeBuilder);
+        ECOBiomeFeatureGroups.addNetherMushrooms(biomeBuilder);
+        ECOBiomeFeatureGroups.addTallGrass(biomeBuilder);
         BiomeDefaultFeatures.addSwampExtraVegetation(biomeBuilder);
         ECOBiomeFeatureGroups.addDeadTuffCavesVegetationFeatures(biomeBuilder);
         ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
@@ -265,10 +282,8 @@ public class ECOBiomes {
         globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
-        BiomeDefaultFeatures.addLightBambooVegetation(biomeBuilder);
         ECOBiomeFeatureGroups.addTallMushrooms(biomeBuilder);
-        ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addForestGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addOverworldMushrooms(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
         ECOBiomeFeatureGroups.addMushroomCavesVegetationFeatures(biomeBuilder);
         ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
@@ -294,8 +309,8 @@ public class ECOBiomes {
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
         ECOBiomeFeatureGroups.addMegaSavannaTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addSavannaGrass(biomeBuilder);
-        BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addTallGrass(biomeBuilder);
         ECOBiomeFeatureGroups.addAmethystCavesVegetationFeatures(biomeBuilder);
         ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
@@ -319,9 +334,9 @@ public class ECOBiomes {
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
         ECOBiomeFeatureGroups.addMegaSavannaTrees(biomeBuilder);
-        ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addSavannaGrass(biomeBuilder);
-        BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addPurpleFlowers(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addTallGrass(biomeBuilder);
         ECOBiomeFeatureGroups.addAmethystCavesVegetationFeatures(biomeBuilder);
         ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
@@ -345,12 +360,13 @@ public class ECOBiomes {
         globalOverworldGeneration(biomeBuilder);
         BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
         BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        ECOBiomeFeatureGroups.addThinSpruceTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addTallMushrooms(biomeBuilder);
         ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addSavannaGrass(biomeBuilder);
-        BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addOverworldMushrooms(biomeBuilder);
+        ECOBiomeFeatureGroups.addNetherMushrooms(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
         BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
-        ECOBiomeFeatureGroups.addThinSpruceTrees(biomeBuilder);
         BiomeDefaultFeatures.addDripstone(biomeBuilder);
         ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
         biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
@@ -358,7 +374,7 @@ public class ECOBiomes {
         Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_MEADOW);
         BiomeSpecialEffects specialEffects = new BiomeSpecialEffects.Builder()
                 .fogColor(12638463).waterFogColor(329011).waterColor(0x7a81e6).skyColor(calculateSkyColor(0.7F)).build();
-        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 0.5F, 0.4F, spawnBuilder, biomeBuilder, music, specialEffects);
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.PLAINS, 0.4F, 0.9F, spawnBuilder, biomeBuilder, music, specialEffects);
     }
 
     public static Biome lushDesert() {
@@ -378,9 +394,9 @@ public class ECOBiomes {
         ECOBiomeFeatureGroups.addMegaSavannaTrees(biomeBuilder);
         ECOBiomeFeatureGroups.addBasicBushes(biomeBuilder);
         ECOBiomeFeatureGroups.addBasicDesertFoilage(biomeBuilder);
-        ECOBiomeFeatureGroups.addBasicFlowers(biomeBuilder);
-        BiomeDefaultFeatures.addSavannaGrass(biomeBuilder);
-        BiomeDefaultFeatures.addSavannaExtraGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addRedFlowers(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addTallGrass(biomeBuilder);
         ECOBiomeFeatureGroups.addGrassyTerracottaCavesVegetationFeatures(biomeBuilder);
         BiomeDefaultFeatures.addDripstone(biomeBuilder);
         ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
@@ -389,5 +405,85 @@ public class ECOBiomes {
         BiomeSpecialEffects specialEffects = (new BiomeSpecialEffects.Builder())
                 .fogColor(12638463).waterFogColor(329011).waterColor(0x21d9c0).skyColor(calculateSkyColor(0.1F)).build();
         return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.SAVANNA, 2.0F, 0.0F, spawnBuilder, biomeBuilder, NORMAL_MUSIC, specialEffects);
+    }
+
+    public static Biome icyTaiga() {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+        BiomeDefaultFeatures.snowySpawns(spawnBuilder);
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        globalOverworldGeneration(biomeBuilder);
+        ECOBiomeFeatureGroups.addIceSpikes(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        ECOBiomeFeatureGroups.addThinSpruceTrees(biomeBuilder);
+        ECOBiomeFeatureGroups.addTallMushrooms(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicBushes(biomeBuilder);
+        ECOBiomeFeatureGroups.addPurpleFlowers(biomeBuilder);
+        ECOBiomeFeatureGroups.addFernGrass(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultExtraVegetation(biomeBuilder);
+        ECOBiomeFeatureGroups.addRootedCavesVegetationFeatures(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_COLD);
+
+        Music music = Musics.createGameMusic(SoundEvents.MUSIC_BIOME_SNOWY_SLOPES);
+        BiomeSpecialEffects specialEffects = (new BiomeSpecialEffects.Builder())
+                .fogColor(12638463).waterFogColor(329011).waterColor(4159204).skyColor(calculateSkyColor(0.1F)).build();
+        return biome(Biome.Precipitation.SNOW, Biome.BiomeCategory.TAIGA, -0.2F, 0.9F, spawnBuilder, biomeBuilder, music, specialEffects);
+    }
+
+    public static Biome floralBeach() {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+        BiomeDefaultFeatures.warmOceanSpawns(spawnBuilder, 6, 3);
+        spawnBuilder
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.TURTLE, 1, 1, 3))
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.RABBIT, 5, 1, 3));
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addMossyStoneBlock(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        BiomeDefaultFeatures.addLightBambooVegetation(biomeBuilder);
+        ECOBiomeFeatureGroups.addSandyJungleTrees(biomeBuilder);
+        if (Math.random()*2 >= 1) {
+            ECOBiomeFeatureGroups.addPurpleFlowers(biomeBuilder);
+            ECOBiomeFeatureGroups.addGravelCavesBareFeatures(biomeBuilder);
+        } else if (Math.random()*4 >= 2) {
+            ECOBiomeFeatureGroups.addRedFlowers(biomeBuilder);
+            ECOBiomeFeatureGroups.addSandCavesBareFeatures(biomeBuilder);
+        } else {
+            ECOBiomeFeatureGroups.addRedFlowers(biomeBuilder);
+            ECOBiomeFeatureGroups.addPurpleFlowers(biomeBuilder);
+        }
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addAdditionalLushVegetation(biomeBuilder);
+        ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
+
+        BiomeSpecialEffects specialEffects = (new BiomeSpecialEffects.Builder())
+                .fogColor(12638463).waterFogColor(329011).waterColor(4159204).skyColor(calculateSkyColor(0.1F)).build();
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.BEACH, 1.0F, 0.5F, spawnBuilder, biomeBuilder, NORMAL_MUSIC, specialEffects);
+    }
+
+    public static Biome oversnowedTaiga() {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+        BiomeDefaultFeatures.snowySpawns(spawnBuilder);
+        BiomeDefaultFeatures.oceanSpawns(spawnBuilder, 1, 3, 8);
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        globalOverworldGeneration(biomeBuilder);
+        ECOBiomeFeatureGroups.addIceSpikes(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        ECOBiomeFeatureGroups.addMegaSpruceTrees(biomeBuilder);
+        ECOBiomeFeatureGroups.addThinSpruceTrees(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
+
+        BiomeSpecialEffects specialEffects = (new BiomeSpecialEffects.Builder())
+                .fogColor(12638463).waterFogColor(329011).waterColor(4159204).foliageColorOverride(0xffffff).skyColor(calculateSkyColor(0.1F)).build();
+        return biome(Biome.Precipitation.SNOW, Biome.BiomeCategory.BEACH, -0.4F, 0.6F, spawnBuilder, biomeBuilder, NORMAL_MUSIC, specialEffects);
     }
 }

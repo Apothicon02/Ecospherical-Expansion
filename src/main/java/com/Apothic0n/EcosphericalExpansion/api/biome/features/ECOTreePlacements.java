@@ -1,11 +1,14 @@
 package com.Apothic0n.EcosphericalExpansion.api.biome.features;
 
+import net.minecraft.data.worldgen.features.TreeFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.TreePlacements;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 
 public class ECOTreePlacements {
     public static final PlacedFeature BRANCHING_JUNGLE_TREE_CHECKED = PlacementUtils.register("branching_jungle_tree_checked", ECOTreeFeatures.BRANCHING_JUNGLE_TREE.filteredByBlockSurvival(Blocks.JUNGLE_SAPLING));
+    public static final PlacedFeature PALM_TREE_CHECKED = PlacementUtils.register("palm_tree_checked", ECOTreeFeatures.TILTED_JUNGLE_TREE.filteredByBlockSurvival(Blocks.DEAD_BUSH));
 
     public static final PlacedFeature MEGA_AZALEA_CHECKED = PlacementUtils.register("mega_azalea_checked", ECOTreeFeatures.MEGA_AZALEA_TREE.filteredByBlockSurvival(Blocks.OAK_SAPLING));
     public static final PlacedFeature AZALEA_BUSH_CHECKED = PlacementUtils.register("azalea_bush_checked", ECOTreeFeatures.AZALEA_BUSH.filteredByBlockSurvival(Blocks.OAK_SAPLING));
@@ -14,7 +17,9 @@ public class ECOTreePlacements {
     public static final PlacedFeature BRANCHING_OAK_CHECKED = PlacementUtils.register("branching_oak_checked", ECOTreeFeatures.BRANCHING_OAK.filteredByBlockSurvival(Blocks.OAK_SAPLING));
     public static final PlacedFeature TWISTED_OAK_CHECKED = PlacementUtils.register("twisted_oak_checked", ECOTreeFeatures.TWISTED_OAK.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
-    public static final PlacedFeature TOWERING_SPRUCE_CHECKED = PlacementUtils.register("towering_spruce_checked", ECOTreeFeatures.TOWERING_SPRUCE.filteredByBlockSurvival(Blocks.SPRUCE_SAPLING));
+    public static final PlacedFeature TOWERING_MEGA_SPRUCE_CHECKED = PlacementUtils.register("towering_mega_spruce_checked", ECOTreeFeatures.TOWERING_MEGA_SPRUCE.filtered(TreePlacements.SNOW_TREE_PREDICATE));
+    public static final PlacedFeature TOWERING_SPRUCE_CHECKED = PlacementUtils.register("towering_spruce_checked", ECOTreeFeatures.TOWERING_SPRUCE.filtered(TreePlacements.SNOW_TREE_PREDICATE));
+    public static final PlacedFeature SPRUCE_BUSH_CHECKED = PlacementUtils.register("spruce_bush_checked", ECOTreeFeatures.SPRUCE_BUSH.filtered(TreePlacements.SNOW_TREE_PREDICATE));
     public static final PlacedFeature OAK_BUSH_CHECKED = PlacementUtils.register("oak_bush_checked", ECOTreeFeatures.OAK_BUSH.filteredByBlockSurvival(Blocks.OAK_SAPLING));
 
     public static final PlacedFeature TILTED_DARK_OAK_CHECKED = PlacementUtils.register("tilted_dark_oak_checked", ECOTreeFeatures.TILTED_DARK_OAK.filteredByBlockSurvival(Blocks.DARK_OAK_SAPLING));

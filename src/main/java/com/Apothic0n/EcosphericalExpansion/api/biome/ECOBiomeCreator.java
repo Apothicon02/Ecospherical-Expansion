@@ -21,21 +21,11 @@ public class ECOBiomeCreator {
     public static final ResourceKey<Biome> CALCITE_CLIFFS = register("calcite_cliffs");
     public static final ResourceKey<Biome> MUSHROOM_PLAINS = register("mushroom_plains");
     public static final ResourceKey<Biome> LUSH_DESERT = register("lush_desert");
+    public static final ResourceKey<Biome> ICY_TAIGA = register("icy_taiga");
+    public static final ResourceKey<Biome> FLORAL_BEACH = register("floral_beach");
+    public static final ResourceKey<Biome> OVERSNOWED_TAIGA = register("oversnowed_taiga");
 
     private static ResourceKey<Biome> register(String name) {
-        BiomeDictionary.addTypes(ECOBiomeCreator.LUSH_OAK, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.HILLS);
-        BiomeDictionary.addTypes(ECOBiomeCreator.LUSH_JUNGLE, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.WET);
-        BiomeDictionary.addTypes(ECOBiomeCreator.ENRICHED_ROOFED_FOREST, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.FOREST);
-        BiomeDictionary.addTypes(ECOBiomeCreator.FROZEN_ROOFED_FOREST, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.FOREST);
-        BiomeDictionary.addTypes(ECOBiomeCreator.LUSH_BIRCH, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.CONIFEROUS);
-        BiomeDictionary.addTypes(ECOBiomeCreator.GLACIAL_PLAINS, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.COLD);
-        BiomeDictionary.addTypes(ECOBiomeCreator.MEGA_SAVANNA, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.SAVANNA, BiomeDictionary.Type.MESA, BiomeDictionary.Type.DRY);
-        BiomeDictionary.addTypes(ECOBiomeCreator.MEGA_SWAMP, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.SWAMP, BiomeDictionary.Type.WET);
-        BiomeDictionary.addTypes(ECOBiomeCreator.MUSHROOM_GROVE, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MUSHROOM, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.WET);
-        BiomeDictionary.addTypes(ECOBiomeCreator.DEEPSLATE_CLIFFS, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MOUNTAIN);
-        BiomeDictionary.addTypes(ECOBiomeCreator.CALCITE_CLIFFS, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MOUNTAIN);
-        BiomeDictionary.addTypes(ECOBiomeCreator.MUSHROOM_PLAINS, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MUSHROOM, BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.PLAINS);
-        BiomeDictionary.addTypes(ECOBiomeCreator.LUSH_DESERT, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MESA, BiomeDictionary.Type.DRY, BiomeDictionary.Type.BEACH);
         return ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(EcosphericalExpansion.MODID, name));
     }
 }

@@ -7,7 +7,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import terrablender.api.BiomeProviders;
-import terrablender.worldgen.noise.LayeredNoiseUtil;
 
 @Mod(EcosphericalExpansion.MODID)
 public class EcosphericalExpansion {

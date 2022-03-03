@@ -3,12 +3,28 @@ package com.Apothic0n.EcosphericalExpansion.api.biome.features;
 import com.Apothic0n.EcosphericalExpansion.api.biome.features.caves.ECOCavePlacements;
 import net.minecraft.data.worldgen.placement.AquaticPlacements;
 import net.minecraft.data.worldgen.placement.CavePlacements;
+import net.minecraft.data.worldgen.placement.MiscOverworldPlacements;
 import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 
 public class ECOBiomeFeatureGroups {
+
+    public static void addGravelCavesBareFeatures(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOCavePlacements.GRAVEL_CAVES_GRAVEL);
+    }
+
+    public static void addSandCavesBareFeatures(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOCavePlacements.SAND_CAVES_SAND);
+    }
+
+    public static void addAdditionalLushVegetation(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.LUSH_CAVES_CEILING_VEGETATION);
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.CAVE_VINES);
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.ROOTED_AZALEA_TREE);
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.SPORE_BLOSSOM);
+    }
 
     public static void addTuffCavesVegetationFeatures(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.LUSH_CAVES_CEILING_VEGETATION);
@@ -30,7 +46,6 @@ public class ECOBiomeFeatureGroups {
 
     public static void addTreelessSwampVegetation(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.FLOWER_SWAMP);
-        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_GRASS_NORMAL);
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_DEAD_BUSH);
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.PATCH_WATERLILY);
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, VegetationPlacements.BROWN_MUSHROOM_SWAMP);
@@ -102,8 +117,17 @@ public class ECOBiomeFeatureGroups {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.CLASSIC_VINES);
     }
 
+    public static void addIceSpikes(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, MiscOverworldPlacements.ICE_SPIKE);
+        pBuilder.addFeature(GenerationStep.Decoration.SURFACE_STRUCTURES, MiscOverworldPlacements.ICE_PATCH);
+    }
+
     public static void addLushJungleTrees(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_LUSH_JUNGLE);
+    }
+
+    public static void addSandyJungleTrees(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_SANDY_JUNGLE);
     }
 
     public static void addAzaleaTrees(BiomeGenerationSettings.Builder pBuilder) {
@@ -120,6 +144,10 @@ public class ECOBiomeFeatureGroups {
 
     public static void addMegaSwampTrees(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_MEGA_SWAMP);
+    }
+
+    public static void addMegaSpruceTrees(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_MEGA_SPRUCE);
     }
 
     public static void addThinSpruceTrees(BiomeGenerationSettings.Builder pBuilder) {
@@ -148,6 +176,7 @@ public class ECOBiomeFeatureGroups {
 
     public static void addBasicBushes(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.OAK_BUSH);
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.SPRUCE_BUSH);
     }
 
     public static void addBasicDesertFoilage(BiomeGenerationSettings.Builder pBuilder) {
@@ -156,6 +185,34 @@ public class ECOBiomeFeatureGroups {
 
     public static void addBasicFlowers(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.BASIC_FLOWERS);
+    }
+
+    public static void addRedFlowers(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.RED_FLOWERS);
+    }
+
+    public static void addPurpleFlowers(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.PURPLE_FLOWERS);
+    }
+
+    public static void addOverworldMushrooms(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.OVERWORLD_MUSHROOMS);
+    }
+
+    public static void addNetherMushrooms(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.NETHER_MUSHROOMS);
+    }
+
+    public static void addBasicGrass(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.BASIC_GRASS);
+    }
+
+    public static void addTallGrass(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TALL_GRASS);
+    }
+
+    public static void addFernGrass(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.FERN_GRASS);
     }
 }
 

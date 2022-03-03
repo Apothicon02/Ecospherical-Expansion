@@ -25,5 +25,8 @@ public class ECOBiomeRegistry {
         registry.register(ECOBiomes.calciteCliffs().setRegistryName(ECOBiomeCreator.CALCITE_CLIFFS.location()));
         registry.register(ECOBiomes.mushroomPlains().setRegistryName(ECOBiomeCreator.MUSHROOM_PLAINS.location()));
         registry.register(ECOBiomes.lushDesert().setRegistryName(ECOBiomeCreator.LUSH_DESERT.location()));
+        registry.register(ECOBiomes.icyTaiga().setRegistryName(ECOBiomeCreator.ICY_TAIGA.location()));
+        registry.register(ECOBiomes.floralBeach().setRegistryName(ECOBiomeCreator.FLORAL_BEACH.location()));
+        registry.register(ECOBiomes.oversnowedTaiga().setRegistryName(ECOBiomeCreator.OVERSNOWED_TAIGA.location()));
     }
 }

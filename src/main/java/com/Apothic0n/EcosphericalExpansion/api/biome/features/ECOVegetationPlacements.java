@@ -1,8 +1,13 @@
 package com.Apothic0n.EcosphericalExpansion.api.biome.features;
 
 import com.google.common.collect.ImmutableList;
+import net.minecraft.core.BlockPos;
 import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.util.valueproviders.IntProvider;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
@@ -10,10 +15,12 @@ import java.util.List;
 public class ECOVegetationPlacements {
     public static final PlacementModifier TREE_THRESHOLD = SurfaceWaterDepthFilter.forMaxDepth(0);
     public static final PlacedFeature TREES_LUSH_JUNGLE = PlacementUtils.register("ecosphericalexpansion:trees_lush_jungle", ECOVegetationFeatures.TREES_LUSH_JUNGLE.placed(treePlacement(PlacementUtils.countExtra(2, 0.1F, 1))));
+    public static final PlacedFeature TREES_SANDY_JUNGLE = PlacementUtils.register("ecosphericalexpansion:trees_sandy_jungle", ECOVegetationFeatures.TREES_SANDY_JUNGLE.placed(treePlacement(PlacementUtils.countExtra(1, 0.1F, 1))));
     public static final PlacedFeature TREES_AZALEA = PlacementUtils.register("ecosphericalexpansion:trees_azalea", ECOVegetationFeatures.TREES_AZALEA.placed(treePlacement(PlacementUtils.countExtra(2, 0.1F, 1))));
     public static final PlacedFeature TREES_LUSH_OAK = PlacementUtils.register("ecosphericalexpansion:trees_lush_oak", ECOVegetationFeatures.TREES_LUSH_OAK.placed(treePlacement(PlacementUtils.countExtra(3, 0.2F, 1))));
     public static final PlacedFeature TREES_MEGA_ACACIA = PlacementUtils.register("ecosphericalexpansion:trees_mega_acacia", ECOVegetationFeatures.TREES_MEGA_ACACIA.placed(treePlacement(PlacementUtils.countExtra(2, 0.2F, 2))));
     public static final PlacedFeature TREES_MEGA_SWAMP = PlacementUtils.register("ecosphericalexpansion:trees_mega_swamp", ECOVegetationFeatures.TREES_MEGA_SWAMP.placed(treePlacement(PlacementUtils.countExtra(1, 0.2F, 2))));
+    public static final PlacedFeature TREES_MEGA_SPRUCE = PlacementUtils.register("ecosphericalexpansion:trees_mega_spruce", ECOVegetationFeatures.TREES_MEGA_SPRUCE.placed(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
     public static final PlacedFeature TREES_THIN_SPRUCE = PlacementUtils.register("ecosphericalexpansion:trees_thin_spruce", ECOVegetationFeatures.TREES_THIN_SPRUCE.placed(treePlacement(PlacementUtils.countExtra(1, 0.1F, 1))));
     public static final PlacedFeature TREES_BIG_DARK_OAK = PlacementUtils.register("ecosphericalexpansion:trees_big_dark_oak", ECOVegetationFeatures.TREES_BIG_DARK_OAK.placed(treePlacement(PlacementUtils.countExtra(1, 0.1F, 1))));
     public static final PlacedFeature TREES_SMALL_DARK_OAK = PlacementUtils.register("ecosphericalexpansion:trees_small_dark_oak", ECOVegetationFeatures.TREES_SMALL_DARK_OAK.placed(treePlacement(PlacementUtils.countExtra(1, 0.1F, 1))));
@@ -22,15 +29,26 @@ public class ECOVegetationPlacements {
     public static final PlacedFeature TREES_TALL_MUSHROOMS = PlacementUtils.register("ecosphericalexpansion:trees_tall_mushrooms", ECOVegetationFeatures.TREES_TALL_MUSHROOMS.placed(treePlacement(PlacementUtils.countExtra(1, 1F, 1))));
     public static final PlacedFeature MISC_AMETHYSTS = PlacementUtils.register("ecosphericalexpansion:misc_amethysts", ECOVegetationFeatures.MISC_AMETHYSTS.placed(treePlacement(PlacementUtils.countExtra(3, 1F, 2))));
     public static final PlacedFeature OAK_BUSH = PlacementUtils.register("ecosphericalexpansion:oak_bush", ECOVegetationFeatures.OAK_BUSH.placed(treePlacement(PlacementUtils.countExtra(3, 0.2F, 1))));
+    public static final PlacedFeature SPRUCE_BUSH = PlacementUtils.register("ecosphericalexpansion:spruce_bush", ECOVegetationFeatures.SPRUCE_BUSH.placed(treePlacement(PlacementUtils.countExtra(2, 0.2F, 1))));
     public static final PlacedFeature TALL_CACTI = PlacementUtils.register("ecosphericalexpansion:tall_cacti", ECOVegetationFeatures.TALL_CACTI.placed(treePlacement(PlacementUtils.countExtra(3, 0.2F, 1))));
-    public static final PlacedFeature BASIC_FLOWERS = PlacementUtils.register("ecosphericalexpansion:basic_flowers", ECOVegetationFeatures.BASIC_FLOWERS.placed(RarityFilter.onAverageOnceEvery(32), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+    public static final PlacedFeature BASIC_FLOWERS = PlacementUtils.register("ecosphericalexpansion:basic_flowers", ECOVegetationFeatures.BASIC_FLOWERS.placed(RarityFilter.onAverageOnceEvery(4), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+    public static final PlacedFeature RED_FLOWERS = PlacementUtils.register("ecosphericalexpansion:red_flowers", ECOVegetationFeatures.RED_FLOWERS.placed(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+    public static final PlacedFeature PURPLE_FLOWERS = PlacementUtils.register("ecosphericalexpansion:purple_flowers", ECOVegetationFeatures.PURPLE_FLOWERS.placed(RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+    public static final PlacedFeature OVERWORLD_MUSHROOMS = PlacementUtils.register("ecosphericalexpansion:overworld_mushrooms", ECOVegetationFeatures.OVERWORLD_MUSHROOMS.placed(CountPlacement.of(3), RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+    public static final PlacedFeature NETHER_MUSHROOMS = PlacementUtils.register("ecosphericalexpansion:nether_mushrooms", ECOVegetationFeatures.NETHER_MUSHROOMS.placed(CountPlacement.of(2), RarityFilter.onAverageOnceEvery(1), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome()));
+    public static final PlacedFeature BASIC_GRASS = PlacementUtils.register("ecosphericalexpansion:basic_grass", ECOVegetationFeatures.BASIC_GRASS.placed(worldSurfaceSquaredWithCount(20)));
+    public static final PlacedFeature TALL_GRASS = PlacementUtils.register("ecosphericalexpansion:tall_grass", ECOVegetationFeatures.TALL_GRASS.placed(worldSurfaceSquaredWithCount(2)));
+    public static final PlacedFeature FERN_GRASS = PlacementUtils.register("ecosphericalexpansion:fern_grass", ECOVegetationFeatures.FERN_GRASS.placed(worldSurfaceSquaredWithCount(4)));
 
-
-    private static ImmutableList.Builder<PlacementModifier> treePlacementBase(PlacementModifier p_195485_) {
-        return ImmutableList.<PlacementModifier>builder().add(p_195485_).add(InSquarePlacement.spread()).add(TREE_THRESHOLD).add(PlacementUtils.HEIGHTMAP_OCEAN_FLOOR).add(BiomeFilter.biome());
+    public static List<PlacementModifier> worldSurfaceSquaredWithCount(int count) {
+        return List.of(CountPlacement.of(count), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome());
     }
 
-    public static List<PlacementModifier> treePlacement(PlacementModifier p_195480_) {
-        return treePlacementBase(p_195480_).build();
+    private static ImmutableList.Builder<PlacementModifier> treePlacementBase(PlacementModifier pModifier) {
+        return ImmutableList.<PlacementModifier>builder().add(pModifier).add(InSquarePlacement.spread()).add(TREE_THRESHOLD).add(PlacementUtils.HEIGHTMAP_OCEAN_FLOOR).add(BiomeFilter.biome());
+    }
+
+    public static List<PlacementModifier> treePlacement(PlacementModifier pModifier) {
+        return treePlacementBase(pModifier).build();
     }
 }

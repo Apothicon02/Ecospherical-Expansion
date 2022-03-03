@@ -33,9 +33,11 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.*;
 
 import java.util.List;
 import java.util.OptionalInt;
+import java.util.Random;
 
 public class ECOTreeFeatures {
     public static final ConfiguredFeature<TreeConfiguration, ?> BRANCHING_JUNGLE_TREE = FeatureUtils.register("branching_jungle_tree", Feature.TREE.configured(createBranchingJungleTree().decorators(ImmutableList.of(new CocoaDecorator(0.2F), TrunkVineDecorator.INSTANCE, LeaveVineDecorator.INSTANCE)).ignoreVines().build()));
+    public static final ConfiguredFeature<TreeConfiguration, ?> TILTED_JUNGLE_TREE = FeatureUtils.register("tilted_jungle_tree", Feature.TREE.configured(createSlantedJungle(9, 9).decorators(ImmutableList.of(LeaveVineDecorator.INSTANCE)).build()));
 
     public static final ConfiguredFeature<?, ?> MEGA_AZALEA_TREE = FeatureUtils.register("mega_azalea_tree", Feature.TREE.configured((new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG), new BendingTrunkPlacer(12, 5, 4, 7, UniformInt.of(1, 2)), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.AZALEA_LEAVES.defaultBlockState(), 3).add(Blocks.FLOWERING_AZALEA_LEAVES.defaultBlockState(), 1)), new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 50), new TwoLayersFeatureSize(1, 0, 1))).dirt(BlockStateProvider.simple(Blocks.ROOTED_DIRT)).forceDirt().build()));
     public static final ConfiguredFeature<?, ?> AZALEA_BUSH = FeatureUtils.register("azalea_bush", Feature.TREE.configured((new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG), new BendingTrunkPlacer(2, 1, 0, 2, UniformInt.of(1, 2)), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.AZALEA_LEAVES.defaultBlockState(), 3).add(Blocks.FLOWERING_AZALEA_LEAVES.defaultBlockState(), 1)), new RandomSpreadFoliagePlacer(ConstantInt.of(3), ConstantInt.of(0), ConstantInt.of(2), 50), new TwoLayersFeatureSize(1, 0, 1))).dirt(BlockStateProvider.simple(Blocks.ROOTED_DIRT)).forceDirt().build()));
@@ -44,8 +46,10 @@ public class ECOTreeFeatures {
     public static final ConfiguredFeature<TreeConfiguration, ?> TOWERING_OAK = FeatureUtils.register("towering_oak", Feature.TREE.configured(createToweringOak().build()));
     public static final ConfiguredFeature<TreeConfiguration, ?> BRANCHING_OAK = FeatureUtils.register("branching_oak", Feature.TREE.configured(createBranchingOak().decorators(ImmutableList.of(TrunkVineDecorator.INSTANCE, LeaveVineDecorator.INSTANCE)).build()));
 
+    public static final ConfiguredFeature<TreeConfiguration, ?> TOWERING_MEGA_SPRUCE = FeatureUtils.register("towering_mega_spruce", Feature.TREE.configured(createToweringMegaSpruce((int) (Math.random()*6) + 12, getSpruceOrOakLogs(), getSpruceOrOakLeaves()).build()));
     public static final ConfiguredFeature<TreeConfiguration, ?> TOWERING_SPRUCE = FeatureUtils.register("towering_spruce", Feature.TREE.configured(createToweringSpruce().build()));
-    public static final ConfiguredFeature<TreeConfiguration, ?> OAK_BUSH = FeatureUtils.register("oak_bush", Feature.TREE.configured(createBush().build()));
+    public static final ConfiguredFeature<TreeConfiguration, ?> SPRUCE_BUSH = FeatureUtils.register("spruce_bush", Feature.TREE.configured(createBush(Blocks.SPRUCE_LEAVES.defaultBlockState()).build()));
+    public static final ConfiguredFeature<TreeConfiguration, ?> OAK_BUSH = FeatureUtils.register("oak_bush", Feature.TREE.configured(createBush(Blocks.OAK_LEAVES.defaultBlockState()).build()));
 
     public static final ConfiguredFeature<TreeConfiguration, ?> TILTED_DARK_OAK = FeatureUtils.register("tilted_dark_oak", Feature.TREE.configured(createTiltedDarkOak().build()));
     public static final ConfiguredFeature<TreeConfiguration, ?> SHORT_DARK_OAK = FeatureUtils.register("short_dark_oak", Feature.TREE.configured(createDarkOak(5).build()));
@@ -73,6 +77,22 @@ public class ECOTreeFeatures {
     public static final ConfiguredFeature<BlockPileConfiguration, ?> MISC_AMETHSYT_LARGE = FeatureUtils.register("misc_amethyst_large", Feature.BLOCK_PILE.configured(new BlockPileConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.AMETHYST_BLOCK.defaultBlockState(), 1).add(Blocks.AMETHYST_CLUSTER.defaultBlockState(), 3).add(Blocks.LARGE_AMETHYST_BUD.defaultBlockState(), 9).add(Blocks.MEDIUM_AMETHYST_BUD.defaultBlockState(), 2)))));
     public static final ConfiguredFeature<BlockPileConfiguration, ?> MISC_AMETHSYT_NORMAL = FeatureUtils.register("misc_amethyst_normal", Feature.BLOCK_PILE.configured(new BlockPileConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.LARGE_AMETHYST_BUD.defaultBlockState(), 1).add(Blocks.MEDIUM_AMETHYST_BUD.defaultBlockState(), 5).add(Blocks.SMALL_AMETHYST_BUD.defaultBlockState(), 2)))));
     public static final ConfiguredFeature<BlockPileConfiguration, ?> MISC_AMETHSYT_SMALL = FeatureUtils.register("misc_amethyst_small", Feature.BLOCK_PILE.configured(new BlockPileConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.MEDIUM_AMETHYST_BUD.defaultBlockState(), 2).add(Blocks.SMALL_AMETHYST_BUD.defaultBlockState(), 7)))));
+
+    private static BlockState getSpruceOrOakLeaves() {
+        BlockState state = Blocks.SPRUCE_LEAVES.defaultBlockState();
+        if (Math.random()*3 >=2) {
+            state = Blocks.DARK_OAK_LEAVES.defaultBlockState();
+        }
+        return state;
+    }
+
+    private static BlockState getSpruceOrOakLogs() {
+        BlockState state = Blocks.STRIPPED_SPRUCE_LOG.defaultBlockState();
+        if (Math.random()*3 >=2) {
+            state = Blocks.STRIPPED_DARK_OAK_LOG.defaultBlockState();
+        }
+        return state;
+    }
 
     private static TreeConfiguration.TreeConfigurationBuilder createMultiMushroom(int height) {
         return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.MUSHROOM_STEM),
@@ -122,6 +142,13 @@ public class ECOTreeFeatures {
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))).ignoreVines();
     }
 
+    private static TreeConfiguration.TreeConfigurationBuilder createToweringMegaSpruce(int height, BlockState logs, BlockState leaves) {
+        return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(logs),
+                new GiantTrunkPlacer(height, height - (height/((int) ((Math.random()*3)+1))), 2), BlockStateProvider.simple(leaves),
+                new SpruceFoliagePlacer(ConstantInt.of(3), ConstantInt.of(2), ConstantInt.of(6)),
+                new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))).ignoreVines().dirt(BlockStateProvider.simple(logs));
+    }
+
     private static TreeConfiguration.TreeConfigurationBuilder createToweringSpruce() {
         return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.SPRUCE_LOG),
                 new StraightTrunkPlacer(11, 6, 1), BlockStateProvider.simple(Blocks.SPRUCE_LEAVES),
@@ -129,9 +156,9 @@ public class ECOTreeFeatures {
                 new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))).ignoreVines();
     }
 
-    private static TreeConfiguration.TreeConfigurationBuilder createBush() {
+    private static TreeConfiguration.TreeConfigurationBuilder createBush(BlockState leaves) {
         return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.OAK_LOG),
-                new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(Blocks.OAK_LEAVES.defaultBlockState()),
+                new StraightTrunkPlacer(1, 0, 0), BlockStateProvider.simple(leaves),
                 new BushFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 2),
                 new TwoLayersFeatureSize(0, 0, 0))).ignoreVines();
     }
@@ -188,5 +215,12 @@ public class ECOTreeFeatures {
                 new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.AZALEA_LEAVES.defaultBlockState(), 11).add(Blocks.FLOWERING_AZALEA_LEAVES.defaultBlockState(), 1)),
                 new DarkOakFoliagePlacer(ConstantInt.of(1), ConstantInt.of(0)),
                 new TwoLayersFeatureSize(6, 3, 2, OptionalInt.of(4)))).ignoreVines();
+    }
+
+    private static TreeConfiguration.TreeConfigurationBuilder createSlantedJungle(int height, int fullness) {
+        return (new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(Blocks.STRIPPED_JUNGLE_WOOD),
+                new BendingTrunkPlacer(height, 5, 0, fullness, UniformInt.of(1, 1)), BlockStateProvider.simple(Blocks.JUNGLE_LEAVES),
+                new BlobFoliagePlacer(ConstantInt.of(2), ConstantInt.of(1), 1),
+                new TwoLayersFeatureSize(0, 0, 0, OptionalInt.of(4)))).ignoreVines();
     }
 }

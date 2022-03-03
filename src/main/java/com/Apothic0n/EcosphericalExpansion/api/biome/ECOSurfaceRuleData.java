@@ -23,7 +23,9 @@ public class ECOSurfaceRuleData {
     private static final SurfaceRules.RuleSource TUFF = makeStateRule(Blocks.TUFF);
 
     private static final SurfaceRules.RuleSource SNOW_BLOCK = makeStateRule(Blocks.SNOW_BLOCK);
+    private static final SurfaceRules.RuleSource POWDERED_SNOW = makeStateRule(Blocks.POWDER_SNOW);
     private static final SurfaceRules.RuleSource DEEPSLATE = makeStateRule(Blocks.DEEPSLATE);
+    private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
     private static final SurfaceRules.RuleSource PACKED_ICE = makeStateRule(Blocks.PACKED_ICE);
     private static final SurfaceRules.RuleSource BLUE_ICE = makeStateRule(Blocks.BLUE_ICE);
 
@@ -183,11 +185,28 @@ public class ECOSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, ROOTED_DIRT),
                 SurfaceRules.ifTrue(SurfaceRules.steep(), TUFF));
 
+        SurfaceRules.RuleSource sandyBeach = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SAND),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SANDSTONE),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), DIORITE));
+
+        SurfaceRules.RuleSource snowyDepths = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SNOW_BLOCK),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SNOW_BLOCK),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), CALCITE));
+
         SurfaceRules.RuleSource myceliumBlackstoneCliffs = SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.verticalGradient("deepslate", VerticalAnchor.absolute(-63), VerticalAnchor.absolute(300)), DEEPSLATE),
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, MYCELIUM),
                 SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DRIPSTONE_BLOCK),
                 SurfaceRules.ifTrue(SurfaceRules.steep(), BLACKSTONE));
+
+        SurfaceRules.RuleSource snowyCalciteCliffs = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.verticalGradient("deepslate", VerticalAnchor.absolute(-63), VerticalAnchor.absolute(63)), DEEPSLATE),
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SNOW_BLOCK),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DIORITE),
+                SurfaceRules.ifTrue(SurfaceRules.verticalGradient("calcite", VerticalAnchor.absolute(60), VerticalAnchor.absolute(300)), CALCITE),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), CALCITE));
 
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.LUSH_OAK), grassyGraniteCliffs),
@@ -202,7 +221,11 @@ public class ECOSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.DEEPSLATE_CLIFFS), deepslateCliffs),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.CALCITE_CLIFFS), calciteCliffs),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.MUSHROOM_PLAINS), grassyGraniteCliffs),
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.LUSH_DESERT), sandyTerracottaMesa)
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.LUSH_DESERT), sandyTerracottaMesa),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.ICY_TAIGA), snowyCalciteCliffs),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.FLORAL_BEACH), grassyGraniteCliffs),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(ECOBiomeCreator.OVERSNOWED_TAIGA), snowyDepths)
+
         );
     }
 
