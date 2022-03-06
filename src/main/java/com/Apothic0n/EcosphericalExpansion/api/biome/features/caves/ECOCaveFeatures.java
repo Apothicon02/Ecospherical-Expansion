@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Properties;
 
 public class ECOCaveFeatures {
-    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> DRIPLEAF = FeatureUtils.register("ecospherical_expansion:dripleaf", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeSmallDripleaf, () -> {
+    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> DRIPLEAF = FeatureUtils.register("eco:dripleaf", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeSmallDripleaf, () -> {
         return makeDripleaf(Direction.EAST);
     }, () -> {
         return makeDripleaf(Direction.WEST);
@@ -39,142 +39,142 @@ public class ECOCaveFeatures {
         return makeDripleaf(Direction.NORTH);
     }))));
 
-    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> BAMBOOAMETHYST = FeatureUtils.register("ecospherical_expansion:bamboo_amethyst", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeBambooAmethyst, () -> {
+    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> BAMBOOAMETHYST = FeatureUtils.register("eco:bamboo_amethyst", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeBambooAmethyst, () -> {
         return makeBambooAmethyst();
     }))));
 
-    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> ROOTEDDIRT = FeatureUtils.register("ecospherical_expansion:rooted_dirt", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeRootedDirt, () -> {
+    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> ROOTEDDIRT = FeatureUtils.register("eco:rooted_dirt", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeRootedDirt, () -> {
         return makeRootedDirt();
     }))));
 
-    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> GRASSYICE = FeatureUtils.register("ecospherical_expansion:grassy_ice", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeGrassyIce, () -> {
+    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> GRASSYICE = FeatureUtils.register("eco:grassy_ice", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeGrassyIce, () -> {
         return makeGrassyIce();
     }))));
 
-    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> ICESTACKS = FeatureUtils.register("ecospherical_expansion:ice_stacks", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeIceStacks, () -> {
+    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> ICESTACKS = FeatureUtils.register("eco:ice_stacks", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeIceStacks, () -> {
         return makeIceStacks();
     }))));
 
-    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> GRASSYTERRACOTTA = FeatureUtils.register("ecospherical_expansion:grassy_terracotta", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeDrippingBamboo, () -> {
+    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> GRASSYTERRACOTTA = FeatureUtils.register("eco:grassy_terracotta", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeDrippingBamboo, () -> {
         return makeDrippingBamboo();
     }))));
 
-    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> SANDYTERRACOTTA = FeatureUtils.register("ecospherical_expansion:sandy_terracotta", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeSandyAmethyst, () -> {
+    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> SANDYTERRACOTTA = FeatureUtils.register("eco:sandy_terracotta", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeSandyAmethyst, () -> {
         return makeSandyAmethyst();
     }))));
 
     //GRAVEL
-    public static final ConfiguredFeature<?, ?> GRAVEL_WITH_DRIPLEAVES = FeatureUtils.register("ecospherical_expansion:gravel_with_dripleaves", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.GRAVEL), () -> {
+    public static final ConfiguredFeature<?, ?> GRAVEL_WITH_DRIPLEAVES = FeatureUtils.register("eco:gravel_with_dripleaves", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.GRAVEL), () -> {
         return DRIPLEAF.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<?, ?> GRAVEL_POOL_WITH_DRIPLEAVES = FeatureUtils.register("ecospherical_expansion:gravel_pool_with_dripleaves", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.GRAVEL), () -> {
+    public static final ConfiguredFeature<?, ?> GRAVEL_POOL_WITH_DRIPLEAVES = FeatureUtils.register("eco:gravel_pool_with_dripleaves", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.GRAVEL), () -> {
         return DRIPLEAF.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> GRAVEL_CAVES_GRAVEL = FeatureUtils.register("ecospherical_expansion:gravel_caves_gravel", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> GRAVEL_CAVES_GRAVEL = FeatureUtils.register("eco:gravel_caves_gravel", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
         return GRAVEL_WITH_DRIPLEAVES.placed();
     }, () -> {
         return GRAVEL_POOL_WITH_DRIPLEAVES.placed();
     })));
 
     //SAND
-    public static final ConfiguredFeature<?, ?> SAND_WITH_DRIPLEAVES = FeatureUtils.register("ecospherical_expansion:sand_with_dripleaves", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.SAND), () -> {
+    public static final ConfiguredFeature<?, ?> SAND_WITH_DRIPLEAVES = FeatureUtils.register("eco:sand_with_dripleaves", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.SAND), () -> {
         return DRIPLEAF.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<?, ?> SAND_POOL_WITH_DRIPLEAVES = FeatureUtils.register("ecospherical_expansion:sand_pool_with_dripleaves", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.SAND), () -> {
+    public static final ConfiguredFeature<?, ?> SAND_POOL_WITH_DRIPLEAVES = FeatureUtils.register("eco:sand_pool_with_dripleaves", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.SAND), () -> {
         return DRIPLEAF.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> SAND_CAVES_SAND = FeatureUtils.register("ecospherical_expansion:sand_caves_sand", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> SAND_CAVES_SAND = FeatureUtils.register("eco:sand_caves_sand", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
         return SAND_WITH_DRIPLEAVES.placed();
     }, () -> {
         return SAND_POOL_WITH_DRIPLEAVES.placed();
     })));
 
     //TUFF
-    public static final ConfiguredFeature<?, ?> TUFF_WITH_DRIPLEAVES = FeatureUtils.register("ecospherical_expansion:tuff_with_dripleaves", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.TUFF), () -> {
+    public static final ConfiguredFeature<?, ?> TUFF_WITH_DRIPLEAVES = FeatureUtils.register("eco:tuff_with_dripleaves", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.TUFF), () -> {
         return DRIPLEAF.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<?, ?> TUFF_POOL_WITH_DRIPLEAVES = FeatureUtils.register("ecospherical_expansion:tuff_pool_with_dripleaves", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.TUFF), () -> {
+    public static final ConfiguredFeature<?, ?> TUFF_POOL_WITH_DRIPLEAVES = FeatureUtils.register("eco:tuff_pool_with_dripleaves", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.TUFF), () -> {
         return DRIPLEAF.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> TUFF_CAVES_TUFF = FeatureUtils.register("ecospherical_expansion:tuff_caves_tuff", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> TUFF_CAVES_TUFF = FeatureUtils.register("eco:tuff_caves_tuff", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
         return TUFF_WITH_DRIPLEAVES.placed();
     }, () -> {
         return TUFF_POOL_WITH_DRIPLEAVES.placed();
     })));
 
     //CALCITE
-    public static final ConfiguredFeature<?, ?> CALCITE_WITH_BAMBOO = FeatureUtils.register("ecospherical_expansion:calcite_with_bambooamethyst", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.GRASS_BLOCK), () -> {
+    public static final ConfiguredFeature<?, ?> CALCITE_WITH_BAMBOO = FeatureUtils.register("eco:calcite_with_bambooamethyst", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.GRASS_BLOCK), () -> {
         return BAMBOOAMETHYST.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<?, ?> CALCITE_POOL_WITH_BAMBOO = FeatureUtils.register("ecospherical_expansion:calcite_pool_with_bambooamethyst", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.CALCITE), () -> {
+    public static final ConfiguredFeature<?, ?> CALCITE_POOL_WITH_BAMBOO = FeatureUtils.register("eco:calcite_pool_with_bambooamethyst", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.CALCITE), () -> {
         return BAMBOOAMETHYST.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> CALCITE_CAVES_CALCITE = FeatureUtils.register("ecospherical_expansion:calcite_caves_calcite", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> CALCITE_CAVES_CALCITE = FeatureUtils.register("eco:calcite_caves_calcite", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
         return CALCITE_WITH_BAMBOO.placed();
     }, () -> {
         return CALCITE_POOL_WITH_BAMBOO.placed();
     })));
 
     //BLACKSTONE
-    public static final ConfiguredFeature<?, ?> BLACKSTONE_WITH_BAMBOO = FeatureUtils.register("ecospherical_expansion:blackstone_with_bambooamethyst", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.ROOTED_DIRT.defaultBlockState(), 1).add(Blocks.MYCELIUM.defaultBlockState(), 9)), () -> {
+    public static final ConfiguredFeature<?, ?> BLACKSTONE_WITH_BAMBOO = FeatureUtils.register("eco:blackstone_with_bambooamethyst", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.ROOTED_DIRT.defaultBlockState(), 1).add(Blocks.MYCELIUM.defaultBlockState(), 9)), () -> {
         return BAMBOOAMETHYST.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<?, ?> BLACKSTONE_POOL_WITH_BAMBOO = FeatureUtils.register("ecospherical_expansion:blackstone_pool_with_bambooamethyst", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.BLACKSTONE), () -> {
+    public static final ConfiguredFeature<?, ?> BLACKSTONE_POOL_WITH_BAMBOO = FeatureUtils.register("eco:blackstone_pool_with_bambooamethyst", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.BLACKSTONE), () -> {
         return BAMBOOAMETHYST.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> MUSHROOM_CAVES_BLACKSTONE = FeatureUtils.register("ecospherical_expansion:mushroom_caves_blackstone", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> MUSHROOM_CAVES_BLACKSTONE = FeatureUtils.register("eco:mushroom_caves_blackstone", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
         return BLACKSTONE_WITH_BAMBOO.placed();
     }, () -> {
         return BLACKSTONE_POOL_WITH_BAMBOO.placed();
     })));
 
     //ROOTED_DIRT
-    public static final ConfiguredFeature<?, ?> ROOTED_DIRT = FeatureUtils.register("ecospherical_expansion:rooted_dirt", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.ROOTED_DIRT.defaultBlockState(), 1).add(Blocks.DIRT.defaultBlockState(), 1).add(Blocks.COARSE_DIRT.defaultBlockState(), 2).add(Blocks.PODZOL.defaultBlockState(), 4).add(Blocks.GRASS_BLOCK.defaultBlockState(), 7)), () -> {
+    public static final ConfiguredFeature<?, ?> ROOTED_DIRT = FeatureUtils.register("eco:rooted_dirt", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.ROOTED_DIRT.defaultBlockState(), 1).add(Blocks.DIRT.defaultBlockState(), 1).add(Blocks.COARSE_DIRT.defaultBlockState(), 2).add(Blocks.PODZOL.defaultBlockState(), 4).add(Blocks.GRASS_BLOCK.defaultBlockState(), 7)), () -> {
         return ROOTEDDIRT.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<?, ?> ROOTED_DIRT_POOL = FeatureUtils.register("ecospherical_expansion:rooted_dirt_pool", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.ROOTED_DIRT.defaultBlockState(), 1).add(Blocks.DIRT.defaultBlockState(), 1).add(Blocks.COARSE_DIRT.defaultBlockState(), 2).add(Blocks.PODZOL.defaultBlockState(), 4)), () -> {
+    public static final ConfiguredFeature<?, ?> ROOTED_DIRT_POOL = FeatureUtils.register("eco:rooted_dirt_pool", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.ROOTED_DIRT.defaultBlockState(), 1).add(Blocks.DIRT.defaultBlockState(), 1).add(Blocks.COARSE_DIRT.defaultBlockState(), 2).add(Blocks.PODZOL.defaultBlockState(), 4)), () -> {
         return ROOTEDDIRT.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> ROOTED_CAVES_ROOTED_DIRT = FeatureUtils.register("ecospherical_expansion:rooted_caves_rooted_dirt", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> ROOTED_CAVES_ROOTED_DIRT = FeatureUtils.register("eco:rooted_caves_rooted_dirt", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
         return ROOTED_DIRT.placed();
     }, () -> {
         return ROOTED_DIRT_POOL.placed();
     })));
 
     //GRASSY_ICE
-    public static final ConfiguredFeature<?, ?> GRASSY_ICE = FeatureUtils.register("ecospherical_expansion:grassy_ice", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS_BLOCK.defaultBlockState(), 4).add(Blocks.ROOTED_DIRT.defaultBlockState(), 1)), () -> {
+    public static final ConfiguredFeature<?, ?> GRASSY_ICE = FeatureUtils.register("eco:grassy_ice", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS_BLOCK.defaultBlockState(), 4).add(Blocks.ROOTED_DIRT.defaultBlockState(), 1)), () -> {
         return GRASSYICE.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<?, ?> GRASSY_ICE_POOL = FeatureUtils.register("ecospherical_expansion:grassy_ice_pool", WaterloggedVegetationPatchFeature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS_BLOCK.defaultBlockState(), 3).add(Blocks.COARSE_DIRT.defaultBlockState(), 1)), () -> {
+    public static final ConfiguredFeature<?, ?> GRASSY_ICE_POOL = FeatureUtils.register("eco:grassy_ice_pool", WaterloggedVegetationPatchFeature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS_BLOCK.defaultBlockState(), 3).add(Blocks.COARSE_DIRT.defaultBlockState(), 1)), () -> {
         return GRASSYICE.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> GRASSY_ICE_CAVES_GRASSY_ICE = FeatureUtils.register("ecospherical_expansion:grassy_ice_caves_grassy_ice", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> GRASSY_ICE_CAVES_GRASSY_ICE = FeatureUtils.register("eco:grassy_ice_caves_grassy_ice", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
         return GRASSY_ICE.placed();
     }, () -> {
         return GRASSY_ICE_POOL.placed();
     })));
 
     //GRASSY_TERRACOTTA
-    public static final ConfiguredFeature<?, ?> GRASSY_TERRACOTTA = FeatureUtils.register("ecospherical_expansion:grassy_terracotta", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS_BLOCK.defaultBlockState(), 4).add(Blocks.ROOTED_DIRT.defaultBlockState(), 1)), () -> {
+    public static final ConfiguredFeature<?, ?> GRASSY_TERRACOTTA = FeatureUtils.register("eco:grassy_terracotta", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS_BLOCK.defaultBlockState(), 4).add(Blocks.ROOTED_DIRT.defaultBlockState(), 1)), () -> {
         return GRASSYTERRACOTTA.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<?, ?> GRASSY_TERRACOTTA_POOL = FeatureUtils.register("ecospherical_expansion:grassy_terracotta_pool", WaterloggedVegetationPatchFeature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS_BLOCK.defaultBlockState(), 2).add(Blocks.COARSE_DIRT.defaultBlockState(), 1).add(Blocks.MOSS_BLOCK.defaultBlockState(), 4)), () -> {
+    public static final ConfiguredFeature<?, ?> GRASSY_TERRACOTTA_POOL = FeatureUtils.register("eco:grassy_terracotta_pool", WaterloggedVegetationPatchFeature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS_BLOCK.defaultBlockState(), 2).add(Blocks.COARSE_DIRT.defaultBlockState(), 1).add(Blocks.MOSS_BLOCK.defaultBlockState(), 4)), () -> {
         return GRASSYTERRACOTTA.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> GRASSY_TERRACOTTA_CAVES_GRASSY_TERRACOTTA = FeatureUtils.register("ecospherical_expansion:grassy_terracotta_caves_grassy_terracotta", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> GRASSY_TERRACOTTA_CAVES_GRASSY_TERRACOTTA = FeatureUtils.register("eco:grassy_terracotta_caves_grassy_terracotta", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
         return GRASSY_TERRACOTTA.placed();
     }, () -> {
         return GRASSY_TERRACOTTA_POOL.placed();
     })));
 
     //SANDY_TERRACOTTA
-    public static final ConfiguredFeature<?, ?> SANDY_TERRACOTTA = FeatureUtils.register("ecospherical_expansion:sandy_terracotta", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.SMOOTH_BASALT.defaultBlockState(), 4).add(Blocks.GRASS_BLOCK.defaultBlockState(), 1)), () -> {
+    public static final ConfiguredFeature<?, ?> SANDY_TERRACOTTA = FeatureUtils.register("eco:sandy_terracotta", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.SMOOTH_BASALT.defaultBlockState(), 4).add(Blocks.GRASS_BLOCK.defaultBlockState(), 1)), () -> {
         return SANDYTERRACOTTA.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<?, ?> SANDY_TERRACOTTA_POOL = FeatureUtils.register("ecospherical_expansion:sandy_terracotta_pool", WaterloggedVegetationPatchFeature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS_BLOCK.defaultBlockState(), 2).add(Blocks.COARSE_DIRT.defaultBlockState(), 1)), () -> {
+    public static final ConfiguredFeature<?, ?> SANDY_TERRACOTTA_POOL = FeatureUtils.register("eco:sandy_terracotta_pool", WaterloggedVegetationPatchFeature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.MOSS_REPLACEABLE.getName(), new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.GRASS_BLOCK.defaultBlockState(), 2).add(Blocks.COARSE_DIRT.defaultBlockState(), 1)), () -> {
         return SANDYTERRACOTTA.placed();
     }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
-    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> SANDY_TERRACOTTA_CAVES_SANDY_TERRACOTTA = FeatureUtils.register("ecospherical_expansion:sandy_terracotta_caves_sandy_terracotta", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> SANDY_TERRACOTTA_CAVES_SANDY_TERRACOTTA = FeatureUtils.register("eco:sandy_terracotta_caves_sandy_terracotta", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
         return SANDY_TERRACOTTA.placed();
     }, () -> {
         return SANDY_TERRACOTTA_POOL.placed();
