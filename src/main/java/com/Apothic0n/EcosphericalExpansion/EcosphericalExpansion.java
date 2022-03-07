@@ -17,12 +17,13 @@ public class EcosphericalExpansion {
     public EcosphericalExpansion() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
+
         Configs.register();
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            BiomeProviders.register(new ECOBiomeProvider(new ResourceLocation(MODID, "biome_provider"), CommonConfig.WEIGHT.get()));
+            BiomeProviders.register(new ECOBiomeProvider(new ResourceLocation(MODID, "biome_provider"), CommonConfig.weight.get()));
         });
     }
 }

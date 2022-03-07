@@ -1,11 +1,18 @@
 package com.Apothic0n.EcosphericalExpansion.api.biome;
 
+import com.Apothic0n.EcosphericalExpansion.config.CommonConfig;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.IForgeRegistry;
+import oshi.util.tuples.Pair;
+
+import java.util.List;
+import java.util.Set;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ECOBiomeRegistry {
