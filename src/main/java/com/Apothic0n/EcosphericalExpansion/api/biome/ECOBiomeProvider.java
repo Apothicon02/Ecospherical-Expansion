@@ -39,8 +39,9 @@ public class ECOBiomeProvider extends BiomeProvider {
         this.addSimilar(mapper, Biomes.TAIGA, ECOBiomeCreator.ICY_TAIGA);
         this.addSimilar(mapper, Biomes.BEACH, ECOBiomeCreator.FLORAL_BEACH);
         this.addSimilar(mapper, Biomes.SNOWY_PLAINS, ECOBiomeCreator.OVERSNOWED_TAIGA);
+        this.addSimilar(mapper, Biomes.BADLANDS, ECOBiomeCreator.ROCKY_ROOFED_FOREST);
         BiomeDictionary.addTypes(ECOBiomeCreator.LUSH_OAK, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.HILLS);
-        BiomeDictionary.addTypes(ECOBiomeCreator.LUSH_JUNGLE, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.WET);
+        BiomeDictionary.addTypes(ECOBiomeCreator.LUSH_JUNGLE, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.JUNGLE, BiomeDictionary.Type.WET, BiomeDictionary.Type.HOT);
         BiomeDictionary.addTypes(ECOBiomeCreator.ENRICHED_ROOFED_FOREST, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.DENSE, BiomeDictionary.Type.FOREST);
         BiomeDictionary.addTypes(ECOBiomeCreator.FROZEN_ROOFED_FOREST, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.FOREST);
         BiomeDictionary.addTypes(ECOBiomeCreator.LUSH_BIRCH, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.CONIFEROUS);
@@ -51,10 +52,12 @@ public class ECOBiomeProvider extends BiomeProvider {
         BiomeDictionary.addTypes(ECOBiomeCreator.DEEPSLATE_CLIFFS, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MOUNTAIN);
         BiomeDictionary.addTypes(ECOBiomeCreator.CALCITE_CLIFFS, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MOUNTAIN);
         BiomeDictionary.addTypes(ECOBiomeCreator.MUSHROOM_PLAINS, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MUSHROOM, BiomeDictionary.Type.CONIFEROUS, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.PLAINS);
-        BiomeDictionary.addTypes(ECOBiomeCreator.LUSH_DESERT, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MESA, BiomeDictionary.Type.DRY, BiomeDictionary.Type.BEACH);
+        BiomeDictionary.addTypes(ECOBiomeCreator.LUSH_DESERT, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MESA, BiomeDictionary.Type.DRY, BiomeDictionary.Type.BEACH, BiomeDictionary.Type.HOT);
         BiomeDictionary.addTypes(ECOBiomeCreator.ICY_TAIGA, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.MOUNTAIN, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.CONIFEROUS);
         BiomeDictionary.addTypes(ECOBiomeCreator.FLORAL_BEACH, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.BEACH, BiomeDictionary.Type.PLAINS);
         BiomeDictionary.addTypes(ECOBiomeCreator.OVERSNOWED_TAIGA, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.SNOWY, BiomeDictionary.Type.HILLS, BiomeDictionary.Type.CONIFEROUS);
+        BiomeDictionary.addTypes(ECOBiomeCreator.ROCKY_ROOFED_FOREST, BiomeDictionary.Type.OVERWORLD, BiomeDictionary.Type.MESA, BiomeDictionary.Type.DRY, BiomeDictionary.Type.FOREST, BiomeDictionary.Type.HOT);
+
     }
 
     public void addSimilar(Consumer<com.mojang.datafixers.util.Pair<TBClimate.ParameterPoint, ResourceKey<Biome>>> mapper, ResourceKey<Biome> similarBiome, ResourceKey<Biome> biome) {

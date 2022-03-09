@@ -35,5 +35,7 @@ public class ECOBiomeRegistry {
         registry.register(ECOBiomes.icyTaiga().setRegistryName(ECOBiomeCreator.ICY_TAIGA.location()));
         registry.register(ECOBiomes.floralBeach().setRegistryName(ECOBiomeCreator.FLORAL_BEACH.location()));
         registry.register(ECOBiomes.oversnowedTaiga().setRegistryName(ECOBiomeCreator.OVERSNOWED_TAIGA.location()));
+        registry.register(ECOBiomes.rockyRoofedForest().setRegistryName(ECOBiomeCreator.ROCKY_ROOFED_FOREST.location()));
+
     }
 }

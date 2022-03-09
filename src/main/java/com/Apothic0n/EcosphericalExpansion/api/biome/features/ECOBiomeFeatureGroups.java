@@ -19,6 +19,10 @@ public class ECOBiomeFeatureGroups {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOCavePlacements.SAND_CAVES_SAND);
     }
 
+    public static void addRedSandCavesBareFeatures(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOCavePlacements.RED_SAND_CAVES_RED_SAND);
+    }
+
     public static void addAdditionalLushVegetation(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.LUSH_CAVES_CEILING_VEGETATION);
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, CavePlacements.CAVE_VINES);
@@ -142,6 +146,10 @@ public class ECOBiomeFeatureGroups {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_MEGA_ACACIA);
     }
 
+    public static void addSparseMegaSavannaTrees(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_SPARSE_MEGA_ACACIA);
+    }
+
     public static void addMegaSwampTrees(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_MEGA_SWAMP);
     }
@@ -166,6 +174,10 @@ public class ECOBiomeFeatureGroups {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_NORMAL_DARK_OAK);
     }
 
+    public static void addRareNormalDarkOakTrees(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_RARE_NORMAL_DARK_OAK);
+    }
+
     public static void addVeryTallBirchTrees(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TREES_TALL_BIRCH);
     }
@@ -181,6 +193,11 @@ public class ECOBiomeFeatureGroups {
 
     public static void addBasicDesertFoilage(BiomeGenerationSettings.Builder pBuilder) {
         pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.TALL_CACTI);
+    }
+
+    public static void addBasaltRubble(BiomeGenerationSettings.Builder pBuilder) {
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOCavePlacements.BASALT_CAVES_BASALT);
+        pBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, ECOVegetationPlacements.BASALT_RUBBLE);
     }
 
     public static void addBasicFlowers(BiomeGenerationSettings.Builder pBuilder) {

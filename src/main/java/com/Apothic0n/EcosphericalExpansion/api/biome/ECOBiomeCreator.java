@@ -24,6 +24,7 @@ public class ECOBiomeCreator {
     public static final ResourceKey<Biome> ICY_TAIGA = register("icy_taiga");
     public static final ResourceKey<Biome> FLORAL_BEACH = register("floral_beach");
     public static final ResourceKey<Biome> OVERSNOWED_TAIGA = register("oversnowed_taiga");
+    public static final ResourceKey<Biome> ROCKY_ROOFED_FOREST = register("rocky_roofed_forest");
 
     private static ResourceKey<Biome> register(String name) {
         return ResourceKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(EcosphericalExpansion.MODID, name));

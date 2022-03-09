@@ -21,6 +21,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WaterloggedVegetationPatchFeature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
+import net.minecraft.world.level.levelgen.feature.stateproviders.SimpleStateProvider;
 import net.minecraft.world.level.levelgen.feature.stateproviders.WeightedStateProvider;
 import net.minecraft.world.level.levelgen.placement.CaveSurface;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
@@ -37,6 +38,14 @@ public class ECOCaveFeatures {
         return makeDripleaf(Direction.SOUTH);
     }, () -> {
         return makeDripleaf(Direction.NORTH);
+    }))));
+
+    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> DEADBUSHES = FeatureUtils.register("eco:dead_bushes", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeDeadBushes, () -> {
+        return makeDeadBushes();
+    }))));
+
+    public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> NOTHING = FeatureUtils.register("eco:nothing", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeNothing, () -> {
+        return makeNothing();
     }))));
 
     public static final ConfiguredFeature<SimpleRandomFeatureConfiguration, ?> BAMBOOAMETHYST = FeatureUtils.register("eco:bamboo_amethyst", Feature.SIMPLE_RANDOM_SELECTOR.configured(new SimpleRandomFeatureConfiguration(List.of(ECOCaveFeatures::makeBambooAmethyst, () -> {
@@ -87,6 +96,32 @@ public class ECOCaveFeatures {
         return SAND_WITH_DRIPLEAVES.placed();
     }, () -> {
         return SAND_POOL_WITH_DRIPLEAVES.placed();
+    })));
+
+    //RED_SAND
+    public static final ConfiguredFeature<?, ?> RED_SAND_WITH_DEADBUSHES = FeatureUtils.register("eco:red_sand_with_deadbushes", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.RED_SAND), () -> {
+        return DEADBUSHES.placed();
+    }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
+    public static final ConfiguredFeature<?, ?> RED_SAND_POOL_WITH_DRIPLEAVES = FeatureUtils.register("eco:red_sand_pool_with_dripleaves", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.RED_SAND), () -> {
+        return DRIPLEAF.placed();
+    }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> RED_SAND_CAVES_RED_SAND = FeatureUtils.register("eco:red_sand_caves_red_sand", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+        return RED_SAND_WITH_DEADBUSHES.placed();
+    }, () -> {
+        return RED_SAND_POOL_WITH_DRIPLEAVES.placed();
+    })));
+
+    //BASALT
+    public static final ConfiguredFeature<?, ?> BASALT_WITH_NOTHING = FeatureUtils.register("eco:basalt_with_nothing", Feature.VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.BASALT), () -> {
+        return NOTHING.placed();
+    }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 2, 0.05F, UniformInt.of(4, 7), 0.7F)));
+    public static final ConfiguredFeature<?, ?> BASALT_POOL_WITH_NOTHING = FeatureUtils.register("eco:basalt_pool_with_nothing", Feature.WATERLOGGED_VEGETATION_PATCH.configured(new VegetationPatchConfiguration(BlockTags.LUSH_GROUND_REPLACEABLE.getName(), BlockStateProvider.simple(Blocks.BASALT), () -> {
+        return NOTHING.placed();
+    }, CaveSurface.FLOOR, ConstantInt.of(3), 0.8F, 5, 0.1F, UniformInt.of(4, 7), 0.7F)));
+    public static final ConfiguredFeature<RandomBooleanFeatureConfiguration, ?> BASALT_CAVES_BASALT = FeatureUtils.register("eco:basalt_caves_basalt", Feature.RANDOM_BOOLEAN_SELECTOR.configured(new RandomBooleanFeatureConfiguration(() -> {
+        return BASALT_WITH_NOTHING.placed();
+    }, () -> {
+        return BASALT_POOL_WITH_NOTHING.placed();
     })));
 
     //TUFF
@@ -188,6 +223,12 @@ public class ECOCaveFeatures {
     }
     private static PlacedFeature makeBambooAmethyst() {
         return Feature.SIMPLE_BLOCK.configured(new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.BAMBOO.defaultBlockState(), 2).add(Blocks.BAMBOO_SAPLING.defaultBlockState(), 1).add(Blocks.DEAD_BUSH.defaultBlockState(), 1).add(Blocks.MEDIUM_AMETHYST_BUD.defaultBlockState(), 1).add(Blocks.GRASS.defaultBlockState(), 8)))).placed();
+    }
+    private static PlacedFeature makeDeadBushes() {
+        return Feature.SIMPLE_BLOCK.configured(new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.DEAD_BUSH.defaultBlockState(), 18).add(Blocks.BAMBOO_SAPLING.defaultBlockState(), 2)))).placed();
+    }
+    private static PlacedFeature makeNothing() {
+        return Feature.SIMPLE_BLOCK.configured(new SimpleBlockConfiguration(SimpleStateProvider.simple(Blocks.AIR))).placed();
     }
     private static PlacedFeature makeRootedDirt() {
         return Feature.SIMPLE_BLOCK.configured(new SimpleBlockConfiguration(new WeightedStateProvider(SimpleWeightedRandomList.<BlockState>builder().add(Blocks.SMALL_DRIPLEAF.defaultBlockState(), 5).add(Blocks.BAMBOO_SAPLING.defaultBlockState(), 2).add(Blocks.PUMPKIN.defaultBlockState(), 2).add(Blocks.GRASS.defaultBlockState(), 28)))).placed();

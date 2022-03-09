@@ -486,4 +486,33 @@ public class ECOBiomes {
                 .fogColor(12638463).waterFogColor(329011).waterColor(4159204).foliageColorOverride(0xffffff).skyColor(calculateSkyColor(0.1F)).build();
         return biome(Biome.Precipitation.SNOW, Biome.BiomeCategory.BEACH, -0.4F, 0.6F, spawnBuilder, biomeBuilder, NORMAL_MUSIC, specialEffects);
     }
+
+    public static Biome rockyRoofedForest() {
+        MobSpawnSettings.Builder spawnBuilder = new MobSpawnSettings.Builder();
+        BiomeDefaultFeatures.commonSpawns(spawnBuilder);
+        BiomeDefaultFeatures.warmOceanSpawns(spawnBuilder, 6, 3);
+        spawnBuilder
+                .addSpawn(MobCategory.CREATURE, new MobSpawnSettings.SpawnerData(EntityType.DONKEY, 1, 1, 1));
+
+        BiomeGenerationSettings.Builder biomeBuilder = new BiomeGenerationSettings.Builder();
+        globalOverworldGeneration(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultOres(biomeBuilder);
+        BiomeDefaultFeatures.addExtraGold(biomeBuilder);
+        BiomeDefaultFeatures.addDefaultSoftDisks(biomeBuilder);
+        ECOBiomeFeatureGroups.addRedSandCavesBareFeatures(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasaltRubble(biomeBuilder);
+        ECOBiomeFeatureGroups.addBigDarkOakTrees(biomeBuilder);
+        ECOBiomeFeatureGroups.addRareNormalDarkOakTrees(biomeBuilder);
+        ECOBiomeFeatureGroups.addAzaleaTrees(biomeBuilder);
+        ECOBiomeFeatureGroups.addRedFlowers(biomeBuilder);
+        ECOBiomeFeatureGroups.addBasicGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addFernGrass(biomeBuilder);
+        ECOBiomeFeatureGroups.addLushOceanVegetationFeatures(biomeBuilder);
+        biomeBuilder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, AquaticPlacements.SEAGRASS_WARM);
+
+        BiomeSpecialEffects specialEffects = (new BiomeSpecialEffects.Builder())
+                .grassColorModifier(BiomeSpecialEffects.GrassColorModifier.DARK_FOREST)
+                .fogColor(12638463).waterFogColor(329011).waterColor(0x21d9c0).skyColor(calculateSkyColor(0.1F)).build();
+        return biome(Biome.Precipitation.RAIN, Biome.BiomeCategory.MESA, 1.7F, 0.4F, spawnBuilder, biomeBuilder, NORMAL_MUSIC, specialEffects);
+    }
 }

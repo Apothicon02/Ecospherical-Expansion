@@ -61,6 +61,8 @@ public class ECOTreeFeatures {
 
     public static final ConfiguredFeature<TreeConfiguration, ?> MEGA_ACACIA = FeatureUtils.register("mega_acacia", Feature.TREE.configured(createAcacia(10).decorators(ImmutableList.of(TrunkVineDecorator.INSTANCE, LeaveVineDecorator.INSTANCE)).build()));
     public static final ConfiguredFeature<TreeConfiguration, ?> MULTI_ACACIA = FeatureUtils.register("multi_acacia", Feature.TREE.configured(createMultiAcacia(7).decorators(ImmutableList.of(TrunkVineDecorator.INSTANCE)).build()));
+    public static final ConfiguredFeature<TreeConfiguration, ?> SPARSE_MEGA_ACACIA = FeatureUtils.register("sparse_mega_acacia", Feature.TREE.configured(createAcacia(10).decorators(ImmutableList.of(TrunkVineDecorator.INSTANCE, LeaveVineDecorator.INSTANCE)).build()));
+    public static final ConfiguredFeature<TreeConfiguration, ?> SPARSE_MULTI_ACACIA = FeatureUtils.register("sparse_multi_acacia", Feature.TREE.configured(createMultiAcacia(7).decorators(ImmutableList.of(TrunkVineDecorator.INSTANCE)).build()));
 
     public static final ConfiguredFeature<TreeConfiguration, ?> MEGA_SWAMP_SMALL = FeatureUtils.register("mega_swamp", Feature.TREE.configured(createSwamp(10).decorators(ImmutableList.of(TrunkVineDecorator.INSTANCE, LeaveVineDecorator.INSTANCE)).build()));
     public static final ConfiguredFeature<TreeConfiguration, ?> MEGA_SWAMP_BIG = FeatureUtils.register("mega_swamp_big", Feature.TREE.configured(createSwamp(17).decorators(ImmutableList.of(TrunkVineDecorator.INSTANCE, LeaveVineDecorator.INSTANCE)).build()));

@@ -32,6 +32,8 @@ public class ECOTreePlacements {
 
     public static final PlacedFeature MEGA_ACACIA_CHECKED = PlacementUtils.register("mega_acacia_checked", ECOTreeFeatures.MEGA_ACACIA.filteredByBlockSurvival(Blocks.DEAD_BUSH));
     public static final PlacedFeature MULTI_ACACIA_CHECKED = PlacementUtils.register("multi_acacia_checked", ECOTreeFeatures.MULTI_ACACIA.filteredByBlockSurvival(Blocks.DEAD_BUSH));
+    public static final PlacedFeature SPARSE_MEGA_ACACIA_CHECKED = PlacementUtils.register("sparse_mega_acacia_checked", ECOTreeFeatures.SPARSE_MEGA_ACACIA.filteredByBlockSurvival(Blocks.CACTUS));
+    public static final PlacedFeature SPARSE_MULTI_ACACIA_CHECKED = PlacementUtils.register("sparse_multi_acacia_checked", ECOTreeFeatures.SPARSE_MULTI_ACACIA.filteredByBlockSurvival(Blocks.CACTUS));
 
     public static final PlacedFeature MEGA_SWAMP_BIG_CHECKED = PlacementUtils.register("mega_swamp_big_checked", ECOTreeFeatures.MEGA_SWAMP_BIG.filteredByBlockSurvival(Blocks.OAK_SAPLING));
     public static final PlacedFeature MEGA_SWAMP_SMALL_CHECKED = PlacementUtils.register("mega_swamp_small_checked", ECOTreeFeatures.MEGA_SWAMP_SMALL.filteredByBlockSurvival(Blocks.OAK_SAPLING));

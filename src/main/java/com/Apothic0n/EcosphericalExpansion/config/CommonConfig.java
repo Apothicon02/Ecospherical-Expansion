@@ -20,10 +20,12 @@ public class CommonConfig {
                         "Default: \n"+
                         "\"eco:lush_oak\", \"eco:lush_jungle\", \"eco:enriched_roofed_forest\", \"eco:frozen_roofed_forest\",\n" +
                         "\"lush_birch\", \"eco:glacial_plains\", \"eco:mega_savanna\", \"eco:mega_swamp\", \"eco:mushroom_grove\", \"eco:deepslate_cliffs\",\n" +
-                        "\"calcite_cliffs\", \"eco:mushroom_plains\", \"eco:lush_desert\", \"eco:icy_taiga\", \"eco:floral_beach\", \"eco:oversnowed_taiga\"")
+                        "\"eco:calcite_cliffs\", \"eco:mushroom_plains\", \"eco:lush_desert\", \"eco:icy_taiga\", \"eco:floral_beach\", \"eco:oversnowed_taiga\",\n" +
+                        "\"eco:rocky_roofed_forest\"")
                 .defineList("allowedBiomes", List.of("eco:lush_oak", "eco:lush_jungle", "eco:enriched_roofed_forest", "eco:frozen_roofed_forest",
                         "lush_birch", "eco:glacial_plains", "eco:mega_savanna", "eco:mega_swamp", "eco:mushroom_grove", "eco:deepslate_cliffs",
-                        "calcite_cliffs", "eco:mushroom_plains", "eco:lush_desert", "eco:icy_taiga", "eco:floral_beach", "eco:oversnowed_taiga"), string -> string instanceof String);
+                        "eco:calcite_cliffs", "eco:mushroom_plains", "eco:lush_desert", "eco:icy_taiga", "eco:floral_beach", "eco:oversnowed_taiga",
+                        "eco:rocky_roofed_forest"), string -> string instanceof String);
 
         COMMON_BUILDER.pop();
     }
