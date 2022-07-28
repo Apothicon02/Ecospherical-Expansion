@@ -1,0 +1,16 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "eco:tilted_tall_mushroom",
+        "chance": 0.3
+      },
+      {
+        "feature": "eco:big_tall_mushroom",
+        "chance": 0.7
+      }
+    ],
+    "default": "eco:normal_tall_mushroom"
+  },
+  "type": "minecraft:random_selector"
+}

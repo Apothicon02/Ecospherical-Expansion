@@ -1,0 +1,24 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "eco:branching_oak",
+        "chance": 0.01
+      },
+      {
+        "feature": "eco:multi_swamp",
+        "chance": 0.25
+      },
+      {
+        "feature": "eco:mega_swamp_big",
+        "chance": 0.11
+      },
+      {
+        "feature": "eco:mega_swamp_small",
+        "chance": 0.6
+      }
+    ],
+    "default": "eco:multi_acacia"
+  },
+  "type": "minecraft:random_selector"
+}

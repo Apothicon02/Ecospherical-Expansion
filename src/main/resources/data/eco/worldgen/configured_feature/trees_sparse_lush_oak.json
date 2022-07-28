@@ -1,0 +1,20 @@
+{
+    "config": {
+      "features": [
+        {
+          "feature": "minecraft:oak_bees_002",
+          "chance": 0.03
+        },
+        {
+          "feature": "minecraft:oak_checked",
+          "chance": 0.07
+        },
+        {
+          "feature": "eco:branching_oak",
+          "chance": 0.9
+        }
+      ],
+      "default": "eco:branching_oak"
+    },
+    "type": "minecraft:random_selector"
+  }

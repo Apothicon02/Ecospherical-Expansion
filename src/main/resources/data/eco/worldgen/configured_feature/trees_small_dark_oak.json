@@ -1,0 +1,16 @@
+{
+    "config": {
+      "features": [
+        {
+          "feature": "eco:twisted_oak",
+          "chance": 0.05
+        },
+        {
+          "feature": "eco:short_dark_oak",
+          "chance": 0.9
+        }
+      ],
+      "default": "eco:short_dark_oak"
+    },
+    "type": "minecraft:random_selector"
+  }

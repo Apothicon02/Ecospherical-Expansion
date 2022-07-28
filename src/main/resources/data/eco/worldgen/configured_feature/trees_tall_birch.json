@@ -1,0 +1,20 @@
+{
+    "config": {
+      "features": [
+        {
+          "feature": "eco:tilted_tall_birch",
+          "chance": 0.28
+        },
+        {
+          "feature": "eco:big_tall_birch",
+          "chance": 0.47
+        },
+        {
+          "feature": "eco:normal_tall_birch",
+          "chance": 0.2
+        }
+      ],
+      "default": "eco:normal_tall_birch"
+    },
+    "type": "minecraft:random_selector"
+  }
