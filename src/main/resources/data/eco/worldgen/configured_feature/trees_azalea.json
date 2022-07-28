@@ -1,0 +1,16 @@
+{
+    "config": {
+      "features": [
+        {
+          "feature": "eco:mega_azalea",
+          "chance": 0.07
+        },
+        {
+          "feature": "eco:azalea_bush",
+          "chance": 0.43
+        }
+      ],
+      "default": "minecraft:fancy_oak_bees_0002"
+    },
+    "type": "minecraft:random_selector"
+  }
