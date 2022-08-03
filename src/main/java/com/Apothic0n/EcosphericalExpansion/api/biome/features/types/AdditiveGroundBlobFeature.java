@@ -5,6 +5,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -31,7 +32,7 @@ public class AdditiveGroundBlobFeature extends Feature<VerticalBlobConfiguration
             return false;
         } else {
             BlockState blockstate = worldgenlevel.getBlockState(blockpos.below());
-            if (!blockstate.is(standOn) && !blockstate.is(standOn2) && !blockstate.is(blobMaterial)) {
+            if (!blockstate.is(standOn) && !blockstate.is(standOn2) && !blockstate.is(blobMaterial) || blockstate.is(Blocks.STONE) && standOn.equals(Blocks.DEEPSLATE) || blockstate.is(Blocks.STONE) && standOn2.equals(Blocks.DEEPSLATE)) {
                 return false;
             } else {
                 worldgenlevel.setBlock(blockpos, blobMaterial.defaultBlockState(), 2);

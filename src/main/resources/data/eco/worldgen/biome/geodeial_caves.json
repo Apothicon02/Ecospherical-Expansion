@@ -1,0 +1,138 @@
+{
+  "temperature": -0.2,
+  "downfall": 0.3,
+  "precipitation": "none",
+  "temperature_modifier": "none",
+  "category": "underground",
+  "creature_spawn_probability": 0.44,
+  "effects": {
+    "sky_color": 7972607,
+    "fog_color": 12638463,
+    "water_color": 6307812,
+    "water_fog_color": 1115443,
+    "grass_color_modifier": "dark_forest",
+    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
+    },
+    "additions_sound": {
+      "sound": "minecraft:block.amethyst_block.chime",
+      "tick_chance": 0.02
+    },
+    "music": {
+      "sound": "minecraft:music.overworld.dripstone_caves",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
+    },
+    "particle": {
+      "options": {
+        "type": "minecraft:portal"
+      },
+      "probability": 0.038093334
+    }
+  },
+  "spawners": {
+    "monster": [
+      {
+        "type": "minecraft:witch",
+        "weight": 10,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "minecraft:stray",
+        "weight": 4,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "minecraft:illusioner",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 1
+      }
+    ],
+    "water_creature": [
+      {
+        "type": "minecraft:axolotl",
+        "weight": 1,
+        "minCount": 2,
+        "maxCount": 7
+      },
+      {
+        "type": "minecraft:cod",
+        "weight": 7,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "minecraft:salmon",
+        "weight": 7,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "minecraft:glow_squid",
+        "weight": 3,
+        "minCount": 2,
+        "maxCount": 3
+      }
+    ]
+  },
+  "spawn_costs": {
+    "minecraft:stray": {
+      "energy_budget": 2,
+      "charge": 1
+    },
+    "minecraft:witch": {
+      "energy_budget": 4,
+      "charge": 2
+    },
+    "minecraft:illusioner": {
+      "energy_budget": 3,
+      "charge": 2
+    }
+  },
+  "carvers": {
+    "air": [
+      "minecraft:cave"
+    ]
+  },
+  "features": [
+    [
+      "eco:smooth_basalt_pillar"
+    ],
+    [
+      "eco:void_amethyst_geode"
+    ],
+    [
+      "eco:amethyst_crystal_spike",
+      "eco:amethyst_crystal_ground_spike",
+      "eco:smooth_basalt_blob",
+      "eco:calcite_blob",
+      "eco:calcite_ground_blob"
+    ],
+    [
+      "eco:deepslate_calcite_blob",
+      "eco:smooth_basalt_calcite_blob"
+    ],
+    [
+      "eco:amethyst_spiral"
+    ],
+    [
+      "eco:amethyst_water_fall"
+    ],
+    [
+      "eco:amethyst_void_crystals",
+      "eco:amethyst_void_ceiling_crystals"
+    ],
+    [
+      "eco:amethyst_vine",
+      "eco:lush_spore_blossom"
+    ]
+  ]
+}
