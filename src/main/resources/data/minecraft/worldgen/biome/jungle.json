@@ -237,6 +237,7 @@
       "eco:tall_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_melon",
+      "minecraft:warm_ocean_vegetation",
       "minecraft:large_dripstone",
       "minecraft:dripstone_cluster",
       "minecraft:pointed_dripstone",
@@ -245,8 +246,7 @@
       "eco:sparse_lush_caves_vegetation",
       "minecraft:rooted_azalea_tree",
       "minecraft:spore_blossom",
-      "minecraft:classic_vines_cave_feature",
-      "minecraft:warm_ocean_vegetation"
+      "minecraft:classic_vines_cave_feature"
     ],
     [
       "minecraft:freeze_top_layer"

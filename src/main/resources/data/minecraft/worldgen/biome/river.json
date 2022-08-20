@@ -176,9 +176,9 @@
       "eco:tall_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "minecraft:classic_vines_cave_feature",
       "minecraft:seagrass_river",
-      "minecraft:sea_pickle"
+      "minecraft:sea_pickle",
+      "minecraft:classic_vines_cave_feature"
     ],
     [
       "minecraft:freeze_top_layer"

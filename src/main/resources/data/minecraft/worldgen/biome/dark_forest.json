@@ -196,14 +196,14 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "minecraft:patch_berry_rare",
+      "minecraft:kelp_cold",
+      "minecraft:seagrass_warm",
+      "minecraft:sea_pickle",
       "minecraft:lush_caves_ceiling_vegetation",
       "minecraft:cave_vines",
       "minecraft:rooted_azalea_tree",
       "minecraft:spore_blossom",
-      "minecraft:classic_vines_cave_feature",
-      "minecraft:kelp_cold",
-      "minecraft:seagrass_warm",
-      "minecraft:sea_pickle"
+      "minecraft:classic_vines_cave_feature"
     ],
     [
       "minecraft:freeze_top_layer"

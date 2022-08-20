@@ -192,14 +192,14 @@
       "minecraft:patch_pumpkin",
       "minecraft:vines",
       "minecraft:patch_melon_sparse",
+      "minecraft:warm_ocean_vegetation",
+      "minecraft:sea_pickle",
       "minecraft:large_dripstone",
       "minecraft:lush_caves_ceiling_vegetation",
       "minecraft:cave_vines",
       "minecraft:rooted_azalea_tree",
       "minecraft:spore_blossom",
       "minecraft:classic_vines_cave_feature",
-      "minecraft:warm_ocean_vegetation",
-      "minecraft:sea_pickle"
     ],
     [
       "minecraft:freeze_top_layer"

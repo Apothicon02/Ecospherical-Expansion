@@ -7,6 +7,7 @@ import com.Apothic0n.EcosphericalExpansion.core.objects.ECOItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import terrablender.api.RegionType;
@@ -20,6 +21,7 @@ public class EcosphericalExpansion {
     public EcosphericalExpansion() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
 
         EcoFeatureRegistry.register(eventBus);
         ECOBlocks.BLOCKS.register(eventBus);
@@ -32,7 +34,10 @@ public class EcosphericalExpansion {
             Regions.register(new GeodeialCavesProvider(new ResourceLocation(MODID, "geodeial_caves_biome_provider"), RegionType.OVERWORLD, 6));
             Regions.register(new MoltenSeepingCavesProvider(new ResourceLocation(MODID, "molten_seeping_caves_biome_provider"), RegionType.OVERWORLD, 9));
             //Regions.register(new ObsidianSpirallingCavesProvider(new ResourceLocation(MODID, "obsidian_spiralling_caves_biome_provider"), RegionType.OVERWORLD, 4));
-            ECOBlocks.fixBlockRenderLayers();
         });
+    }
+
+    private void clientSetup(final FMLClientSetupEvent event) {
+        ECOBlocks.fixBlockRenderLayers();
     }
 }
