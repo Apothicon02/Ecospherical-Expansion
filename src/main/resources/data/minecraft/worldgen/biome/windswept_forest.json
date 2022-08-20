@@ -177,9 +177,9 @@
       "eco:basic_grass",
       "eco:fern_grass",
       "minecraft:patch_sugar_cane",
-      "minecraft:kelp_cold",
       "minecraft:seagrass_warm",
-      "minecraft:sea_pickle"
+      "minecraft:sea_pickle",
+      "minecraft:kelp_cold"
     ],
     [
       "minecraft:freeze_top_layer"
