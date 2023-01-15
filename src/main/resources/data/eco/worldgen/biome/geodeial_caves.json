@@ -32,7 +32,7 @@
       "options": {
         "type": "minecraft:portal"
       },
-      "probability": 0.038093334
+      "probability": 0.0001
     }
   },
   "spawners": {
@@ -95,6 +95,22 @@
     "minecraft:illusioner": {
       "energy_budget": 3,
       "charge": 2
+    },
+    "minecraft:axolotl": {
+      "energy_budget": 2,
+      "charge": 1
+    },
+    "minecraft:cod": {
+      "energy_budget": 2,
+      "charge": 1
+    },
+    "minecraft:salmon": {
+      "energy_budget": 2,
+      "charge": 1
+    },
+    "minecraft:glow_squid": {
+      "energy_budget": 1,
+      "charge": 1
     }
   },
   "carvers": {

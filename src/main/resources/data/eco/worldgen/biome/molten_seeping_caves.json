@@ -8,8 +8,8 @@
   "effects": {
     "sky_color": 7972607,
     "fog_color": 12638463,
-    "water_color": 6307812,
-    "water_fog_color": 1115443,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
     "grass_color_modifier": "dark_forest",
     "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
     "mood_sound": {
@@ -32,7 +32,7 @@
       "options": {
         "type": "minecraft:white_ash"
       },
-      "probability": 0.118093334
+      "probability": 0.0001
     }
   },
   "spawners": {
@@ -40,12 +40,6 @@
       {
         "type": "minecraft:witch",
         "weight": 10,
-        "minCount": 1,
-        "maxCount": 1
-      },
-      {
-        "type": "minecraft:blaze",
-        "weight": 4,
         "minCount": 1,
         "maxCount": 1
       },
@@ -84,10 +78,6 @@
     ]
   },
   "spawn_costs": {
-    "minecraft:blaze": {
-      "energy_budget": 2,
-      "charge": 1
-    },
     "minecraft:witch": {
       "energy_budget": 4,
       "charge": 2
@@ -95,6 +85,22 @@
     "minecraft:illusioner": {
       "energy_budget": 3,
       "charge": 2
+    },
+    "minecraft:axolotl": {
+      "energy_budget": 2,
+      "charge": 1
+    },
+    "minecraft:cod": {
+      "energy_budget": 2,
+      "charge": 1
+    },
+    "minecraft:salmon": {
+      "energy_budget": 2,
+      "charge": 1
+    },
+    "minecraft:glow_squid": {
+      "energy_budget": 1,
+      "charge": 1
     }
   },
   "carvers": {

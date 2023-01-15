@@ -8,8 +8,8 @@
   "effects": {
     "sky_color": 7972607,
     "fog_color": 12638463,
-    "water_color": 6307812,
-    "water_fog_color": 1115443,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
     "grass_color_modifier": "dark_forest",
     "ambient_sound": "minecraft:ambient.warped_forest.loop",
     "mood_sound": {
@@ -32,7 +32,7 @@
       "options": {
         "type": "minecraft:falling_water"
       },
-      "probability": 0.018
+      "probability": 0.0001
     }
   },
   "spawners": {
@@ -85,6 +85,22 @@
     "minecraft:illusioner": {
       "energy_budget": 6,
       "charge": 2
+    },
+    "minecraft:axolotl": {
+      "energy_budget": 2,
+      "charge": 1
+    },
+    "minecraft:cod": {
+      "energy_budget": 2,
+      "charge": 1
+    },
+    "minecraft:salmon": {
+      "energy_budget": 2,
+      "charge": 1
+    },
+    "minecraft:glow_squid": {
+      "energy_budget": 1,
+      "charge": 1
     }
   },
   "carvers": {
