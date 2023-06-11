@@ -1,12 +1,11 @@
 package com.Apothic0n.EcosphericalExpansion.api.biome.features.types;
 
 import com.Apothic0n.EcosphericalExpansion.api.biome.features.configurations.RockConfiguration;
-import com.Apothic0n.EcosphericalExpansion.api.biome.features.configurations.VerticalBlobConfiguration;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 
@@ -20,7 +19,7 @@ public class SpheroidRockFeature extends Feature<RockConfiguration> {
     public boolean place(FeaturePlaceContext<RockConfiguration> pContext) {
         WorldGenLevel worldgenlevel = pContext.level();
         BlockPos blockpos = pContext.origin();
-        Random random = pContext.random();
+        RandomSource random = pContext.random();
         RockConfiguration config = pContext.config();
         Block blobMaterial = config.blobMaterial.getBlock();
         Integer blobWidth = config.getBlobWidth().sample(random);

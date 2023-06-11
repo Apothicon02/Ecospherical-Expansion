@@ -17,10 +17,10 @@
             "minecraft:podzol",
             "minecraft:coarse_dirt",
             "minecraft:mycelium",
-            "minecraft:moss_block"
+            "minecraft:moss_block",
+            "minecraft:mud"
           ]
         }
       }
     ]
   }
-  
