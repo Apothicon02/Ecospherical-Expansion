@@ -8,6 +8,8 @@
     "fog_color": 12638463,
     "water_color": 8028646,
     "water_fog_color": 329011,
+    "grass_color": 14277473,
+    "foliage_color": 8837985,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -203,13 +205,14 @@
       "minecraft:trees_plains",
       "eco:clustered_tall_mushrooms",
       "eco:bushes_clustered",
+      "eco:sunflowers",
       "eco:basic_flowers",
       "eco:clustered_overworld_mushrooms",
       "eco:clustered_nether_mushrooms",
       "eco:basic_grass",
       "eco:plains_grass",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
+      "eco:clustered_pumpkin",
       "minecraft:warm_ocean_vegetation"
     ],
     [

@@ -1,0 +1,16 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "eco:larger_snowy_cherry_bush",
+        "chance": 0.34
+      },
+      {
+        "feature": "eco:snowy_cherry_bush",
+        "chance": 0.66
+      }
+    ],
+    "default": "eco:larger_snowy_cherry_bush"
+  },
+  "type": "minecraft:random_selector"
+}

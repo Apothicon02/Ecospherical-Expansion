@@ -1,0 +1,16 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "eco:andesite_mountainous_rocks",
+        "chance": 0.82
+      },
+      {
+        "feature": "eco:tuff_mountainous_rocks",
+        "chance": 0.18
+      }
+    ],
+    "default": "eco:andesite_mountainous_rocks"
+  },
+  "type": "minecraft:random_selector"
+}

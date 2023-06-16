@@ -1,0 +1,20 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "eco:snowy_cherry_bees",
+        "chance": 0.12
+      },
+      {
+        "feature": "eco:trunked_spruce",
+        "chance": 0.12
+      },
+      {
+        "feature": "eco:towering_spruce",
+        "chance": 0.66
+      }
+    ],
+    "default": "eco:towering_spruce"
+  },
+  "type": "minecraft:random_selector"
+}

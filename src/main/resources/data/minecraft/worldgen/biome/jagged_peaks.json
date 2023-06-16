@@ -1,12 +1,11 @@
 {
-  "temperature": 0.8,
-  "downfall": 0.4,
+  "temperature": -0.7,
+  "downfall": 0.9,
   "has_precipitation": true,
-  "category": "plains",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 8756735,
     "fog_color": 12638463,
-    "water_color": 8028646,
+    "water_color": 4159204,
     "water_fog_color": 329011,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -14,14 +13,32 @@
       "block_search_extent": 8,
       "offset": 2
     },
-    "particle": {
-      "options": {
-        "type": "minecraft:crimson_spore"
-      },
-      "probability": 0.0015
+    "music": {
+      "sound": "minecraft:music.overworld.jagged_peaks",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      }
+    ],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:goat",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
+    "misc": [],
     "monster": [
       {
         "type": "minecraft:spider",
@@ -37,19 +54,19 @@
       },
       {
         "type": "minecraft:zombie_villager",
-        "weight": 25,
+        "weight": 5,
         "minCount": 1,
         "maxCount": 1
       },
       {
         "type": "minecraft:skeleton",
-        "weight": 60,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:creeper",
-        "weight": 60,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
@@ -61,64 +78,17 @@
       },
       {
         "type": "minecraft:enderman",
-        "weight": 50,
+        "weight": 10,
         "minCount": 1,
         "maxCount": 4
       },
       {
         "type": "minecraft:witch",
-        "weight": 25,
+        "weight": 5,
         "minCount": 1,
         "maxCount": 1
       }
     ],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 2,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:mooshroom",
-        "weight": 18,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:horse",
-        "weight": 5,
-        "minCount": 2,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:llama",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 3
-      }
-    ],
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "weight": 10,
-        "minCount": 8,
-        "maxCount": 8
-      }
-    ],
-    "axolotls": [],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
@@ -127,16 +97,8 @@
         "maxCount": 6
       }
     ],
-    "water_creature": [
-      {
-        "type": "minecraft:squid",
-        "weight": 2,
-        "minCount": 3,
-        "maxCount": 4
-      }
-    ],
     "water_ambient": [],
-    "misc": []
+    "water_creature": []
   },
   "spawn_costs": {},
   "carvers": {
@@ -189,28 +151,21 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+      "minecraft:ore_emerald",
+      "eco:white_mountainous_rocks",
+      "eco:mountainous_snow"
     ],
-    [],
+    [
+      "minecraft:ore_infested"
+    ],
     [
       "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "minecraft:spring_lava",
+      "minecraft:spring_lava_frozen"
     ],
     [
-      "minecraft:glow_lichen",
-      "eco:grass_rocks",
-      "eco:trees_clustered_tall_oak",
-      "minecraft:trees_plains",
-      "eco:clustered_tall_mushrooms",
-      "eco:bushes_clustered",
-      "eco:basic_flowers",
-      "eco:clustered_overworld_mushrooms",
-      "eco:clustered_nether_mushrooms",
-      "eco:basic_grass",
-      "eco:plains_grass",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "minecraft:warm_ocean_vegetation"
+      "minecraft:glow_lichen"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -1,0 +1,16 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "eco:mountainous_powder_snow_pile",
+        "chance": 0.75
+      },
+      {
+        "feature": "eco:mountainous_snow_pile",
+        "chance": 0.25
+      }
+    ],
+    "default": "eco:mountainous_snow_pile"
+  },
+  "type": "minecraft:random_selector"
+}

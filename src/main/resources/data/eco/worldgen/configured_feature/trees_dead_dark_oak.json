@@ -1,0 +1,16 @@
+{
+    "config": {
+      "features": [
+        {
+          "feature": "eco:dead_short_dark_oak",
+          "chance": 0.1
+        },
+        {
+          "feature": "eco:dead_normal_dark_oak",
+          "chance": 0.9
+        }
+      ],
+      "default": "eco:dead_normal_dark_oak"
+    },
+    "type": "minecraft:random_selector"
+  }

@@ -271,6 +271,7 @@ public class ECOSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.TAIGA), grassyGraniteCliffs),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.OLD_GROWTH_PINE_TAIGA), grassyGraniteCliffs),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.OLD_GROWTH_SPRUCE_TAIGA), grassyGraniteCliffs),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.MEADOW), grassyGraniteCliffs),
 
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.BAMBOO_JUNGLE), grassyDripstoneCliffs),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.SPARSE_JUNGLE), grassyDripstoneCliffs),
@@ -297,6 +298,7 @@ public class ECOSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.DESERT), sandyTerracottaMesa), //Lush Desert
 
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.ICE_SPIKES), snowyCalciteCliffs), //Icy Taiga
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.GROVE), snowyCalciteCliffs),
 
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.SNOWY_TAIGA), snowyDepths), //Oversnowed Taiga
 

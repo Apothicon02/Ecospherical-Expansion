@@ -1,0 +1,16 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "eco:ice_mountainous_rocks",
+        "chance": 0.78
+      },
+      {
+        "feature": "eco:blue_ice_mountainous_rocks",
+        "chance": 0.22
+      }
+    ],
+    "default": "eco:ice_mountainous_rocks"
+  },
+  "type": "minecraft:random_selector"
+}
