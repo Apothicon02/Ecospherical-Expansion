@@ -167,7 +167,9 @@
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [],
+    [
+      "eco:clay_water_fall"
+    ],
     [],
     [
       "minecraft:ore_dirt",
@@ -219,14 +221,10 @@
       "minecraft:patch_sugar_cane",
       "minecraft:warm_ocean_vegetation",
       "minecraft:sea_pickle",
-      "minecraft:large_dripstone",
-      "minecraft:dripstone_cluster",
-      "minecraft:pointed_dripstone",
-      "minecraft:lush_caves_ceiling_vegetation",
-      "minecraft:cave_vines",
-      "minecraft:rooted_azalea_tree",
-      "minecraft:spore_blossom",
-      "minecraft:classic_vines_cave_feature"
+      "eco:large_dripstone",
+      "eco:dripstone_cluster",
+      "eco:pointed_dripstone",
+      "eco:clay_pool_with_dripleaves"
     ],
     [
       "minecraft:freeze_top_layer"

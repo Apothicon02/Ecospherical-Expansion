@@ -108,7 +108,9 @@
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [],
+    [
+      "eco:clay_water_fall"
+    ],
     [],
     [
       "minecraft:ore_dirt",
@@ -155,7 +157,11 @@
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin"
+      "minecraft:patch_pumpkin",
+      "eco:large_dripstone",
+      "eco:dripstone_cluster",
+      "eco:pointed_dripstone",
+      "eco:clay_pool_with_dripleaves"
     ],
     [
       "minecraft:freeze_top_layer"

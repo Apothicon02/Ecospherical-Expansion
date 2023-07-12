@@ -170,16 +170,22 @@
     [],
     [
       "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_surface",
+      "eco:delta"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "eco:small_basalt_columns",
+      "eco:large_basalt_columns",
+      "eco:sparse_smooth_basalt_pillar"
     ],
     [
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [],
+    [
+      "eco:lava_fall"
+    ],
     [],
     [
       "minecraft:ore_dirt",
@@ -229,7 +235,10 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane_badlands",
       "eco:clustered_pumpkin",
-      "minecraft:patch_cactus_decorated"
+      "minecraft:patch_cactus_decorated",
+      "minecraft:spring_delta",
+      "minecraft:ore_magma",
+      "minecraft:spring_closed_double"
     ],
     [
       "minecraft:freeze_top_layer"

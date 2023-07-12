@@ -123,7 +123,10 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "eco:sparse_packed_ice_pillar",
+      "eco:thin_ice_pillar",
+      "eco:sparse_thin_blue_ice_pillar"
     ],
     [
       "minecraft:monster_room",
@@ -178,11 +181,13 @@
       "eco:fern_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_berry_rare",
-      "minecraft:lush_caves_ceiling_vegetation",
-      "minecraft:cave_vines",
-      "minecraft:rooted_azalea_tree",
-      "minecraft:spore_blossom",
-      "minecraft:classic_vines_cave_feature"
+      "eco:amethyst_spiral",
+      "eco:amethyst_void_crystals",
+      "eco:sparse_amethyst_void_ceiling_crystals",
+      "eco:sparse_amethyst_vine",
+      "eco:snowy_pool_with_ice",
+      "eco:powdered_snow_pool",
+      "eco:patch_snow_layer"
     ],
     [
       "minecraft:freeze_top_layer"

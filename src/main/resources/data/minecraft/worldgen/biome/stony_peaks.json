@@ -108,13 +108,17 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "eco:sparse_deepslate_pillar",
+      "eco:sparse_thin_obsidian_pillar"
     ],
     [
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [],
+    [
+      "eco:crying_obsidian_water_fall"
+    ],
     [],
     [
       "minecraft:ore_dirt",
@@ -149,7 +153,9 @@
       "eco:gray_mountainous_rocks"
     ],
     [
-      "minecraft:ore_infested"
+      "minecraft:ore_infested",
+      "eco:sculk_vein",
+      "eco:sculk_patch_deep_dark"
     ],
     [
       "minecraft:spring_water",

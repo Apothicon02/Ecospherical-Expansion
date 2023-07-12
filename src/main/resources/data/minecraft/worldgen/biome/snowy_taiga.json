@@ -123,7 +123,10 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "eco:sparse_packed_ice_pillar",
+      "eco:thin_ice_pillar",
+      "eco:sparse_thin_blue_ice_pillar"
     ],
     [
       "minecraft:monster_room",
@@ -171,7 +174,14 @@
       "eco:ice_spike",
       "eco:ice_patch",
       "eco:trees_mega_spruce",
-      "eco:trees_thin_spruce"
+      "eco:trees_thin_spruce",
+      "eco:amethyst_spiral",
+      "eco:amethyst_void_crystals",
+      "eco:sparse_amethyst_void_ceiling_crystals",
+      "eco:sparse_amethyst_vine",
+      "eco:snowy_pool_with_ice",
+      "eco:powdered_snow_pool",
+      "eco:patch_snow_layer"
     ],
     [
       "minecraft:freeze_top_layer"

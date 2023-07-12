@@ -1,0 +1,25 @@
+{
+  "type": "eco:flood",
+  "config": {
+    "material": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:water",
+        "Properties": {
+          "level": "0"
+        }
+      }
+    },
+    "frozenMaterial": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:ice",
+        "Properties": {
+          "age": "0"
+        }
+      }
+    },
+    "elevation": 0,
+    "frozen": true
+  }
+}
