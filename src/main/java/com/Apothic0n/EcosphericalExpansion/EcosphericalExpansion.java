@@ -1,7 +1,7 @@
 package com.Apothic0n.EcosphericalExpansion;
 
 import com.Apothic0n.EcosphericalExpansion.api.biome.*;
-import com.Apothic0n.EcosphericalExpansion.features.EcoFeatureRegistry;
+import com.Apothic0n.EcosphericalExpansion.api.biome.features.EcoFeatureRegistry;
 import com.Apothic0n.EcosphericalExpansion.core.objects.EcoBlocks;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -17,6 +17,7 @@ public class EcosphericalExpansion {
     public EcosphericalExpansion() {
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
 
         EcoFeatureRegistry.register(eventBus);
         EcoBlocks.BLOCKS.register(eventBus);
