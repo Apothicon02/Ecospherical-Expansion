@@ -1,0 +1,8 @@
+accessWidener v2 named
+accessible method net/minecraft/world/level/levelgen/feature/DripstoneUtils getDripstoneHeight (DDDD)D # getDripstoneHeight
+accessible method net/minecraft/world/level/levelgen/feature/DripstoneUtils isCircleMostlyEmbeddedInStone (Lnet/minecraft/world/level/WorldGenLevel;Lnet/minecraft/core/BlockPos;I)Z # isCircleMostlyEmbeddedInStone
+accessible method net/minecraft/world/level/levelgen/feature/DripstoneUtils isEmptyOrWaterOrLava (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)Z # isEmptyOrWaterOrLava
+accessible method net/minecraft/world/level/levelgen/feature/DripstoneUtils buildBaseToTipColumn (Lnet/minecraft/core/Direction;IZLjava/util/function/Consumer;)V # buildBaseToTipColumn
+accessible method net/minecraft/world/level/levelgen/feature/DripstoneUtils growPointedDripstone (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/Direction;IZ)V # growPointedDripstone
+accessible method net/minecraft/world/level/levelgen/feature/DripstoneUtils placeDripstoneBlockIfPossible (Lnet/minecraft/world/level/LevelAccessor;Lnet/minecraft/core/BlockPos;)Z # placeDripstoneBlockIfPossible
+accessible method net/minecraft/world/level/levelgen/feature/DripstoneUtils createPointedDripstone (Lnet/minecraft/core/Direction;Lnet/minecraft/world/level/block/state/properties/DripstoneThickness;)Lnet/minecraft/world/level/block/state/BlockState; # createPointedDripstone

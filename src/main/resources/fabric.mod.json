@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "eco",
+  "version": "${version}",
+  "name": "Ecospherical Expansion",
+  "description": "Expanding the ecosphere!",
+  "authors": [
+    "Apothic0n"
+  ],
+  "contact": {
+    "homepage": "https://discord.gg/uWjKpHwq5W",
+    "sources": "https://github.com/Apothicon02/Ecospherical-Expansion"
+  },
+  "license": "MIT",
+  "icon": "assets/eco/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.Apothic0n.EcosphericalExpansion"
+    ],
+    "client": [
+
+    ]
+  },
+  "mixins": [
+    {
+      "config": "eco.mixins.json",
+      "environment": "server"
+    }
+  ],
+
+  "accessWidener" : "eco.accesswidener",
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
