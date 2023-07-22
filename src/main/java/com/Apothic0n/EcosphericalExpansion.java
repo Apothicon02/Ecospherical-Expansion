@@ -25,6 +25,7 @@ public class EcosphericalExpansion implements ModInitializer, TerraBlenderApi {
     public void onInitialize() {
         EcoBlocks.register();
         EcoFeatureRegistry.register();
+        SurfaceRuleManager.addToDefaultSurfaceRulesAtStage(SurfaceRuleManager.RuleCategory.OVERWORLD, SurfaceRuleManager.RuleStage.AFTER_BEDROCK, 100, ECOSurfaceRuleData.makeRules());
 
         UseBlockCallback.EVENT.register((player, world, hand, hit) -> {
             BlockState state = world.getBlockState(hit.getBlockPos());
@@ -41,11 +42,5 @@ public class EcosphericalExpansion implements ModInitializer, TerraBlenderApi {
             }
             return InteractionResult.PASS;
         });
-    }
-
-    @Override
-    public void onTerraBlenderInitialized()
-    {
-        SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MODID, ECOSurfaceRuleData.makeRules());
     }
 }
