@@ -3,10 +3,10 @@
   "downfall": 0,
   "has_precipitation": false,
   "effects": {
-    "sky_color": 7254527,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "grass_color": 9470285,
     "foliage_color": 10387789,
     "mood_sound": {
@@ -186,7 +186,9 @@
     [
       "eco:lava_fall"
     ],
-    [],
+    [
+      "eco:sand_patches"
+    ],
     [
       "minecraft:ore_dirt",
       "minecraft:ore_gravel",
@@ -225,7 +227,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:grass_rocks",
+      "eco:anvil_rocks",
       "eco:trees_dead_dark_oak",
       "eco:dead_rooted_bushes",
       "eco:bushes_clustered",

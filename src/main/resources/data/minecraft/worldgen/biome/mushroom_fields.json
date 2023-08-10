@@ -4,22 +4,16 @@
   "has_precipitation": true,
   "category": "mushroom",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 8028646,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "foliage_color": 8028646,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:crimson_spore"
-      },
-      "probability": 0.0015
     }
   },
   "spawners": {
@@ -128,17 +122,16 @@
     ],
     [
       "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "minecraft:spring_lava",
+      "minecraft:glow_lichen",
+      "eco:blackstone_anvil_rocks",
+      "eco:mud",
+      "eco:mud_pool",
+      "eco:dense_tall_mushrooms",
+      "eco:mangrove_bushes_noise_dense"
     ],
     [
-      "minecraft:glow_lichen",
-      "eco:blackstone",
-      "eco:blackstone_pool",
-      "eco:trees_thin_spruce",
-      "eco:tall_mushrooms",
-      "eco:bushes_dense",
-      "eco:basic_flowers",
-      "eco:overworld_mushrooms",
+      "eco:dense_overworld_mushrooms",
       "eco:nether_mushrooms",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",

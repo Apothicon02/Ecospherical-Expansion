@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "forest",
   "effects": {
-    "sky_color": 9817086,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "grass_color_modifier": "dark_forest",
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -167,7 +167,8 @@
     ],
     [
       "eco:sculk_vein",
-      "eco:sculk_patch_deep_dark"
+      "eco:sculk_patch_deep_dark",
+      "eco:amethyst_block_cluster"
     ],
     [
       "minecraft:spring_water",
@@ -181,8 +182,6 @@
       "eco:trees_big_dark_oak",
       "eco:trees_normal_dark_oak",
       "eco:trees_small_dark_oak",
-      "eco:basic_grass",
-      "eco:fern_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:seagrass_warm",
       "minecraft:sea_pickle",

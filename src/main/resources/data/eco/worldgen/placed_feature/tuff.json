@@ -2,24 +2,14 @@
     "feature": "eco:tuff",
     "placement": [
       {
+        "type": "minecraft:noise_based_count",
+        "noise_to_count_ratio": 1,
+        "noise_factor": 1,
+        "noise_offset": -0.2
+      },
+      {
         "type": "minecraft:count",
-        "count": {
-          "type": "minecraft:weighted_list",
-          "distribution": [
-            {
-              "weight": 46,
-              "data": 6
-            },
-            {
-              "weight": 3,
-              "data": 10
-            },
-            {
-              "weight": 1,
-              "data": 27
-            }
-          ]
-        }
+        "count": 6
       },
       {
         "type": "minecraft:in_square"

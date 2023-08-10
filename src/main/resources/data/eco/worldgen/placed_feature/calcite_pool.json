@@ -2,8 +2,14 @@
     "feature": "eco:calcite_pool",
     "placement": [
       {
+        "type": "minecraft:noise_based_count",
+        "noise_to_count_ratio": 1,
+        "noise_factor": 1,
+        "noise_offset": -0.4
+      },
+      {
         "type": "minecraft:count",
-        "count": 5
+        "count": 4
       },
       {
         "type": "minecraft:in_square"

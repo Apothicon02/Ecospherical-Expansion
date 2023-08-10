@@ -30,8 +30,9 @@
       "state": {
         "Name": "minecraft:jungle_leaves",
         "Properties": {
-          "persistent": "false",
-          "distance": "7"
+          "distance": "7",
+          "persistent": "true",
+          "waterlogged": "false"
         }
       }
     },
@@ -42,10 +43,10 @@
       "height_rand_b": 0
     },
     "foliage_placer": {
-      "type": "minecraft:fancy_foliage_placer",
-      "radius": 2,
-      "offset": 4,
-      "height": 4
+      "type": "minecraft:jungle_foliage_placer",
+      "radius": 4,
+      "offset": 1,
+      "height": 5
     },
     "decorators": [
       {

@@ -7,7 +7,9 @@
     "defaultRequire": 1
   },
   "mixins": [
-    "DripstoneUtilsMixin"
+    "BiomeSpecialEffectsMixin",
+    "DripstoneUtilsMixin",
+    "BiomeMixin"
   ],
   "client": [
   ],

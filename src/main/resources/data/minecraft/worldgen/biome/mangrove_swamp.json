@@ -3,10 +3,10 @@
   "downfall": 0.9,
   "has_precipitation": true,
   "effects": {
-    "sky_color": 7907327,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 3832426,
-    "water_fog_color": 5077600,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "foliage_color": 9285927,
     "grass_color_modifier": "swamp",
     "mood_sound": {
@@ -185,6 +185,8 @@
       "minecraft:trees_mangrove",
       "eco:tuff",
       "eco:tuff_pool",
+      "eco:tall_mushrooms",
+      "eco:tall_brown_mushrooms",
       "eco:trees_mega_swamp",
       "eco:oak_bush",
       "minecraft:patch_grass_normal",

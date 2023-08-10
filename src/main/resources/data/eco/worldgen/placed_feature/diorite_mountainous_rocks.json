@@ -16,7 +16,8 @@
           0
         ],
         "blocks": [
-          "minecraft:stone"
+          "minecraft:stone",
+          "minecraft:gravel"
         ]
       }
     }

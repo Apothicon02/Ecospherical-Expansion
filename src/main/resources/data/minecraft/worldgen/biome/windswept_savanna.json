@@ -3,10 +3,10 @@
   "downfall": 0,
   "has_precipitation": false,
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 2218432,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "foliage_color": 9883965,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -229,7 +229,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:grass_rocks",
+      "eco:gray_standalone_cliffs",
       "eco:grassy_terracotta",
       "eco:grassy_terracotta_pool",
       "eco:trees_mega_savanna",

@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "plains",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 8028646,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "grass_color": 14277473,
     "foliage_color": 8837985,
     "mood_sound": {
@@ -15,12 +15,6 @@
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:crimson_spore"
-      },
-      "probability": 0.0015
     }
   },
   "spawners": {
@@ -204,10 +198,11 @@
     [
       "minecraft:glow_lichen",
       "eco:grass_rocks",
+      "eco:trees_branching_oak",
       "eco:trees_clustered_tall_oak",
       "minecraft:trees_plains",
       "eco:clustered_tall_mushrooms",
-      "eco:bushes_clustered",
+      "eco:dense_bushes_clustered",
       "eco:sunflowers",
       "eco:basic_flowers",
       "eco:clustered_overworld_mushrooms",

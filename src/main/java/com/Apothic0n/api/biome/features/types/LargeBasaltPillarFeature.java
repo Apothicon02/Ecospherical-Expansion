@@ -28,7 +28,7 @@ public class LargeBasaltPillarFeature extends Feature<LargeDripstoneConfiguratio
 
     public boolean place(FeaturePlaceContext<LargeDripstoneConfiguration> pContext) {
         WorldGenLevel worldgenlevel = pContext.level();
-        BlockPos blockpos = pContext.origin();
+        BlockPos blockpos = new BlockPos((int) pContext.origin().getCenter().x(), pContext.origin().getY(), (int) pContext.origin().getCenter().z());
         RandomSource random = pContext.random();
         LargeDripstoneConfiguration config = pContext.config();
 

@@ -3,15 +3,15 @@
       "features": [
         {
           "feature": "eco:twisted_oak",
-          "chance": 0.08
+          "chance": 0.18
         },
         {
           "feature": "eco:towering_jungle_tree",
-          "chance": 0.12
+          "chance": 0.15
         },
         {
           "feature": "minecraft:jungle_bush",
-          "chance": 0.7
+          "chance": 0.57
         }
       ],
       "default": "eco:branching_jungle_tree"

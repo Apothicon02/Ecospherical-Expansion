@@ -4,22 +4,16 @@
   "has_precipitation": true,
   "category": "taiga",
   "effects": {
-    "sky_color": 8233983,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "foliage_color": 13718835,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:ash"
-      },
-      "probability": 0.01
     }
   },
   "spawners": {
@@ -200,11 +194,12 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:grass_rocks",
+      "eco:gray_standalone_cliffs",
       "eco:red_sand",
-      "eco:trees_thin_spruce",
-      "eco:trees_tall_spruce",
-      "minecraft:trees_taiga",
+      "eco:trees_sparse_old_growth_spruce_taiga",
+      "eco:trees_noise_thin_spruce",
+      "eco:trees_noise_tall_spruce",
+      "eco:fallen_trees_spruce",
       "eco:bushes_basic",
       "eco:red_flowers",
       "eco:overworld_mushrooms",
@@ -212,7 +207,7 @@
       "eco:fern_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "minecraft:patch_berry_rare",
+      "eco:patch_berry",
       "minecraft:warm_ocean_vegetation",
       "eco:large_dripstone",
       "eco:dripstone_cluster",

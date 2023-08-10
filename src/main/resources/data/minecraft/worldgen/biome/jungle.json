@@ -4,21 +4,15 @@
   "has_precipitation": true,
   "category": "jungle",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 2218432,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:ash"
-      },
-      "probability": 0.02
     }
   },
   "spawners": {
@@ -228,17 +222,19 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:grass_rocks",
+      "eco:gray_standalone_cliffs",
       "eco:tuff",
       "eco:tuff_pool",
       "minecraft:bamboo_light",
+      "eco:trees_branching_oak",
       "eco:trees_lush_jungle",
       "eco:trees_azalea",
-      "eco:oak_bush",
+      "eco:clustered_tall_mushrooms",
+      "eco:dense_bushes_clustered",
       "eco:red_flowers",
       "eco:purple_flowers",
       "eco:nether_mushrooms",
-      "eco:basic_grass",
+      "eco:dense_grass",
       "eco:tall_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_melon",

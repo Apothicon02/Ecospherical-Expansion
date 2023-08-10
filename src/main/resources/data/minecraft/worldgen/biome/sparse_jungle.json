@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "jungle",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 2218432,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -181,6 +181,7 @@
       "minecraft:glow_lichen",
       "eco:grass_rocks",
       "minecraft:bamboo_light",
+      "eco:bamboo_cluster",
       "minecraft:trees_sparse_jungle",
       "eco:bushes_dense",
       "eco:red_flowers",

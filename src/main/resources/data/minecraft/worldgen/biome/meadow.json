@@ -3,10 +3,10 @@
   "downfall": 0.8,
   "has_precipitation": true,
   "effects": {
-    "sky_color": 8103167,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 937679,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -180,6 +180,7 @@
       "minecraft:spring_lava",
       "minecraft:glow_lichen",
       "eco:grass_rocks",
+      "eco:tall_mushrooms",
       "eco:azalea_bushes",
       "eco:mangrove_bushes_dense"
     ],

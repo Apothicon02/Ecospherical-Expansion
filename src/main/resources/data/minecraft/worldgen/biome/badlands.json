@@ -4,10 +4,10 @@
   "has_precipitation": false,
   "category": "forest",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 2218432,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "grass_color_modifier": "dark_forest",
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -180,7 +180,10 @@
     [
       "eco:lava_fall"
     ],
-    [],
+    [
+      "eco:packed_mud_patches",
+      "eco:shallow_mud_patches"
+    ],
     [
       "minecraft:ore_dirt",
       "minecraft:ore_gravel",
@@ -223,9 +226,7 @@
       "eco:red_sand",
       "eco:basalt",
       "eco:basalt_rubble",
-      "eco:trees_big_dark_oak",
-      "eco:trees_rare_normal_dark_oak",
-      "eco:trees_azalea",
+      "eco:trees_flooded_mangrove",
       "eco:red_flowers",
       "eco:basic_grass",
       "eco:fern_grass",

@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "forest",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "grass_color_modifier": "dark_forest",
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -190,7 +190,8 @@
       "eco:trees_big_dark_oak",
       "eco:trees_normal_dark_oak",
       "eco:trees_small_dark_oak",
-      "eco:oak_bush",
+      "eco:fallen_trees_dark_oak",
+      "eco:dark_oak_bushes",
       "eco:basic_flowers",
       "eco:overworld_mushrooms",
       "eco:basic_grass",

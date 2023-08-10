@@ -3,10 +3,10 @@
   "downfall": 0.3,
   "has_precipitation": true,
   "effects": {
-    "sky_color": 8233727,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -188,8 +188,11 @@
     [
       "minecraft:glow_lichen",
       "minecraft:trees_windswept_hills",
+      "eco:dense_noise_tall_brown_mushrooms",
+      "eco:sparse_tall_red_mushrooms",
       "minecraft:flower_default",
-      "minecraft:patch_grass_badlands",
+      "eco:dense_grass",
+      "eco:tall_grass",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",

@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "taiga",
   "effects": {
-    "sky_color": 9817086,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4020182,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "foliage_color": 16777215,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -175,6 +175,7 @@
       "eco:ice_patch",
       "eco:trees_mega_spruce",
       "eco:trees_thin_spruce",
+      "eco:trees_noise_thin_spruce",
       "eco:amethyst_spiral",
       "eco:amethyst_void_crystals",
       "eco:sparse_amethyst_void_ceiling_crystals",

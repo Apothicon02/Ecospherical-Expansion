@@ -19,13 +19,12 @@
       "com.Apothic0n.EcosphericalExpansion"
     ],
     "client": [
-
+      "com.Apothic0n.ECOClient"
     ]
   },
   "mixins": [
     {
-      "config": "eco.mixins.json",
-      "environment": "server"
+      "config": "eco.mixins.json"
     }
   ],
 

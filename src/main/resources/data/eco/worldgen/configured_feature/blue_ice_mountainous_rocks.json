@@ -3,21 +3,10 @@
   "config": {
     "state_provider": {
       "fallback": {
-        "type": "minecraft:weighted_state_provider",
-        "entries": [
-          {
-            "weight": 199,
-            "data": {
-              "Name": "minecraft:blue_ice"
-            }
-          },
-          {
-            "weight": 1,
-            "data": {
-              "Name": "minecraft:air"
-            }
-          }
-        ]
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:blue_ice"
+        }
       },
       "rules": []
     },

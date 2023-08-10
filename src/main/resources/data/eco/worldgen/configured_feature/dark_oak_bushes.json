@@ -1,0 +1,16 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "eco:dark_oak_bush",
+        "chance": 0.97
+      },
+      {
+        "feature": "eco:rooted_bush",
+        "chance": 0.03
+      }
+    ],
+    "default": "eco:dark_oak_bush"
+  },
+  "type": "minecraft:random_selector"
+}

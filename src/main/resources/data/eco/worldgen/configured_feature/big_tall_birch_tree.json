@@ -57,7 +57,7 @@
           "type": "minecraft:weighted_state_provider",
           "entries": [
             {
-              "weight": 16,
+              "weight": 496,
               "data": {
                 "Name": "minecraft:grass_block",
                 "Properties": {
@@ -68,16 +68,7 @@
             {
               "weight": 3,
               "data": {
-                "Name": "minecraft:calcite"
-              }
-            },
-            {
-              "weight": 1,
-              "data": {
-                "Name": "minecraft:birch_wood",
-                "Properties": {
-                  "axis": "y"
-                }
+                "Name": "minecraft:moss_block"
               }
             }
           ]

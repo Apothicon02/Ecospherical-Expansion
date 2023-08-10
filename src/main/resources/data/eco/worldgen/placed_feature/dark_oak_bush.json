@@ -18,7 +18,10 @@
             "minecraft:coarse_dirt",
             "minecraft:mycelium",
             "minecraft:moss_block",
-            "minecraft:mud"
+            "minecraft:packed_mud",
+            "minecraft:mud",
+            "minecraft:red_sand",
+            "minecraft:oak_leaves"
           ]
         }
       }

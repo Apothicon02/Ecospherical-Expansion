@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "taiga",
   "effects": {
-    "sky_color": 8233983,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "grass_color": 13718835,
     "foliage_color": 13733683,
     "mood_sound": {
@@ -15,12 +15,6 @@
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:ash"
-      },
-      "probability": 0.0035
     }
   },
   "spawners": {
@@ -206,8 +200,10 @@
     ],
     [
       "minecraft:glow_lichen",
+      "eco:gray_standalone_cliffs",
       "minecraft:patch_large_fern",
-      "minecraft:trees_old_growth_spruce_taiga",
+      "eco:trees_old_growth_spruce_taiga",
+      "eco:fallen_trees_spruce",
       "eco:bushes_basic",
       "eco:red_flowers",
       "minecraft:patch_grass_taiga",

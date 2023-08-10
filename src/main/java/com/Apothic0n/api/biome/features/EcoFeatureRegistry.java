@@ -62,6 +62,14 @@ public abstract class EcoFeatureRegistry {
 
     public static final Feature<ProbabilityFeatureConfiguration> CAVE_SEAGRASS_FEATURE = new CaveSeagrassFeature(ProbabilityFeatureConfiguration.CODEC);
 
+    public static final Feature<FallenTreeConfiguration> THIN_FALLEN_TREE_FEATURE = new ThinFallenTreeFeature(FallenTreeConfiguration.CODEC);
+
+    public static final Feature<FallenTreeConfiguration> THICK_FALLEN_TREE_FEATURE = new ThickFallenTreeFeature(FallenTreeConfiguration.CODEC);
+
+    public static final Feature<AnvilRockConfiguration> ANVIL_ROCK_FEATURE = new AnvilRockFeature(AnvilRockConfiguration.CODEC);
+
+    public static final Feature<NoneFeatureConfiguration> AMETHYST_BLOCK_CLUSTER_FEATURE = new AmethystBlockClusterFeature(NoneFeatureConfiguration.CODEC);
+
     public static void register() {
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "spheroid_rock"), SPHEROID_ROCK);
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "additive_blob"), ADDITIVE_BLOB);
@@ -89,5 +97,9 @@ public abstract class EcoFeatureRegistry {
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "cave_kelp"), CAVE_KELP_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "cave_pickle"), CAVE_PICKLE_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "cave_seagrass"), CAVE_SEAGRASS_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "thick_fallen_tree"), THICK_FALLEN_TREE_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "thin_fallen_tree"), THIN_FALLEN_TREE_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "anvil_rock"), ANVIL_ROCK_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "amethyst_block_cluster"), AMETHYST_BLOCK_CLUSTER_FEATURE);
     }
 }

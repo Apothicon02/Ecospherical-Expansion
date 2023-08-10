@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "forest",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -201,11 +201,13 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:grass_rocks",
+      "eco:gray_standalone_cliffs",
       "eco:sparse_rooted_dirt",
+      "eco:trees_branching_oak",
       "eco:trees_sparse_lush_oak",
       "eco:trees_tall_oak",
       "minecraft:birch_tall",
+      "eco:fallen_trees_birch_and_oak",
       "eco:bushes_dense",
       "eco:basic_flowers",
       "eco:overworld_mushrooms",

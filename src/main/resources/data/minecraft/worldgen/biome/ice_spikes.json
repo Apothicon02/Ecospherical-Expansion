@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "taiga",
   "effects": {
-    "sky_color": 9817086,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "foliage_color": 16777215,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -164,7 +164,9 @@
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
-    [],
+    [
+      "eco:amethyst_block_cluster"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"

@@ -4,21 +4,17 @@
   "has_precipitation": true,
   "category": "forest",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
+    "grass_color": 6413194,
+    "foliage_color": 11983713,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:ash"
-      },
-      "probability": 0.01
     }
   },
   "spawners": {
@@ -154,14 +150,17 @@
     ],
     [
       "minecraft:amethyst_geode",
-      "eco:sparse_calcite_pillar"
+      "eco:sparse_smooth_basalt_pillar",
+      "eco:amethyst_crystal_spike",
+      "eco:amethyst_crystal_ground_spike",
+      "eco:amethyst_spiral"
     ],
     [
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
     [
-      "eco:clay_water_fall"
+      "eco:amethyst_water_fall"
     ],
     [],
     [
@@ -194,37 +193,41 @@
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
-    [],
+    [
+      "eco:smooth_basalt_blob",
+      "eco:calcite_blob",
+      "eco:calcite_ground_blob",
+      "eco:deepslate_calcite_blob",
+      "eco:smooth_basalt_calcite_blob"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
       "minecraft:glow_lichen",
+      "eco:grass_rocks",
       "eco:rooted_dirt",
-      "eco:rooted_dirt_pool",
+      "eco:tall_mushrooms",
+      "eco:azalea_bushes",
       "minecraft:bamboo_light",
-      "eco:trees_lush_oak",
-      "minecraft:trees_birch_and_oak",
-      "eco:basic_flowers",
-      "eco:overworld_mushrooms",
+      "eco:trees_branching_oak",
+      "eco:trees_sparse_lush_oak",
+      "eco:trees_tall_oak",
+      "minecraft:birch_tall",
+      "eco:fallen_trees_birch_and_oak",
+      "minecraft:flower_forest_flowers",
+      "minecraft:flower_cherry",
+      "eco:sparse_trees_cherry",
       "eco:basic_grass",
-      "eco:fern_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "minecraft:patch_berry_rare",
       "minecraft:warm_ocean_vegetation",
-      "eco:dense_rooted_azalea_trees",
-      "eco:rooted_big_tall_birch_trees",
-      "eco:rooted_tilted_tall_birch_trees",
-      "eco:rooted_normal_tall_birch_trees",
-      "minecraft:lush_caves_ceiling_vegetation",
-      "minecraft:cave_vines",
-      "eco:lush_cave_vines",
-      "eco:clay_pool_with_dripleaves",
-      "eco:lush_caves_vegetation",
-      "eco:lush_spore_blossom",
-      "minecraft:classic_vines_cave_feature"
+      "eco:amethyst_void_crystals",
+      "eco:amethyst_void_ceiling_crystals",
+      "eco:amethyst_vine",
+      "eco:lush_spore_blossom"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "swamp",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 6388580,
-    "water_fog_color": 2302743,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "foliage_color": 6975545,
     "grass_color_modifier": "swamp",
     "mood_sound": {
@@ -15,12 +15,6 @@
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:rain"
-      },
-      "probability": 0.00043
     }
   },
   "spawners": {
@@ -221,14 +215,18 @@
       "eco:grass_rocks",
       "eco:tuff",
       "eco:tuff_pool",
+      "eco:trees_branching_oak",
       "eco:trees_mega_swamp",
+      "eco:common_clustered_tall_mushrooms",
       "eco:oak_bush",
       "minecraft:flower_swamp",
       "minecraft:patch_dead_bush",
       "minecraft:patch_waterlily",
+      "eco:noise_patch_waterlily",
       "eco:overworld_mushrooms",
       "eco:nether_mushrooms",
-      "eco:basic_grass",
+      "minecraft:seagrass_swamp",
+      "eco:dense_grass",
       "eco:tall_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",

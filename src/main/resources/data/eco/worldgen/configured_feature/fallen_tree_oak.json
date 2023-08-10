@@ -1,0 +1,15 @@
+{
+  "type": "eco:thin_fallen_tree",
+  "config": {
+    "material": {
+      "Name": "minecraft:oak_log"
+    },
+    "length": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 3,
+        "max_inclusive": 6
+      }
+    }
+  }
+}

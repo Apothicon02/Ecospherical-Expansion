@@ -28,6 +28,8 @@ public class ECOSurfaceRuleData {
     private static final SurfaceRules.RuleSource DIORITE = makeStateRule(Blocks.DIORITE);
     private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
     private static final SurfaceRules.RuleSource MUD = makeStateRule(Blocks.MUD);
+    private static final SurfaceRules.RuleSource PACKED_MUD = makeStateRule(Blocks.PACKED_MUD);
+    private static final SurfaceRules.RuleSource MUDDY_MANGROVE_ROOTS = makeStateRule(Blocks.MUDDY_MANGROVE_ROOTS);
     private static final SurfaceRules.RuleSource TUFF = makeStateRule(Blocks.TUFF);
 
     private static final SurfaceRules.RuleSource SNOW_BLOCK = makeStateRule(Blocks.SNOW_BLOCK);
@@ -100,59 +102,83 @@ public class ECOSurfaceRuleData {
 
     public static SurfaceRules.RuleSource makeRules() {
         SurfaceRules.RuleSource snowyGlacialCliffs = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SNOW_BLOCK)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, CALCITE),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), CALCITE));
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), SNOW_BLOCK))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)));
 
         SurfaceRules.RuleSource frozenGlacialCliffs = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SNOW_BLOCK)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, CALCITE),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), CALCITE));
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), SNOW_BLOCK))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)));
 
         SurfaceRules.RuleSource grassyTerracottaMesa = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, GRASS_BLOCK)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DIRT),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), TERRACOTTA));
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), GRASS_BLOCK))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), DIRT)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), DIRT)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), DIRT)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), TERRACOTTA)));
+
 
         SurfaceRules.RuleSource sandyTerracottaMesa = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, RED_SAND)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, TERRACOTTA),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), TERRACOTTA));
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), RED_SAND))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), TERRACOTTA)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), ORANGE_TERRACOTTA)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), RED_TERRACOTTA)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), RED_TERRACOTTA)));
+
 
         SurfaceRules.RuleSource mossyCalciteCliffs = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, MOSS_BLOCK)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DIORITE),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), CALCITE));
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), MOSS_BLOCK))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), DIORITE)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)));
 
         SurfaceRules.RuleSource grassyMudCliffs = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, GRASS_BLOCK)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, MUD),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), TUFF));
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), GRASS_BLOCK))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), PACKED_MUD)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), MUD)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), MUD)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), TUFF)));
 
         SurfaceRules.RuleSource grassyGraniteCliffs = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, GRASS_BLOCK)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, GRANITE),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), TUFF));
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), GRASS_BLOCK))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), GRANITE)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), GRANITE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), GRANITE)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), TUFF)));
 
         SurfaceRules.RuleSource rootedCliffs = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, GRASS_BLOCK)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, ROOTED_DIRT),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), TUFF));
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), GRASS_BLOCK))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), ROOTED_DIRT)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), COARSE_DIRT)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), DIRT)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), DIRT)));
 
         SurfaceRules.RuleSource snowyDepths = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SNOW_BLOCK)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SNOW_BLOCK),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), CALCITE));
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), SNOW_BLOCK))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), SNOW_BLOCK)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)));
 
-        SurfaceRules.RuleSource myceliumBlackstoneCliffs = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, MYCELIUM)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, MUD),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), BLACKSTONE));
+        SurfaceRules.RuleSource myceliumMudCliffs = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), MYCELIUM))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), PACKED_MUD)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), MUDDY_MANGROVE_ROOTS)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), MUD)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), MUD)));
 
         SurfaceRules.RuleSource snowyCalciteCliffs = SurfaceRules.sequence(
-                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SNOW_BLOCK)),
-                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DIORITE),
-                SurfaceRules.ifTrue(SurfaceRules.steep(), CALCITE));
+                SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(), SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), SNOW_BLOCK))),
+                SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), DIORITE)),
+                SurfaceRules.ifTrue(SurfaceRules.DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.VERY_DEEP_UNDER_FLOOR, SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)),
+                SurfaceRules.ifTrue(SurfaceRules.steep(), SurfaceRules.ifTrue(SurfaceRules.yBlockCheck(VerticalAnchor.aboveBottom(125), 1), CALCITE)));
 
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.FLOWER_FOREST), grassyGraniteCliffs), //Lush Oak
@@ -185,7 +211,7 @@ public class ECOSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.SAVANNA_PLATEAU), grassyTerracottaMesa),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.WINDSWEPT_SAVANNA), grassyTerracottaMesa),
 
-                SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.MUSHROOM_FIELDS), myceliumBlackstoneCliffs), //Mushroom Grove
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.MUSHROOM_FIELDS), myceliumMudCliffs), //Mushroom Grove
 
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.DESERT), sandyTerracottaMesa), //Lush Desert
 

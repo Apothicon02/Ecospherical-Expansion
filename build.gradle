@@ -25,6 +25,15 @@ repositories {
 loom {
     splitEnvironmentSourceSets()
 
+    mixin {
+        // When disabled tiny remapper will be used to remap Mixins instead of the AP. Experimental.
+        useLegacyMixinAp = true
+        // Set the default refmap name
+        defaultRefmapName = "mixins.eco.refmap.json"
+
+        // See https://github.com/FabricMC/fabric-loom/blob/dev/0.11/src/main/java/net/fabricmc/loom/api/MixinExtensionAPI.java for options to add additional sourcesets
+    }
+
     mods {
         "eco" {
             sourceSet sourceSets.main

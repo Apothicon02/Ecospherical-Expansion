@@ -4,21 +4,15 @@
   "has_precipitation": true,
   "category": "forest",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7321776,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:white_ash"
-      },
-      "probability": 0.01
     }
   },
   "spawners": {
@@ -205,6 +199,7 @@
       "eco:calcite",
       "eco:calcite_pool",
       "minecraft:bamboo_light",
+      "eco:trees_branching_oak",
       "eco:trees_tall_birch",
       "eco:trees_azalea",
       "eco:bushes_dense",
