@@ -5,7 +5,7 @@
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 7321776,
+    "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -93,7 +93,7 @@
     "water_ambient": [
       {
         "type": "minecraft:cod",
-        "weight": 15,
+        "weight": 8,
         "minCount": 3,
         "maxCount": 6
       },
@@ -113,9 +113,9 @@
     "water_creature": [
       {
         "type": "minecraft:squid",
-        "weight": 10,
+        "weight": 8,
         "minCount": 1,
-        "maxCount": 2
+        "maxCount": 4
       },
       {
         "type": "minecraft:dolphin",
@@ -135,7 +135,8 @@
   },
   "features": [
     [
-      "eco:flood_water"
+      "eco:underwater_packed_mud",
+      "eco:underwater_noise_granite_rocks"
     ],
     [
       "minecraft:lake_lava_underground",
@@ -202,6 +203,7 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "minecraft:seagrass_warm",
       "minecraft:kelp_warm",
       "eco:cave_ceiling_shrubbery",

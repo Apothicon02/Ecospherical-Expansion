@@ -1,0 +1,97 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 96,
+    "xz_spread": 7,
+    "y_spread": 3,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "weight": 38,
+                "data": {
+                  "Name": "minecraft:mossy_cobblestone_slab"
+                }
+              },
+              {
+                "weight": 13,
+                "data": {
+                  "Name": "minecraft:stone_slab"
+                }
+              },
+              {
+                "weight": 7,
+                "data": {
+                  "Name": "minecraft:cobblestone_slab"
+                }
+              },
+              {
+                "weight": 1,
+                "data": {
+                  "Name": "minecraft:stone_wall"
+                }
+              },
+              {
+                "weight": 3,
+                "data": {
+                  "Name": "minecraft:mossy_cobblestone_wall"
+                }
+              },
+              {
+                "weight": 1,
+                "data": {
+                  "Name": "minecraft:stone"
+                }
+              },
+              {
+                "weight": 3,
+                "data": {
+                  "Name": "minecraft:mossy_cobblestone"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "offset": [
+                  0,
+                  0,
+                  0
+                ],
+                "blocks": [
+                  "minecraft:air",
+                  "minecraft:grass",
+                  "minecraft:snow"
+                ]
+              },
+              {
+                "type": "minecraft:matching_blocks",
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ],
+                "blocks": [
+                  "minecraft:mossy_cobblestone",
+                  "minecraft:gravel"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -3,11 +3,11 @@
     "features": [
       {
         "feature": "eco:tilted_tall_mushroom",
-        "chance": 0.99
+        "chance": 0.67
       },
       {
-        "feature": "eco:big_tall_mushroom",
-        "chance": 0.01
+        "feature": "eco:huge_brown_mushroom",
+        "chance": 0.33
       }
     ],
     "default": "eco:tilted_tall_mushroom"

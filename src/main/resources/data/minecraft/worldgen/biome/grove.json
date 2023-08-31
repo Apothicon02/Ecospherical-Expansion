@@ -5,7 +5,7 @@
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 7321776,
+    "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -204,10 +204,13 @@
     ],
     [
       "minecraft:glow_lichen",
+      "eco:white_stones",
+      "eco:calcite_pond",
       "eco:trees_sparse_grove",
       "eco:snowy_cherry_bushes",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "eco:amethyst_spiral",
       "eco:amethyst_void_crystals",
       "eco:sparse_amethyst_void_ceiling_crystals",

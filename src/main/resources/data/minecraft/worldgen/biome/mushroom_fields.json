@@ -6,7 +6,7 @@
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 7321776,
+    "water_color": 7318712,
     "water_fog_color": 272948,
     "foliage_color": 8028646,
     "mood_sound": {
@@ -17,15 +17,6 @@
     }
   },
   "spawners": {
-    "monster": [],
-    "creature": [
-      {
-        "type": "minecraft:mooshroom",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 8
-      }
-    ],
     "ambient": [
       {
         "type": "minecraft:bat",
@@ -35,6 +26,16 @@
       }
     ],
     "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:mooshroom",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 8
+      }
+    ],
+    "misc": [],
+    "monster": [],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
@@ -43,16 +44,8 @@
         "maxCount": 6
       }
     ],
-    "water_creature": [
-      {
-        "type": "minecraft:glow_squid",
-        "weight": 6,
-        "minCount": 1,
-        "maxCount": 2
-      }
-    ],
     "water_ambient": [],
-    "misc": []
+    "water_creature": []
   },
   "spawn_costs": {},
   "carvers": {
@@ -126,7 +119,9 @@
       "minecraft:glow_lichen",
       "eco:blackstone_anvil_rocks",
       "eco:mud",
+      "eco:mud_pond",
       "eco:mud_pool",
+      "eco:wild_flower_patch",
       "eco:dense_tall_mushrooms",
       "eco:mangrove_bushes_noise_dense"
     ],
@@ -135,6 +130,7 @@
       "eco:nether_mushrooms",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "minecraft:warm_ocean_vegetation",
       "eco:amethyst_void_crystals",
       "eco:amethyst_void_ceiling_crystals",

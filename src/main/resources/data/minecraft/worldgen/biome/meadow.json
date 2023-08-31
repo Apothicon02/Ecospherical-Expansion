@@ -5,7 +5,7 @@
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 7321776,
+    "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -54,7 +54,7 @@
     "monster": [
       {
         "type": "minecraft:spider",
-        "weight": 70,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
@@ -90,7 +90,7 @@
       },
       {
         "type": "minecraft:enderman",
-        "weight": 40,
+        "weight": 10,
         "minCount": 1,
         "maxCount": 4
       },
@@ -181,6 +181,7 @@
       "minecraft:glow_lichen",
       "eco:grass_rocks",
       "eco:tall_mushrooms",
+      "eco:wild_flower_patch",
       "eco:azalea_bushes",
       "eco:mangrove_bushes_dense"
     ],
@@ -191,6 +192,7 @@
       "eco:tall_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "minecraft:patch_berry_rare",
       "minecraft:warm_ocean_vegetation"
     ],

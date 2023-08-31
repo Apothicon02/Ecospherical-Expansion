@@ -44,7 +44,7 @@
     "foliage_placer": {
       "type": "minecraft:fancy_foliage_placer",
       "radius": 2,
-      "offset": 1,
+      "offset": 2,
       "height": 3
     },
     "decorators": [

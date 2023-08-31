@@ -1,22 +1,40 @@
 {
-  "temperature": 1.7,
-  "downfall": 0.4,
+  "temperature": 2,
+  "downfall": 0,
   "has_precipitation": false,
   "category": "forest",
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 7321776,
+    "water_color": 7318712,
     "water_fog_color": 272948,
-    "grass_color_modifier": "dark_forest",
+    "grass_color": 9470285,
+    "foliage_color": 10387789,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
+    },
+    "music": {
+      "sound": "minecraft:music.overworld.badlands",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      }
+    ],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
     "monster": [
       {
         "type": "minecraft:spider",
@@ -26,27 +44,27 @@
       },
       {
         "type": "minecraft:zombie",
-        "weight": 75,
+        "weight": 95,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:zombie_villager",
-        "weight": 25,
+        "weight": 5,
         "minCount": 1,
         "maxCount": 1
       },
       {
         "type": "minecraft:skeleton",
-        "weight": 70,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:creeper",
-        "weight": 90,
+        "weight": 100,
         "minCount": 4,
-        "maxCount": 7
+        "maxCount": 4
       },
       {
         "type": "minecraft:slime",
@@ -56,58 +74,17 @@
       },
       {
         "type": "minecraft:enderman",
-        "weight": 30,
+        "weight": 10,
         "minCount": 1,
-        "maxCount": 6
+        "maxCount": 4
       },
       {
         "type": "minecraft:witch",
-        "weight": 25,
+        "weight": 5,
         "minCount": 1,
-        "maxCount": 2
+        "maxCount": 1
       }
     ],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "weight": 14,
-        "minCount": 4,
-        "maxCount": 8
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 7,
-        "minCount": 3,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 2,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 17,
-        "minCount": 4,
-        "maxCount": 8
-      }
-    ],
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "weight": 10,
-        "minCount": 8,
-        "maxCount": 8
-      },
-      {
-        "type": "minecraft:parrot",
-        "weight": 3,
-        "minCount": 2,
-        "maxCount": 3
-      }
-    ],
-    "axolotls": [],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
@@ -116,41 +93,8 @@
         "maxCount": 6
       }
     ],
-    "water_creature": [
-      {
-        "type": "minecraft:squid",
-        "weight": 2,
-        "minCount": 3,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:glow_squid",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 1
-      },
-      {
-        "type": "minecraft:axolotl",
-        "weight": 3,
-        "minCount": 1,
-        "maxCount": 3
-      }
-    ],
-    "water_ambient": [
-      {
-        "type": "minecraft:salmon",
-        "weight": 4,
-        "minCount": 3,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:cod",
-        "weight": 2,
-        "minCount": 2,
-        "maxCount": 3
-      }
-    ],
-    "misc": []
+    "water_ambient": [],
+    "water_creature": []
   },
   "spawn_costs": {},
   "carvers": {
@@ -223,6 +167,7 @@
     [
       "minecraft:glow_lichen",
       "eco:grass_rocks",
+      "eco:terracotta_pond",
       "eco:red_sand",
       "eco:basalt",
       "eco:basalt_rubble",

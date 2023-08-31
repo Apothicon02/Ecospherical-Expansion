@@ -8,6 +8,8 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.StraightTrunkPlacer;
+import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 
 public abstract class EcoFeatureRegistry {
     public static final Feature<RockConfiguration> SPHEROID_ROCK = new SpheroidRockFeature(RockConfiguration.CODEC);
@@ -70,6 +72,16 @@ public abstract class EcoFeatureRegistry {
 
     public static final Feature<NoneFeatureConfiguration> AMETHYST_BLOCK_CLUSTER_FEATURE = new AmethystBlockClusterFeature(NoneFeatureConfiguration.CODEC);
 
+    public static final Feature<SimpleBlockConfiguration> STEMMED_2X2X2_CUBE_FEATURE = new Stemmed2x2x2CubeFeature(SimpleBlockConfiguration.CODEC);
+
+    public static final Feature<SimpleIntConfiguration> THIN_BUSH_FEATURE = new ThinBushFeature(SimpleIntConfiguration.CODEC);
+
+    public static final Feature<SimpleIntConfiguration> THICK_BUSH_FEATURE = new ThickBushFeature(SimpleIntConfiguration.CODEC);
+
+    public static final Feature<WaterloggableRandomPatchConfiguration> WATERLOGGABLE_RANDOM_PATCH_FEATURE = new WaterloggableRandomPatchFeature(WaterloggableRandomPatchConfiguration.CODEC);
+
+    public static final Feature<DoubleBlockConfiguration> POND_FEATURE = new PondFeature(DoubleBlockConfiguration.CODEC);
+
     public static void register() {
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "spheroid_rock"), SPHEROID_ROCK);
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "additive_blob"), ADDITIVE_BLOB);
@@ -101,5 +113,10 @@ public abstract class EcoFeatureRegistry {
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "thin_fallen_tree"), THIN_FALLEN_TREE_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "anvil_rock"), ANVIL_ROCK_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "amethyst_block_cluster"), AMETHYST_BLOCK_CLUSTER_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "stemmed_2x2x2_cube"), STEMMED_2X2X2_CUBE_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "thin_bush"), THIN_BUSH_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "thick_bush"), THICK_BUSH_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "waterloggable_random_patch"), WATERLOGGABLE_RANDOM_PATCH_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "pond"), POND_FEATURE);
     }
 }

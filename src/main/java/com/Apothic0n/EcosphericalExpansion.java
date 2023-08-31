@@ -1,32 +1,41 @@
 package com.Apothic0n;
 
 
-import com.Apothic0n.api.biome.ECOSurfaceRuleData;
 import com.Apothic0n.api.biome.features.EcoFeatureRegistry;
+import com.Apothic0n.api.biome.features.decorators.EcoTreeDecoratorType;
+import com.Apothic0n.api.biome.features.foliage_placers.EcoFoliagePlacerType;
+import com.Apothic0n.api.biome.features.trunk_placers.EcoTrunkPlacerType;
 import com.Apothic0n.core.objects.EcoBlocks;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.biome.BiomeSpecialEffects;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import terrablender.api.SurfaceRuleManager;
-import terrablender.api.TerraBlenderApi;
+import net.minecraft.world.phys.Vec3;
 
-public class EcosphericalExpansion implements ModInitializer, TerraBlenderApi {
+import static net.minecraft.world.level.block.Block.UPDATE_ALL;
+import static net.minecraft.world.level.block.Block.UPDATE_NONE;
+
+public class EcosphericalExpansion implements ModInitializer {
     public static final String MODID = "eco";
     @Override
     public void onInitialize() {
         EcoBlocks.register();
         EcoFeatureRegistry.register();
-        SurfaceRuleManager.addToDefaultSurfaceRulesAtStage(SurfaceRuleManager.RuleCategory.OVERWORLD, SurfaceRuleManager.RuleStage.AFTER_BEDROCK, 100, ECOSurfaceRuleData.makeRules());
+        EcoTrunkPlacerType.init();
+        EcoFoliagePlacerType.init();
+        EcoTreeDecoratorType.init();
 
         UseBlockCallback.EVENT.register((player, world, hand, hit) -> {
             BlockState state = world.getBlockState(hit.getBlockPos());
@@ -43,5 +52,33 @@ public class EcosphericalExpansion implements ModInitializer, TerraBlenderApi {
             }
             return InteractionResult.PASS;
         });
+
+        ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
+            Level level = entity.level();
+            BlockPos pos = entity.blockPosition();
+            if (level.getBlockState(pos.below()).is(Blocks.BEDROCK) && pos.getY() >= level.getMaxBuildHeight() && level.dimension().equals(Level.OVERWORLD)) {
+                pos = pos.below(64);
+                if (entity instanceof Player) {
+                    generateSquare(level, pos.below(2), Blocks.OAK_WOOD.defaultBlockState());
+                    generateSquare(level, pos.below(), Blocks.OAK_WOOD.defaultBlockState());
+                    generateSquare(level, pos, Blocks.AIR.defaultBlockState());
+                    generateSquare(level, pos.above(), Blocks.AIR.defaultBlockState());
+                    level.setBlock(pos, Blocks.TORCH.defaultBlockState(), UPDATE_ALL);
+                }
+                entity.teleportRelative(0, -64, 0);
+            }
+        });
+    }
+
+    private void generateSquare(Level level, BlockPos pos, BlockState state) {
+        level.setBlock(pos, state, UPDATE_ALL);
+        level.setBlock(pos.north(), state, UPDATE_ALL);
+        level.setBlock(pos.east(), state, UPDATE_ALL);
+        level.setBlock(pos.south(), state, UPDATE_ALL);
+        level.setBlock(pos.west(), state, UPDATE_ALL);
+        level.setBlock(pos.north().east(), state, UPDATE_ALL);
+        level.setBlock(pos.south().east(), state, UPDATE_ALL);
+        level.setBlock(pos.north().west(), state, UPDATE_ALL);
+        level.setBlock(pos.south().west(), state, UPDATE_ALL);
     }
 }

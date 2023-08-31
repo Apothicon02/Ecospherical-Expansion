@@ -1,0 +1,12 @@
+{
+  "type": "eco:thin_bush",
+  "config": {
+    "intValue": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 2,
+        "max_inclusive": 5
+      }
+    }
+  }
+}

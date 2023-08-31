@@ -6,7 +6,7 @@
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 7321776,
+    "water_color": 7318712,
     "water_fog_color": 272948,
     "grass_color": 13733683,
     "foliage_color": 13718835,
@@ -15,6 +15,12 @@
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
+    },
+    "music": {
+      "sound": "minecraft:music.overworld.old_growth_taiga",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
@@ -200,11 +206,18 @@
     ],
     [
       "minecraft:glow_lichen",
+      "eco:gravelly_azalea_shrubbery",
       "eco:gray_standalone_cliffs",
+      "eco:mossy_stone_filler",
+      "eco:moss_stones",
+      "eco:gray_stones",
+      "eco:mossy_pond",
       "minecraft:patch_large_fern",
+      "eco:wild_flower_patch",
       "eco:trees_old_growth_pine_taiga",
+      "eco:trees_giant_spruce",
       "eco:fallen_trees_spruce",
-      "eco:bushes_dense",
+      "eco:bushes_taiga",
       "eco:basic_flowers",
       "minecraft:patch_grass_taiga",
       "minecraft:patch_dead_bush",
@@ -212,8 +225,10 @@
       "minecraft:red_mushroom_old_growth",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
+      "eco:trees_pine_taiga",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "minecraft:patch_berry_common",
       "minecraft:spring_delta",
       "minecraft:ore_magma",

@@ -5,7 +5,7 @@
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 7321776,
+    "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -178,6 +178,7 @@
     ],
     [
       "minecraft:ore_infested",
+      "eco:emerald_rocks",
       "eco:sculk_vein",
       "eco:sculk_patch_deep_dark"
     ],
@@ -187,14 +188,16 @@
     ],
     [
       "minecraft:glow_lichen",
+      "eco:gray_stones",
+      "eco:mossy_pond",
+      "eco:wild_flower_patch",
       "minecraft:trees_windswept_hills",
-      "eco:dense_noise_tall_brown_mushrooms",
       "eco:sparse_tall_red_mushrooms",
+      "eco:dense_noise_tall_brown_mushrooms",
       "minecraft:flower_default",
+      "eco:clustered_overworld_mushrooms",
       "eco:dense_grass",
       "eco:tall_grass",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin"
     ],

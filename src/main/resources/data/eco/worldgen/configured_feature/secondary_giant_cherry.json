@@ -1,0 +1,119 @@
+{
+  "type": "minecraft:tree",
+  "config": {
+    "ignore_vines": true,
+    "force_dirt": false,
+    "minimum_size": {
+      "type": "minecraft:two_layers_feature_size",
+      "limit": 1,
+      "lower_size": 0,
+      "upper_size": 2
+    },
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:dirt"
+      }
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:cherry_wood",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 4,
+          "data": {
+            "Name": "minecraft:cherry_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "true",
+              "waterlogged": "false"
+            }
+          }
+        },
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:air"
+          }
+        }
+      ]
+    },
+    "root_placer": {
+      "type": "minecraft:mangrove_root_placer",
+      "root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:cherry_wood"
+        }
+      },
+      "trunk_offset_y": 2,
+      "mangrove_root_placement": {
+        "max_root_width": 3,
+        "max_root_length": 6,
+        "random_skew_chance": 0.3,
+        "can_grow_through": "#minecraft:leaves",
+        "muddy_roots_in": "#minecraft:dirt",
+        "muddy_roots_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:cherry_wood"
+          }
+        }
+      }
+    },
+    "trunk_placer": {
+      "type": "eco:branching_trunk_placer",
+      "base_height": 24,
+      "height_rand_a": 5,
+      "height_rand_b": 0,
+      "branch_count": 3,
+      "amount_of_branches": 6,
+      "branch_horizontal_length": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 3,
+          "max_inclusive": 10
+        }
+      },
+      "branch_start_offset_from_top": {
+        "min_inclusive": -1,
+        "max_inclusive": 0
+      },
+      "branch_end_height": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": -7,
+          "max_inclusive": -1
+        }
+      }
+    },
+    "foliage_placer": {
+      "type": "minecraft:cherry_foliage_placer",
+      "radius": 5,
+      "offset": 0,
+      "height": 4,
+      "wide_bottom_layer_hole_chance": 1,
+      "corner_hole_chance": 1,
+      "hanging_leaves_chance": 1,
+      "hanging_leaves_extension_chance": 1
+    },
+    "decorators": [
+      {
+        "type": "eco:mushrooms",
+        "probability": 0.25
+      },
+      {
+        "type": "minecraft:beehive",
+        "probability": 0.6
+      }
+    ]
+  }
+}

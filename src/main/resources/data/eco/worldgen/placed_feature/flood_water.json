@@ -13,12 +13,9 @@
       "height": {
         "type": "minecraft:constant",
         "value": {
-          "absolute": -50
+          "absolute": 0
         }
       }
-    },
-    {
-      "type": "minecraft:biome"
     }
   ]
 }

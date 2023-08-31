@@ -3,10 +3,18 @@
     "features": [
       {
         "feature": "eco:dark_oak_bush",
-        "chance": 0.97
+        "chance": 0.67
       },
       {
         "feature": "eco:rooted_bush",
+        "chance": 0.03
+      },
+      {
+        "feature": "eco:thin_bush",
+        "chance": 0.27
+      },
+      {
+        "feature": "eco:thick_bush",
         "chance": 0.03
       }
     ],

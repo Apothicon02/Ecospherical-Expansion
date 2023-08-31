@@ -5,7 +5,7 @@
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 7321776,
+    "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -123,7 +123,8 @@
   },
   "features": [
     [
-      "eco:flood_water"
+      "eco:underwater_clay",
+      "eco:underwater_noise_andesite_rocks"
     ],
     [
       "minecraft:lake_lava_underground",
@@ -190,6 +191,7 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "minecraft:seagrass_deep",
       "minecraft:seagrass_simple",
       "minecraft:kelp_cold",

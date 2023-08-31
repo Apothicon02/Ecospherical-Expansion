@@ -5,7 +5,7 @@
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 7321776,
+    "water_color": 7318712,
     "water_fog_color": 272948,
     "foliage_color": 9285927,
     "grass_color_modifier": "swamp",
@@ -34,12 +34,6 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:pig",
-        "weight": 3,
-        "minCount": 2,
-        "maxCount": 4
-      },
-      {
         "type": "minecraft:frog",
         "weight": 10,
         "minCount": 2,
@@ -50,31 +44,31 @@
     "monster": [
       {
         "type": "minecraft:spider",
-        "weight": 50,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:zombie",
-        "weight": 55,
+        "weight": 95,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:zombie_villager",
-        "weight": 85,
+        "weight": 5,
         "minCount": 1,
         "maxCount": 1
       },
       {
         "type": "minecraft:skeleton",
-        "weight": 20,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:creeper",
-        "weight": 160,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
@@ -92,7 +86,7 @@
       },
       {
         "type": "minecraft:witch",
-        "weight": 35,
+        "weight": 5,
         "minCount": 1,
         "maxCount": 1
       },
@@ -182,10 +176,13 @@
     ],
     [
       "minecraft:glow_lichen",
+      "eco:trees_giant_mangrove",
       "minecraft:trees_mangrove",
+      "eco:mud_pond_extra",
       "eco:tuff",
       "eco:tuff_pool",
       "eco:tall_mushrooms",
+      "eco:wild_flower_patch",
       "eco:tall_brown_mushrooms",
       "eco:trees_mega_swamp",
       "eco:oak_bush",

@@ -1,5 +1,14 @@
 {
-  "block.strato.amethyst_vines": "Amethyst Vines",
-  "block.strato.amethyst_vines_plant": "Amethyst Vines Plant",
-  "block.strato.glowing_amethyst": "Glowing Amethyst"
+  "block.eco.amethyst_vines": "Amethyst Vines",
+  "block.eco.amethyst_vines_plant": "Amethyst Vines Plant",
+  "block.eco.glowing_amethyst": "Glowing Amethyst",
+
+  "generator.eco.thermospherical": "Thermospherical",
+  "generator.eco.mesospherical": "Mesospherical",
+  "generator.eco.stratospherical": "Stratospherical",
+  "generator.eco.tropospherical": "Tropospherical",
+  "generator.eco.lithospherical": "Lithospherical",
+  "generator.eco.asthenospherical": "Asthenospherical",
+
+  "biome.eco.floating_river": "Floating River"
 }

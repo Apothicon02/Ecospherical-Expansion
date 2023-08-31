@@ -1,0 +1,11 @@
+{
+  "type": "eco:stemmed_2x2x2_cube",
+  "config": {
+    "to_place": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:pumpkin"
+      }
+    }
+  }
+}
