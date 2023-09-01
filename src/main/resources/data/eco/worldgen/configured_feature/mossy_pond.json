@@ -1,0 +1,17 @@
+{
+  "type": "eco:pond",
+  "config": {
+    "to_place": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:mossy_cobblestone"
+      }
+    },
+    "slab_to_place": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:mossy_cobblestone_slab"
+      }
+    }
+  }
+}

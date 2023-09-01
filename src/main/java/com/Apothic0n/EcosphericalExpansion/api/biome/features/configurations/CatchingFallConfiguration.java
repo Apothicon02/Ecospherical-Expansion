@@ -4,10 +4,10 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.material.FluidState;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Set;
 
@@ -21,13 +21,13 @@ public class CatchingFallConfiguration implements FeatureConfiguration {
             return v.rockCount;
         }), Codec.INT.fieldOf("hole_count").orElse(1).forGetter((v) -> {
             return v.holeCount;
-        }), ForgeRegistries.BLOCKS.getCodec().listOf().fieldOf("validBlocks").xmap(ImmutableSet::copyOf, ImmutableList::copyOf).forGetter((v) -> {
+        }), BuiltInRegistries.BLOCK.byNameCodec().listOf().fieldOf("validBlocks").xmap(ImmutableSet::copyOf, ImmutableList::copyOf).forGetter((v) -> {
             return (ImmutableSet<Block>)v.validBlocks;
-        }), ForgeRegistries.BLOCKS.getCodec().listOf().fieldOf("invalidBlocks").xmap(ImmutableSet::copyOf, ImmutableList::copyOf).forGetter((v) -> {
+        }), BuiltInRegistries.BLOCK.byNameCodec().listOf().fieldOf("invalidBlocks").xmap(ImmutableSet::copyOf, ImmutableList::copyOf).forGetter((v) -> {
             return (ImmutableSet<Block>) v.validBlocks;
-        }), ForgeRegistries.BLOCKS.getCodec().fieldOf("basinMaterial").forGetter((v) -> {
+        }), BuiltInRegistries.BLOCK.byNameCodec().fieldOf("basinMaterial").forGetter((v) -> {
             return v.basinMaterial;
-        }), ForgeRegistries.BLOCKS.getCodec().fieldOf("basinMaterial2").forGetter((v) -> {
+        }), BuiltInRegistries.BLOCK.byNameCodec().fieldOf("basinMaterial2").forGetter((v) -> {
             return v.basinMaterial2;
         })).apply(fields, CatchingFallConfiguration::new);
     });

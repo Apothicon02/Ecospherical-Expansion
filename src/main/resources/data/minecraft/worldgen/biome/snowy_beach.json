@@ -3,10 +3,10 @@
   "downfall": 0.3,
   "has_precipitation": true,
   "effects": {
-    "sky_color": 8364543,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4020182,
-    "water_fog_color": 329011,
+    "water_color": 7318712,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -141,7 +141,9 @@
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:disk_gravel",
+      "eco:white_mountainous_rocks",
+      "eco:mountainous_snow"
     ],
     [],
     [
@@ -150,12 +152,15 @@
     ],
     [
       "minecraft:glow_lichen",
+      "eco:white_stones",
+      "eco:calcite_pond",
       "minecraft:flower_default",
       "minecraft:patch_grass_badlands",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "eco:large_dripstone",
       "eco:dripstone_cluster",
       "eco:pointed_dripstone",

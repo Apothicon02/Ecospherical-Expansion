@@ -2,10 +2,10 @@ package com.Apothic0n.EcosphericalExpansion.api.biome.features.types;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.util.RandomSource;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Mth;
+import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.FloatProvider;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Block;
@@ -17,10 +17,9 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.LargeDripstoneConfiguration;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
 
-import javax.annotation.Nullable;
 import java.util.Optional;
-import java.util.Random;
 
 public class LargeCalcitePillarFeature extends Feature<LargeDripstoneConfiguration> {
     public LargeCalcitePillarFeature(Codec<LargeDripstoneConfiguration> pContext) {
@@ -29,7 +28,7 @@ public class LargeCalcitePillarFeature extends Feature<LargeDripstoneConfigurati
 
     public boolean place(FeaturePlaceContext<LargeDripstoneConfiguration> pContext) {
         WorldGenLevel worldgenlevel = pContext.level();
-        BlockPos blockpos = pContext.origin();
+        BlockPos blockpos = new BlockPos((int) pContext.origin().getCenter().x(), pContext.origin().getY(), (int) pContext.origin().getCenter().z());
         RandomSource random = pContext.random();
         LargeDripstoneConfiguration config = pContext.config();
 

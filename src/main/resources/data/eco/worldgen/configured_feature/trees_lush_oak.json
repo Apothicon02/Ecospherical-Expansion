@@ -14,7 +14,7 @@
           "chance": 0.9
         }
       ],
-      "default": "eco:branching_oak"
+      "default": "eco:twisted_oak"
     },
     "type": "minecraft:random_selector"
   }

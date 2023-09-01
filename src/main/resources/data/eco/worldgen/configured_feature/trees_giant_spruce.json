@@ -1,0 +1,16 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "eco:giant_spruce",
+        "chance": 0.57
+      },
+      {
+        "feature": "eco:secondary_giant_spruce",
+        "chance": 0.43
+      }
+    ],
+    "default": "eco:giant_spruce"
+  },
+  "type": "minecraft:random_selector"
+}

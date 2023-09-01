@@ -1,0 +1,17 @@
+{
+  "type": "eco:pond",
+  "config": {
+    "to_place": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:terracotta"
+      }
+    },
+    "slab_to_place": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:red_sandstone_slab"
+      }
+    }
+  }
+}

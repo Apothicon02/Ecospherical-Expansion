@@ -28,7 +28,12 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:jungle_leaves"
+        "Name": "minecraft:jungle_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "true",
+          "waterlogged": "false"
+        }
       }
     },
     "trunk_placer": {
@@ -39,9 +44,9 @@
     },
     "foliage_placer": {
       "type": "minecraft:jungle_foliage_placer",
-      "radius": 1,
-      "offset": 0,
-      "height": 2
+      "radius": 5,
+      "offset": 1,
+      "height": 4
     },
     "decorators": [
       {
@@ -49,7 +54,7 @@
       },
       {
         "type": "minecraft:leave_vine",
-        "probability": 0.95
+        "probability": 0.45
       }
     ]
   }

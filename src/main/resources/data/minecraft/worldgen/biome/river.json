@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "river",
   "effects": {
-    "sky_color": 8103167,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7318712,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -16,6 +16,17 @@
     }
   },
   "spawners": {
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      }
+    ],
+    "axolotls": [],
+    "creature": [],
+    "misc": [],
     "monster": [
       {
         "type": "minecraft:spider",
@@ -72,30 +83,12 @@
         "maxCount": 1
       }
     ],
-    "creature": [],
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "weight": 10,
-        "minCount": 8,
-        "maxCount": 8
-      }
-    ],
-    "axolotls": [],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
         "weight": 10,
         "minCount": 4,
         "maxCount": 6
-      }
-    ],
-    "water_creature": [
-      {
-        "type": "minecraft:squid",
-        "weight": 2,
-        "minCount": 1,
-        "maxCount": 4
       }
     ],
     "water_ambient": [
@@ -106,7 +99,14 @@
         "maxCount": 5
       }
     ],
-    "misc": []
+    "water_creature": [
+      {
+        "type": "minecraft:squid",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 4
+      }
+    ]
   },
   "spawn_costs": {},
   "carvers": {
@@ -178,6 +178,7 @@
       "eco:tall_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "minecraft:seagrass_river",
       "minecraft:sea_pickle",
       "eco:large_dripstone",

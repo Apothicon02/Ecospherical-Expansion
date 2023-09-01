@@ -1,0 +1,29 @@
+{
+  "feature": "eco:trees_tall_birch",
+  "placement": [
+    {
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 4,
+      "noise_factor": 50,
+      "noise_offset": -0.15
+    },
+    {
+      "type": "minecraft:count",
+      "count": 3
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 0
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

@@ -11,8 +11,6 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 
-import java.util.Random;
-
 public class CaveKelpFeature extends Feature<NoneFeatureConfiguration> {
     public CaveKelpFeature(Codec<NoneFeatureConfiguration> pContext) {
         super(pContext);

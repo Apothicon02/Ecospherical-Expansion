@@ -3,11 +3,19 @@
     "features": [
       {
         "feature": "eco:mangrove_bush",
-        "chance": 0.75
+        "chance": 0.57
       },
       {
         "feature": "eco:rooted_bush",
-        "chance": 0.25
+        "chance": 0.22
+      },
+      {
+        "feature": "eco:thin_bush",
+        "chance": 0.18
+      },
+      {
+        "feature": "eco:thick_bush",
+        "chance": 0.03
       }
     ],
     "default": "eco:mangrove_bush"

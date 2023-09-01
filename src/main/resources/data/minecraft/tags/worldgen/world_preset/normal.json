@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "eco:thermospherical",
+    "eco:mesospherical",
+    "eco:stratospherical",
+    "eco:tropospherical",
+    "eco:lithospherical",
+    "eco:asthenospherical"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+    "config": {
+      "features": [
+        {
+          "feature": "eco:twisted_oak",
+          "chance": 0.03
+        },
+        {
+          "feature": "eco:branching_oak",
+          "chance": 0.97
+        }
+      ],
+      "default": "eco:twisted_oak"
+    },
+    "type": "minecraft:random_selector"
+  }

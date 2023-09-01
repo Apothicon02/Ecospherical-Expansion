@@ -5,14 +5,14 @@
     "column_radius": {
       "type": "minecraft:uniform",
       "value": {
-        "min_inclusive": 13,
-        "max_inclusive": 17
+        "min_inclusive": 3,
+        "max_inclusive": 19
       }
     },
     "height_scale": {
       "type": "minecraft:uniform",
       "value": {
-        "min_inclusive": 1.2,
+        "min_inclusive": 0.4,
         "max_exclusive": 2
       }
     },
@@ -34,8 +34,8 @@
     "wind_speed": {
       "type": "minecraft:uniform",
       "value": {
-        "min_inclusive": 0.2,
-        "max_exclusive": 0.7
+        "min_inclusive": 0,
+        "max_exclusive": 0.3
       }
     },
     "min_radius_for_wind": 4,

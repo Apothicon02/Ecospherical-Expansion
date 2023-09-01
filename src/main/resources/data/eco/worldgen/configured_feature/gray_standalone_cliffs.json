@@ -1,0 +1,16 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "eco:andesite_standalone_cliffs",
+        "chance": 0.82
+      },
+      {
+        "feature": "eco:tuff_standalone_cliffs",
+        "chance": 0.18
+      }
+    ],
+    "default": "eco:andesite_standalone_cliffs"
+  },
+  "type": "minecraft:random_selector"
+}

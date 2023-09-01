@@ -10,8 +10,8 @@
       "xz_radius": {
         "type": "minecraft:uniform",
         "value": {
-          "min_inclusive": 4,
-          "max_inclusive": 7
+          "min_inclusive": 3,
+          "max_inclusive": 5
         }
       },
       "replaceable": "#eco:moss_replaceable_plus_sand",

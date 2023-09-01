@@ -1,0 +1,16 @@
+{
+    "config": {
+      "features": [
+        {
+          "feature": "eco:fallen_tree_oak",
+          "chance": 0.61
+        },
+        {
+          "feature": "eco:fallen_tree_birch",
+          "chance": 0.26
+        }
+      ],
+      "default": "eco:fallen_tree_oak"
+    },
+    "type": "minecraft:random_selector"
+  }

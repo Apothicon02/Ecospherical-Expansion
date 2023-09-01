@@ -1,0 +1,41 @@
+{
+  "feature": "eco:giant_mangrove",
+  "placement": [
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:any_of",
+        "predicates": [
+          {
+            "type": "minecraft:would_survive",
+            "state": {
+              "Name": "minecraft:mangrove_propagule",
+              "Properties": {
+                "stage": "0"
+              }
+            }
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "offset": [
+              0,
+              -1,
+              0
+            ],
+            "blocks": [
+              "minecraft:sand",
+              "minecraft:dirt",
+              "minecraft:coarse_dirt",
+              "minecraft:rooted_dirt",
+              "minecraft:mycelium",
+              "minecraft:grass_block",
+              "minecraft:moss_block",
+              "minecraft:packed_mud",
+              "minecraft:gravel"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

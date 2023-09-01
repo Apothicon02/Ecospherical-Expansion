@@ -1,0 +1,87 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 96,
+    "xz_spread": 7,
+    "y_spread": 3,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "weight": 3,
+                "data": {
+                  "Name": "minecraft:pink_petals"
+                }
+              },
+              {
+                "weight": 2,
+                "data": {
+                  "Name": "minecraft:pitcher_plant"
+                }
+              },
+              {
+                "weight": 2,
+                "data": {
+                  "Name": "minecraft:torchflower"
+                }
+              },
+              {
+                "weight": 3,
+                "data": {
+                  "Name": "minecraft:moss_carpet"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_blocks",
+                "offset": [
+                  0,
+                  0,
+                  0
+                ],
+                "blocks": [
+                  "minecraft:air",
+                  "minecraft:grass",
+                  "minecraft:snow"
+                ]
+              },
+              {
+                "type": "minecraft:matching_blocks",
+                "offset": [
+                  0,
+                  -1,
+                  0
+                ],
+                "blocks": [
+                  "minecraft:snow_block",
+                  "minecraft:grass_block",
+                  "minecraft:dirt",
+                  "minecraft:podzol",
+                  "minecraft:coarse_dirt",
+                  "minecraft:mycelium",
+                  "minecraft:moss_block",
+                  "minecraft:packed_mud",
+                  "minecraft:mud",
+                  "minecraft:red_sand"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

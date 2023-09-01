@@ -1,0 +1,25 @@
+{
+  "feature": "eco:small_patch_sunflower",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 12,
+          "max_inclusive": 24
+        }
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "MOTION_BLOCKING"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

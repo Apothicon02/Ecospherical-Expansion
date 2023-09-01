@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "swamp",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 6388580,
-    "water_fog_color": 2302743,
+    "water_color": 7318712,
+    "water_fog_color": 272948,
     "foliage_color": 6975545,
     "grass_color_modifier": "swamp",
     "mood_sound": {
@@ -16,42 +16,84 @@
       "block_search_extent": 8,
       "offset": 2
     },
-    "particle": {
-      "options": {
-        "type": "minecraft:rain"
-      },
-      "probability": 0.00043
+    "music": {
+      "sound": "minecraft:music.overworld.swamp",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      }
+    ],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:sheep",
+        "weight": 12,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:pig",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:chicken",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:cow",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:frog",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 5
+      }
+    ],
+    "misc": [],
     "monster": [
       {
         "type": "minecraft:spider",
-        "weight": 125,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:zombie",
-        "weight": 45,
+        "weight": 95,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:zombie_villager",
-        "weight": 55,
+        "weight": 5,
         "minCount": 1,
         "maxCount": 1
       },
       {
         "type": "minecraft:skeleton",
-        "weight": 75,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
       {
         "type": "minecraft:creeper",
-        "weight": 60,
+        "weight": 100,
         "minCount": 4,
         "maxCount": 4
       },
@@ -69,51 +111,17 @@
       },
       {
         "type": "minecraft:witch",
-        "weight": 45,
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "type": "minecraft:slime",
+        "weight": 1,
         "minCount": 1,
         "maxCount": 1
       }
     ],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "weight": 14,
-        "minCount": 2,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 20,
-        "minCount": 4,
-        "maxCount": 10
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 6,
-        "minCount": 1,
-        "maxCount": 3
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 5,
-        "minCount": 2,
-        "maxCount": 4
-      },{
-        "type": "minecraft:frog",
-        "weight": 60,
-        "minCount": 3,
-        "maxCount": 7
-      }
-    ],
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "weight": 10,
-        "minCount": 8,
-        "maxCount": 8
-      }
-    ],
-    "axolotls": [],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
@@ -122,41 +130,8 @@
         "maxCount": 6
       }
     ],
-    "water_creature": [
-      {
-        "type": "minecraft:squid",
-        "weight": 2,
-        "minCount": 3,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:glow_squid",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 1
-      },
-      {
-        "type": "minecraft:axolotl",
-        "weight": 3,
-        "minCount": 1,
-        "maxCount": 3
-      }
-    ],
-    "water_ambient": [
-      {
-        "type": "minecraft:salmon",
-        "weight": 4,
-        "minCount": 3,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:cod",
-        "weight": 2,
-        "minCount": 2,
-        "maxCount": 3
-      }
-    ],
-    "misc": []
+    "water_ambient": [],
+    "water_creature": []
   },
   "spawn_costs": {},
   "carvers": {
@@ -218,20 +193,28 @@
     ],
     [
       "minecraft:glow_lichen",
+      "eco:trees_giant_mangrove",
       "eco:grass_rocks",
+      "eco:mud_pond_extra",
       "eco:tuff",
       "eco:tuff_pool",
+      "eco:wild_flower_patch",
+      "eco:trees_branching_oak",
       "eco:trees_mega_swamp",
+      "eco:common_clustered_tall_mushrooms",
       "eco:oak_bush",
       "minecraft:flower_swamp",
       "minecraft:patch_dead_bush",
       "minecraft:patch_waterlily",
+      "eco:noise_patch_waterlily",
       "eco:overworld_mushrooms",
       "eco:nether_mushrooms",
-      "eco:basic_grass",
+      "eco:dense_grass",
       "eco:tall_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
+      "minecraft:seagrass_swamp",
       "minecraft:warm_ocean_vegetation",
       "eco:dense_rooted_azalea_trees",
       "eco:rooted_towering_jungle_trees",

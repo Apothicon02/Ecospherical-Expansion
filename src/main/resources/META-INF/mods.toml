@@ -38,10 +38,3 @@ Ecospherical Expansion:
 
 Expanding the ecosphere!
 '''
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.eco]]
-    modId="terrablender"
-    mandatory=true
-    versionRange="[3.0.0.163,)"
-    ordering="NONE"
-    side="BOTH"

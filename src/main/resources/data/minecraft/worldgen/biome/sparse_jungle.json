@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "category": "jungle",
   "effects": {
-    "sky_color": 7972607,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 2218432,
-    "water_fog_color": 329011,
+    "water_color": 7318712,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -16,6 +16,48 @@
     }
   },
   "spawners": {
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      }
+    ],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:sheep",
+        "weight": 12,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:pig",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:chicken",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:cow",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:chicken",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      }
+    ],
+    "misc": [],
     "monster": [
       {
         "type": "minecraft:spider",
@@ -66,47 +108,6 @@
         "maxCount": 1
       }
     ],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      }
-    ],
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "weight": 10,
-        "minCount": 8,
-        "maxCount": 8
-      }
-    ],
-    "axolotls": [],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
@@ -115,9 +116,8 @@
         "maxCount": 6
       }
     ],
-    "water_creature": [],
     "water_ambient": [],
-    "misc": []
+    "water_creature": []
   },
   "spawn_costs": {},
   "carvers": {
@@ -180,7 +180,10 @@
     [
       "minecraft:glow_lichen",
       "eco:grass_rocks",
+      "eco:mud_pond",
       "minecraft:bamboo_light",
+      "eco:bamboo_cluster",
+      "eco:wild_flower_patch",
       "minecraft:trees_sparse_jungle",
       "eco:bushes_dense",
       "eco:red_flowers",
@@ -190,6 +193,7 @@
       "eco:tall_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "minecraft:vines",
       "minecraft:patch_melon_sparse",
       "minecraft:warm_ocean_vegetation",

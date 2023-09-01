@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "features": [
+      {
+        "chance": 0.075,
+        "feature": "eco:ancient_flower_patch"
+      },
+      {
+        "chance": 0.25,
+        "feature": "eco:tulip_flower_patch"
+      },
+      {
+        "chance": 0.175,
+        "feature": "eco:lily_flower_patch"
+      },
+      {
+        "chance": 0.34,
+        "feature": "eco:grassy_patch"
+      },
+      {
+        "chance": 0.16,
+        "feature": "eco:tall_flower_patch"
+      }
+    ],
+    "default": "eco:grassy_patch"
+  }
+}

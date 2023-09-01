@@ -2,8 +2,8 @@ package com.Apothic0n.EcosphericalExpansion.api.biome.features.types;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
-import net.minecraft.util.RandomSource;
 import net.minecraft.core.Direction;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -13,7 +13,6 @@ import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
 import net.minecraft.world.level.levelgen.feature.configurations.VegetationPatchConfiguration;
 
 import java.util.HashSet;
-import java.util.Random;
 import java.util.Set;
 import java.util.function.Predicate;
 

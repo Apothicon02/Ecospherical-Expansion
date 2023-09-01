@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:block_pile",
+  "config": {
+    "state_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 23,
+          "data": {
+            "Name": "minecraft:deepslate"
+          }
+        },
+        {
+          "weight": 7,
+          "data": {
+            "Name": "minecraft:cobbled_deepslate"
+          }
+        },
+        {
+          "weight": 70,
+          "data": {
+            "Name": "minecraft:deepslate_emerald_ore"
+          }
+        }
+      ]
+    }
+  }
+}

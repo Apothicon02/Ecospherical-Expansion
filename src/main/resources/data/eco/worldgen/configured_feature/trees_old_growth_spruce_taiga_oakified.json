@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "features": [
+      {
+        "chance": 0.33333334,
+        "feature": "eco:mega_spruce_oakified"
+      },
+      {
+        "chance": 0.33333334,
+        "feature": "eco:pine_oakified"
+      }
+    ],
+    "default": "eco:spruce_oakified"
+  }
+}

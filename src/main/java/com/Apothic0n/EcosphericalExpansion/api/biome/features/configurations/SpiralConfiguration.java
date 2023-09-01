@@ -4,17 +4,17 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
-import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Set;
 
 public class SpiralConfiguration implements FeatureConfiguration {
     public static final Codec<SpiralConfiguration> CODEC = RecordCodecBuilder.create((fields) -> {
-        return fields.group(ForgeRegistries.BLOCKS.getCodec().listOf().fieldOf("validBlocks").xmap(ImmutableSet::copyOf, ImmutableList::copyOf).forGetter((v) -> {
+        return fields.group(BuiltInRegistries.BLOCK.byNameCodec().listOf().fieldOf("validBlocks").xmap(ImmutableSet::copyOf, ImmutableList::copyOf).forGetter((v) -> {
             return (ImmutableSet<Block>)v.validBlocks;
         }), BlockState.CODEC.fieldOf("stemMaterial").forGetter((v) -> {
             return v.stemMaterial;

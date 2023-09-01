@@ -1,0 +1,38 @@
+{
+  "feature": "eco:large_pumpkin",
+  "placement": [
+    {
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 2,
+      "noise_factor": 3,
+      "noise_offset": -0.2
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "WORLD_SURFACE_WG"
+    },
+    {
+      "type": "minecraft:environment_scan",
+      "direction_of_search": "down",
+      "max_steps": 1,
+      "target_condition": {
+        "type": "minecraft:true"
+      },
+      "allowed_search_condition": {
+        "type": "minecraft:matching_block_tag",
+        "offset": [
+          0,
+          -1,
+          0
+        ],
+        "tag": "minecraft:dirt"
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

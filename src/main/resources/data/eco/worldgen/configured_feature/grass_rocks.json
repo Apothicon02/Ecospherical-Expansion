@@ -7,11 +7,15 @@
         },
         {
           "feature": "eco:granite_rocks",
-          "chance": 0.34
+          "chance": 0.30
         },
         {
           "feature": "eco:calcite_rocks",
           "chance": 0.16
+        },
+        {
+          "feature": "eco:tuff_rocks",
+          "chance": 0.04
         }
       ],
       "default": "eco:andesite_rocks"

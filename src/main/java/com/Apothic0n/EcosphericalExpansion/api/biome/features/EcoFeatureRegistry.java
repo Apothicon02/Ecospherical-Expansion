@@ -11,7 +11,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public abstract class EcoFeatureRegistry {
-
     public static final DeferredRegister<Feature<?>> FEATURES = DeferredRegister.create(ForgeRegistries.FEATURES, EcosphericalExpansion.MODID);
 
     public static final RegistryObject<Feature<RockConfiguration>> SPHEROID_ROCK = FEATURES.register("spheroid_rock", () ->
@@ -92,6 +91,33 @@ public abstract class EcoFeatureRegistry {
     public static final RegistryObject<Feature<ProbabilityFeatureConfiguration>> CAVE_SEAGRASS_FEATURE = FEATURES.register("cave_seagrass", () ->
             new CaveSeagrassFeature(ProbabilityFeatureConfiguration.CODEC));
 
+    public static final RegistryObject<Feature<FallenTreeConfiguration>> THIN_FALLEN_TREE_FEATURE = FEATURES.register("thin_fallen_tree", () ->
+            new ThinFallenTreeFeature(FallenTreeConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<FallenTreeConfiguration>> THICK_FALLEN_TREE_FEATURE = FEATURES.register("thick_fallen_tree", () ->
+            new ThickFallenTreeFeature(FallenTreeConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<AnvilRockConfiguration>> ANVIL_ROCK_FEATURE = FEATURES.register("anvil_rock", () ->
+            new AnvilRockFeature(AnvilRockConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> AMETHYST_BLOCK_CLUSTER_FEATURE = FEATURES.register("amethyst_block_cluster", () ->
+            new AmethystBlockClusterFeature(NoneFeatureConfiguration.CODEC));
+
+
+    public static final RegistryObject<Feature<SimpleBlockConfiguration>> STEMMED_2X2X2_CUBE_FEATURE = FEATURES.register("stemmed_2x2x2_cube", () ->
+            new Stemmed2x2x2CubeFeature(SimpleBlockConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<SimpleIntConfiguration>> THIN_BUSH_FEATURE = FEATURES.register("thin_bush", () ->
+            new ThinBushFeature(SimpleIntConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<SimpleIntConfiguration>> THICK_BUSH_FEATURE = FEATURES.register("thick_bush", () ->
+            new ThickBushFeature(SimpleIntConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<WaterloggableRandomPatchConfiguration>> WATERLOGGABLE_RANDOM_PATCH_FEATURE = FEATURES.register("waterloggable_random_patch", () ->
+            new WaterloggableRandomPatchFeature(WaterloggableRandomPatchConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<DoubleBlockConfiguration>> POND_FEATURE = FEATURES.register("pond", () ->
+            new PondFeature(DoubleBlockConfiguration.CODEC));
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
     }

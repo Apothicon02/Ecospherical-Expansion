@@ -10,11 +10,11 @@
           "chance": 0.07
         },
         {
-          "feature": "eco:branching_oak",
+          "feature": "eco:twisted_oak",
           "chance": 0.9
         }
       ],
-      "default": "eco:branching_oak"
+      "default": "eco:twisted_oak"
     },
     "type": "minecraft:random_selector"
   }

@@ -4,11 +4,11 @@
   "has_precipitation": true,
   "category": "taiga",
   "effects": {
-    "sky_color": 8233983,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
-    "grass_color": 13718835,
+    "water_color": 7318712,
+    "water_fog_color": 272948,
+    "grass_color": 14909027,
     "foliage_color": 13733683,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
@@ -16,14 +16,68 @@
       "block_search_extent": 8,
       "offset": 2
     },
-    "particle": {
-      "options": {
-        "type": "minecraft:ash"
-      },
-      "probability": 0.0035
+    "music": {
+      "sound": "minecraft:music.overworld.old_growth_taiga",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      }
+    ],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:sheep",
+        "weight": 12,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:pig",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:chicken",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:cow",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:wolf",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:rabbit",
+        "weight": 4,
+        "minCount": 2,
+        "maxCount": 3
+      },
+      {
+        "type": "minecraft:fox",
+        "weight": 8,
+        "minCount": 2,
+        "maxCount": 4
+      }
+    ],
+    "misc": [],
     "monster": [
       {
         "type": "minecraft:spider",
@@ -74,59 +128,6 @@
         "maxCount": 1
       }
     ],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:wolf",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:rabbit",
-        "weight": 4,
-        "minCount": 2,
-        "maxCount": 3
-      },
-      {
-        "type": "minecraft:fox",
-        "weight": 8,
-        "minCount": 2,
-        "maxCount": 4
-      }
-    ],
-    "ambient": [
-      {
-        "type": "minecraft:bat",
-        "weight": 10,
-        "minCount": 8,
-        "maxCount": 8
-      }
-    ],
-    "axolotls": [],
     "underground_water_creature": [
       {
         "type": "minecraft:glow_squid",
@@ -135,9 +136,8 @@
         "maxCount": 6
       }
     ],
-    "water_creature": [],
     "water_ambient": [],
-    "misc": []
+    "water_creature": []
   },
   "spawn_costs": {},
   "carvers": {
@@ -206,9 +206,18 @@
     ],
     [
       "minecraft:glow_lichen",
+      "eco:gravelly_azalea_shrubbery",
+      "eco:gray_standalone_cliffs",
+      "eco:mossy_stone_filler",
+      "eco:moss_stones",
+      "eco:gray_stones",
+      "eco:mossy_pond",
       "minecraft:patch_large_fern",
-      "minecraft:trees_old_growth_spruce_taiga",
-      "eco:bushes_basic",
+      "eco:wild_flower_patch",
+      "eco:trees_old_growth_spruce_taiga",
+      "eco:trees_giant_spruce",
+      "eco:fallen_trees_spruce",
+      "eco:bushes_taiga",
       "eco:red_flowers",
       "minecraft:patch_grass_taiga",
       "minecraft:patch_dead_bush",
@@ -216,8 +225,10 @@
       "minecraft:red_mushroom_old_growth",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
+      "eco:trees_pine_taiga",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "minecraft:patch_berry_common",
       "minecraft:spring_delta",
       "minecraft:ore_magma",

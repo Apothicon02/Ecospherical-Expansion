@@ -2,8 +2,10 @@
   "feature": "eco:grass_rocks",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": 118
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 24,
+      "noise_factor": 1,
+      "noise_offset": 0
     },
     {
       "type": "minecraft:in_square"

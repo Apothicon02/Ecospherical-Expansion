@@ -1,0 +1,34 @@
+{
+  "feature": "eco:tuff_standalone_cliffs",
+  "placement": [
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": 0,
+      "y_spread": -2
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [
+          0,
+          1,
+          0
+        ],
+        "blocks": [
+          "minecraft:stone",
+          "minecraft:grass_block",
+          "minecraft:moss_block",
+          "minecraft:sand",
+          "minecraft:red_sand",
+          "minecraft:terracotta",
+          "minecraft:dirt",
+          "minecraft:coarse_dirt",
+          "minecraft:rooted_dirt",
+          "minecraft:mud",
+          "minecraft:packed_mud"
+        ]
+      }
+    }
+  ]
+}

@@ -4,10 +4,10 @@
   "has_precipitation": true,
   "temperature_modifier": "frozen",
   "effects": {
-    "sky_color": 8103167,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 3750089,
-    "water_fog_color": 329011,
+    "water_color": 7318712,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -125,7 +125,8 @@
   },
   "features": [
     [
-      "eco:flood_water"
+      "eco:underwater_blue_ice",
+      "eco:underwater_noise_ice_rocks"
     ],
     [
       "minecraft:lake_lava_underground",
@@ -191,19 +192,18 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "eco:amethyst_spiral",
       "eco:amethyst_void_crystals",
       "eco:sparse_amethyst_void_ceiling_crystals",
       "eco:sparse_amethyst_vine",
       "eco:cave_seagrass_warm",
-      "eco:cave_kelp_warm",
       "eco:cave_pickle",
       "eco:snowy_pool_with_ice",
       "eco:powdered_snow_pool",
       "eco:patch_snow_layer"
     ],
     [
-      "eco:flood_frozen_water",
       "eco:dense_powdered_snow_fall",
       "eco:amethyst_frosted_ice_crystals",
       "minecraft:freeze_top_layer"

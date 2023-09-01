@@ -3,11 +3,15 @@
       "features": [
         {
           "feature": "eco:tilted_dark_oak",
-          "chance": 0.67
+          "chance": 0.57
         },
         {
           "feature": "eco:short_dark_oak",
-          "chance": 0.31
+          "chance": 0.28
+        },
+        {
+          "feature": "minecraft:dark_oak_checked",
+          "chance": 0.13
         }
       ],
       "default": "minecraft:fancy_oak_bees_002"

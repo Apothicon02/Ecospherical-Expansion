@@ -3,10 +3,10 @@
   "downfall": 0.9,
   "has_precipitation": true,
   "effects": {
-    "sky_color": 8756735,
+    "sky_color": 9806079,
     "fog_color": 12638463,
-    "water_color": 4159204,
-    "water_fog_color": 329011,
+    "water_color": 7318712,
+    "water_fog_color": 272948,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,

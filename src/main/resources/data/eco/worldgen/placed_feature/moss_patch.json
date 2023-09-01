@@ -1,0 +1,25 @@
+{
+  "feature": "eco:moss_patch",
+  "placement": [
+    {
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 3,
+      "noise_factor": 2,
+      "noise_offset": 0.07
+    },
+    {
+      "type": "minecraft:count",
+      "count": 6
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}
