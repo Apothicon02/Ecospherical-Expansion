@@ -2,14 +2,10 @@
   "feature": "eco:mountainous_snow",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": {
-        "type": "minecraft:uniform",
-        "value": {
-          "min_inclusive": 128,
-          "max_inclusive": 164
-        }
-      }
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 150,
+      "noise_factor": 1,
+      "noise_offset": -0.2
     },
     {
       "type": "minecraft:in_square"

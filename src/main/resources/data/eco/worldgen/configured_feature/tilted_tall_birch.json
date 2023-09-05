@@ -61,6 +61,11 @@
       "radius": 1,
       "offset": 0
     },
-    "decorators": []
+    "decorators": [
+      {
+        "type": "eco:cave_vines",
+        "probability": 0.8
+      }
+    ]
   }
 }

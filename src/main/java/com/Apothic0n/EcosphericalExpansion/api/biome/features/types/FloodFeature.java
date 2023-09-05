@@ -41,7 +41,7 @@ public class FloodFeature extends Feature<FloodConfiguration> {
                     BlockPos pos = new BlockPos(x, y, z);
                     if ((worldgenlevel.getBlockState(pos).is(BlockTags.DIRT) || worldgenlevel.getBlockState(pos).is(BlockTags.SAND) || worldgenlevel.getBlockState(pos).is(Blocks.SNOW_BLOCK) || worldgenlevel.getBlockState(pos).is(Blocks.POWDER_SNOW)) && !worldgenlevel.getFluidState(pos).is(Fluids.LAVA) && worldgenlevel.getBlockState(pos) != state && worldgenlevel.getBlockState(pos) != Blocks.DEAD_BUBBLE_CORAL_BLOCK.defaultBlockState() && worldgenlevel.getBiome(pos).is(BiomeTags.IS_RIVER) && !worldgenlevel.getBiome(pos).is(Biomes.RIVER)) {
                         worldgenlevel.setBlock(pos, state, UPDATE_NONE);
-                        if (worldgenlevel.getBlockState(pos.above()).isAir() && frozen) {
+                        if (frozen) {
                             worldgenlevel.setBlock(pos, frozenState, UPDATE_NONE);
                         }
                         if (worldgenlevel.getBlockState(pos.below()).isAir() || worldgenlevel.getFluidState(pos.below()).is(Fluids.LAVA)) {
@@ -67,7 +67,7 @@ public class FloodFeature extends Feature<FloodConfiguration> {
             if (worldgenlevel.getBlockState(pos.below()).isAir() || worldgenlevel.getFluidState(pos.below()).is(Fluids.LAVA)) {
                 worldgenlevel.setBlock(pos, barrierState, UPDATE_NONE);
             } else if (worldgenlevel.getBiome(pos).is(BiomeTags.IS_RIVER) && !worldgenlevel.getBiome(pos).is(Biomes.RIVER)) {
-                if (worldgenlevel.getBlockState(pos.above()).isAir() && frozen) {
+                if (frozen) {
                     worldgenlevel.setBlock(pos, frozenState, UPDATE_NONE);
                 } else {
                     if (state.is(Blocks.WATER) || state.is(Blocks.LAVA)) {

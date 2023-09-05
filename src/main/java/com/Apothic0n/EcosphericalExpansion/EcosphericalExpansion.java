@@ -4,7 +4,9 @@ import com.Apothic0n.EcosphericalExpansion.api.biome.features.EcoFeatureRegistry
 import com.Apothic0n.EcosphericalExpansion.api.biome.features.decorators.EcoTreeDecoratorType;
 import com.Apothic0n.EcosphericalExpansion.api.biome.features.foliage_placers.EcoFoliagePlacerType;
 import com.Apothic0n.EcosphericalExpansion.api.biome.features.trunk_placers.EcoTrunkPlacerType;
+import com.Apothic0n.EcosphericalExpansion.core.events.EntityLoadEvent;
 import com.Apothic0n.EcosphericalExpansion.core.objects.EcoBlocks;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;

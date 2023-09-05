@@ -1,11 +1,11 @@
 {
-  "feature": "eco:trees_mega_swamp",
+  "feature": "eco:trees_mega_savanna",
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 1,
-      "noise_factor": 1,
-      "noise_offset": 0
+      "noise_to_count_ratio": 6,
+      "noise_factor": 6,
+      "noise_offset": -0.4
     },
     {
       "type": "minecraft:in_square"

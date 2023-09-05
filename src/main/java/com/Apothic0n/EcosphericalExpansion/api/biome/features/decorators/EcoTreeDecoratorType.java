@@ -20,6 +20,8 @@ public abstract class EcoTreeDecoratorType<P extends TreeDecorator> {
     public static final RegistryObject<TreeDecoratorType<MushroomsDecorator>> MUSHROOMS = TREE_DECORATOR_TYPE.register("mushrooms", () ->
             new TreeDecoratorType<>(MushroomsDecorator.CODEC));
 
+    public static final RegistryObject<TreeDecoratorType<CaveVineDecorator>> CAVE_VINES = TREE_DECORATOR_TYPE.register("cave_vines", () ->
+            new TreeDecoratorType<>(CaveVineDecorator.CODEC));
     public static void register(IEventBus eventBus) {
         TREE_DECORATOR_TYPE.register(eventBus);
     }

@@ -7,16 +7,15 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.ChunkStatus;
+import net.minecraft.world.level.chunk.LevelChunk;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
-import net.minecraftforge.event.entity.living.MobSpawnEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -47,24 +46,25 @@ public class CommonModEvents {
     }
 
     @SubscribeEvent
-    public void entityLoaded(EntityJoinLevelEvent event) {
-        Level level = event.getLevel();
-        Entity entity = event.getEntity();
-        BlockPos pos = event.getEntity().blockPosition();
-        if (level.getBlockState(pos.below()).is(Blocks.BEDROCK) && pos.getY() >= level.getMaxBuildHeight() && level.dimension().equals(Level.OVERWORLD)) {
-            pos = pos.below(64);
-            if (entity instanceof Player) {
+    public static void entityLoaded(EntityLoadEvent event) {
+        Level level = event.level;
+        Entity entity = event.entity;
+        BlockPos pos = entity.blockPosition();
+        if (entity instanceof Player) {
+            int y = level.getMaxBuildHeight();
+            if (pos.getY() == y && level.dimension().equals(Level.OVERWORLD) && level.getBlockState(pos.below()).is(Blocks.BEDROCK)) {
+                pos = pos.below(64);
                 generateSquare(level, pos.below(2), Blocks.OAK_WOOD.defaultBlockState());
                 generateSquare(level, pos.below(), Blocks.OAK_WOOD.defaultBlockState());
                 generateSquare(level, pos, Blocks.AIR.defaultBlockState());
                 generateSquare(level, pos.above(), Blocks.AIR.defaultBlockState());
                 level.setBlock(pos, Blocks.TORCH.defaultBlockState(), UPDATE_ALL);
+                entity.teleportRelative(0, -64, 0);
             }
-            entity.teleportRelative(0, -64, 0);
         }
     }
 
-    private void generateSquare(Level level, BlockPos pos, BlockState state) {
+    private static void generateSquare(Level level, BlockPos pos, BlockState state) {
         level.setBlock(pos, state, UPDATE_ALL);
         level.setBlock(pos.north(), state, UPDATE_ALL);
         level.setBlock(pos.east(), state, UPDATE_ALL);

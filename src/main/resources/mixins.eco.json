@@ -7,9 +7,10 @@
     "defaultRequire": 1
   },
   "mixins": [
+    "BiomeMixin",
     "BiomeSpecialEffectsMixin",
     "DripstoneUtilsMixin",
-    "BiomeMixin"
+    "ServerLevelEntityCallbacksMixin"
   ],
   "client": [
   ],

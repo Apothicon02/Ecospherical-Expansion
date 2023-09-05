@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "eco:the_amplified_overworld",
+    "eco:the_enclosed_overworld",
+    "eco:the_open_overworld"
+  ]
+}
