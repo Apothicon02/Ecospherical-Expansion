@@ -10,6 +10,8 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.*;
 public abstract class EcoTreeDecoratorType<P extends TreeDecorator> {
     public static final TreeDecoratorType<MushroomsDecorator> MUSHROOMS = EcoTreeDecoratorType.register("mushrooms", MushroomsDecorator.CODEC);
 
+    public static final TreeDecoratorType<CaveVineDecorator> CAVE_VINES = EcoTreeDecoratorType.register("cave_vines", CaveVineDecorator.CODEC);
+
     private static <P extends TreeDecorator> TreeDecoratorType<P> register(String key, Codec<P> codec) {
         return Registry.register(BuiltInRegistries.TREE_DECORATOR_TYPE, new ResourceLocation(EcosphericalExpansion.MODID, key), new TreeDecoratorType<P>(codec));
     }

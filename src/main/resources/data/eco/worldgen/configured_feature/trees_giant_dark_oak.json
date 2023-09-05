@@ -27,7 +27,11 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:dark_oak_leaves"
+        "Name": "minecraft:dark_oak_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "true"
+        }
       }
     },
     "root_placer": {
@@ -92,6 +96,10 @@
       {
         "type": "minecraft:beehive",
         "probability": 0.6
+      },
+      {
+        "type": "eco:cave_vines",
+        "probability": 0.8
       }
     ]
   }

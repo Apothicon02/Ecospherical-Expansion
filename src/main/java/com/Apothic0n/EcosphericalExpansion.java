@@ -56,21 +56,21 @@ public class EcosphericalExpansion implements ModInitializer {
         ServerEntityEvents.ENTITY_LOAD.register((entity, world) -> {
             Level level = entity.level();
             BlockPos pos = entity.blockPosition();
-            if (level.getBlockState(pos.below()).is(Blocks.BEDROCK) && pos.getY() >= level.getMaxBuildHeight() && level.dimension().equals(Level.OVERWORLD)) {
-                pos = pos.below(64);
-                if (entity instanceof Player) {
+            if (entity instanceof Player) {
+                if (pos.getY() >= level.getMaxBuildHeight() && level.dimension().equals(Level.OVERWORLD) && level.getBlockState(pos.below()).is(Blocks.BEDROCK)) {
+                    pos = pos.below(64);
                     generateSquare(level, pos.below(2), Blocks.OAK_WOOD.defaultBlockState());
                     generateSquare(level, pos.below(), Blocks.OAK_WOOD.defaultBlockState());
                     generateSquare(level, pos, Blocks.AIR.defaultBlockState());
                     generateSquare(level, pos.above(), Blocks.AIR.defaultBlockState());
                     level.setBlock(pos, Blocks.TORCH.defaultBlockState(), UPDATE_ALL);
+                    entity.teleportRelative(0, -64, 0);
                 }
-                entity.teleportRelative(0, -64, 0);
             }
         });
     }
 
-    private void generateSquare(Level level, BlockPos pos, BlockState state) {
+    private static void generateSquare(Level level, BlockPos pos, BlockState state) {
         level.setBlock(pos, state, UPDATE_ALL);
         level.setBlock(pos.north(), state, UPDATE_ALL);
         level.setBlock(pos.east(), state, UPDATE_ALL);

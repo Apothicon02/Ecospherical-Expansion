@@ -15,7 +15,7 @@
   },
   "noise": {
     "min_y": -64,
-    "height": 128,
+    "height": 192,
     "size_horizontal": 1,
     "size_vertical": 2
   },
@@ -139,7 +139,7 @@
         "type": "minecraft:y_clamped_gradient",
         "from_y": 48,
         "to_y": 64,
-        "from_value": 0,
+        "from_value": -0.5,
         "to_value": 1
       }
     },
@@ -151,6 +151,28 @@
   "surface_rule": {
     "type": "minecraft:sequence",
     "sequence": [
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:not",
+          "invert": {
+            "type": "minecraft:vertical_gradient",
+            "random_name": "minecraft:bedrock_roof",
+            "true_at_and_below": {
+              "below_top": 5
+            },
+            "false_at_and_above": {
+              "below_top": 0
+            }
+          }
+        },
+        "then_run": {
+          "type": "minecraft:block",
+          "result_state": {
+            "Name": "minecraft:bedrock"
+          }
+        }
+      },
       {
         "type": "minecraft:condition",
         "if_true": {
