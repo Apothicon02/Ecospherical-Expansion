@@ -4,6 +4,7 @@
     "eco:thermospherical",
     "eco:mesospherical",
     "eco:stratospherical",
+    "eco:ogstratospherical",
     "eco:tropospherical",
     "eco:lithospherical",
     "eco:asthenospherical"
