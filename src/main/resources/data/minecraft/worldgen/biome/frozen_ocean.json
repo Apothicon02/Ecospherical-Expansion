@@ -191,9 +191,6 @@
       "minecraft:patch_pumpkin",
       "eco:large_pumpkin",
       "eco:amethyst_spiral",
-      "eco:amethyst_void_crystals",
-      "eco:sparse_amethyst_void_ceiling_crystals",
-      "eco:sparse_amethyst_vine",
       "eco:cave_seagrass_warm",
       "eco:cave_kelp_warm",
       "eco:cave_pickle",
@@ -203,7 +200,6 @@
     ],
     [
       "eco:dense_powdered_snow_fall",
-      "eco:amethyst_frosted_ice_crystals",
       "minecraft:freeze_top_layer"
     ]
   ]

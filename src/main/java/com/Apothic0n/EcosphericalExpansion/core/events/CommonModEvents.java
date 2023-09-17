@@ -1,8 +1,8 @@
 package com.Apothic0n.EcosphericalExpansion.core.events;
 
 import com.Apothic0n.EcosphericalExpansion.EcosphericalExpansion;
-import com.Apothic0n.EcosphericalExpansion.core.objects.EcoBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
@@ -13,9 +13,7 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.chunk.ChunkStatus;
-import net.minecraft.world.level.chunk.LevelChunk;
-import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -24,35 +22,14 @@ import static net.minecraft.world.level.block.Block.UPDATE_ALL;
 
 @Mod.EventBusSubscriber(modid = EcosphericalExpansion.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonModEvents {
-
-    @SubscribeEvent
-    public static void itemUsed(PlayerInteractEvent.RightClickBlock event) {
-        Level pLevel = event.getLevel();
-        BlockPos pPos =  event.getHitVec().getBlockPos();
-        BlockState pBlock = pLevel.getBlockState(pPos);
-        ItemStack pStack = event.getItemStack();
-        Player player = event.getEntity();
-        if (!pLevel.isClientSide) { //Runs stuff on the server every time a player right-clicks a block
-            if (pStack.getItem() == Items.GLOW_INK_SAC && pBlock.getBlock() == Blocks.AMETHYST_CLUSTER) {
-                pLevel.setBlock(pPos, EcoBlocks.GLOWING_AMETHYST.get().withPropertiesOf(pBlock), 2);
-                float f = Mth.randomBetween(pLevel.random, 0.8F, 1.2F);
-                pLevel.playSound((Player)null, pPos, SoundEvents.DOLPHIN_EAT, SoundSource.BLOCKS, 1.0F, f);
-                player.swing(event.getHand(), true);
-                if (!player.isCreative()) {
-                    pStack.setCount(pStack.getCount() - 1);
-                }
-            }
-        }
-    }
-
     @SubscribeEvent
     public static void entityLoaded(EntityLoadEvent event) {
         Level level = event.level;
         Entity entity = event.entity;
         BlockPos pos = entity.blockPosition();
-        if (entity instanceof Player) {
+        if (entity instanceof Player && level.dimension().equals(Level.OVERWORLD)) {
             int y = level.getMaxBuildHeight();
-            if (pos.getY() == y && level.dimension().equals(Level.OVERWORLD) && level.getBlockState(pos.below()).is(Blocks.BEDROCK)) {
+            if (pos.getY() == y && level.getBlockState(pos.below()).is(Blocks.BEDROCK)) {
                 pos = pos.below(64);
                 generateSquare(level, pos.below(2), Blocks.OAK_WOOD.defaultBlockState());
                 generateSquare(level, pos.below(), Blocks.OAK_WOOD.defaultBlockState());
@@ -60,6 +37,61 @@ public class CommonModEvents {
                 generateSquare(level, pos.above(), Blocks.AIR.defaultBlockState());
                 level.setBlock(pos, Blocks.TORCH.defaultBlockState(), UPDATE_ALL);
                 entity.teleportRelative(0, -64, 0);
+            } else {
+                boolean overVoid = true;
+                for (int i = level.getMinBuildHeight() - 1; i < level.getMaxBuildHeight(); i++) {
+                    if (!level.getBlockState(new BlockPos(pos.getX(), i, pos.getZ())).isAir()) {
+                        overVoid = false;
+                    }
+                }
+                if (overVoid) {
+                    pos = new BlockPos(pos.getX(), 64, pos.getZ());
+                    level.setBlock(pos.below(5), Blocks.CAVE_VINES.defaultBlockState().setValue(BlockStateProperties.BERRIES, true), UPDATE_ALL);
+                    generateSquare(level, pos.below(4), Blocks.STONE.defaultBlockState());
+                    generateSquare(level, pos.below(3), Blocks.STONE.defaultBlockState());
+                    generateSquare(level, pos.below(2), Blocks.DIRT.defaultBlockState());
+                    generateSquare(level, pos.below(), Blocks.GRASS_BLOCK.defaultBlockState());
+                    generateSquare(level, pos.north(3).below(3), Blocks.STONE.defaultBlockState());
+                    generateSquare(level, pos.north(3).below(2), Blocks.DIRT.defaultBlockState());
+                    generateSquare(level, pos.north(3).below(), Blocks.GRASS_BLOCK.defaultBlockState());
+                    generateSquare(level, pos.east(3).below(3), Blocks.STONE.defaultBlockState());
+                    generateSquare(level, pos.east(3).below(2), Blocks.DIRT.defaultBlockState());
+                    generateSquare(level, pos.east(3).below(), Blocks.GRASS_BLOCK.defaultBlockState());
+                    generateSquare(level, pos.south(3).below(3), Blocks.STONE.defaultBlockState());
+                    generateSquare(level, pos.south(3).below(2), Blocks.DIRT.defaultBlockState());
+                    generateSquare(level, pos.south(3).below(), Blocks.GRASS_BLOCK.defaultBlockState());
+                    generateSquare(level, pos.west(3).below(3), Blocks.STONE.defaultBlockState());
+                    generateSquare(level, pos.west(3).below(2), Blocks.DIRT.defaultBlockState());
+                    generateSquare(level, pos.west(3).below(), Blocks.GRASS_BLOCK.defaultBlockState());
+                    generateSquare(level, pos.north(3).east(3).below(2), Blocks.DIRT.defaultBlockState());
+                    generateSquare(level, pos.north(3).east(3).below(), Blocks.GRASS_BLOCK.defaultBlockState());
+                    generateSquare(level, pos.north(3).west(3).below(2), Blocks.DIRT.defaultBlockState());
+                    generateSquare(level, pos.north(3).west(3).below(), Blocks.GRASS_BLOCK.defaultBlockState());
+                    generateSquare(level, pos.south(3).east(3).below(2), Blocks.DIRT.defaultBlockState());
+                    generateSquare(level, pos.south(3).east(3).below(), Blocks.GRASS_BLOCK.defaultBlockState());
+                    generateSquare(level, pos.south(3).west(3).below(2), Blocks.DIRT.defaultBlockState());
+                    generateSquare(level, pos.south(3).west(3).below(), Blocks.GRASS_BLOCK.defaultBlockState());
+                    level.setBlock(pos.north(2).east(3), Blocks.OAK_LOG.defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.Z), UPDATE_ALL);
+                    level.setBlock(pos.north(3).east(3), Blocks.OAK_LOG.defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.Z), UPDATE_ALL);
+                    level.setBlock(pos.north(3).east(3).above(), Blocks.MOSS_CARPET.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.north(4).east(3), Blocks.OAK_LOG.defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.Z), UPDATE_ALL);
+                    level.setBlock(pos.north(5).east(3), Blocks.OAK_LOG.defaultBlockState().setValue(BlockStateProperties.AXIS, Direction.Axis.Z), UPDATE_ALL);
+                    level.setBlock(pos.east(3).south(3), Blocks.OAK_SAPLING.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.south(3).west(3), Blocks.OAK_SAPLING.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.west(3).north(3), Blocks.OAK_SAPLING.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.north(1).east().below(), Blocks.WATER.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.north(1).east().south().below(2), Blocks.AIR.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.north(1).east().west().below(2), Blocks.AIR.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.south(1).west().below(), Blocks.LAVA.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.below(), Blocks.COBBLESTONE.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.north(1).west().below(), Blocks.COBBLESTONE.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.south(1).east().below(), Blocks.COBBLESTONE.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.north(1).below(), Blocks.AIR.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.east(1).below(), Blocks.AIR.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.south(1).below(), Blocks.AIR.defaultBlockState(), UPDATE_ALL);
+                    level.setBlock(pos.west(1).below(), Blocks.AIR.defaultBlockState(), UPDATE_ALL);
+                    entity.teleportTo(pos.getX(), pos.getY(), pos.getZ());
+                }
             }
         }
     }
