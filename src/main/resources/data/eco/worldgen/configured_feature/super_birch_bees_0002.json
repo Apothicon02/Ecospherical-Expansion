@@ -5,10 +5,9 @@
     "force_dirt": false,
     "minimum_size": {
       "type": "minecraft:two_layers_feature_size",
-      "min_clipped_height": 4,
-      "limit": 0,
+      "limit": 1,
       "lower_size": 0,
-      "upper_size": 0
+      "upper_size": 1
     },
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
@@ -30,50 +29,28 @@
       "state": {
         "Name": "minecraft:birch_leaves",
         "Properties": {
+          "distance": "7",
           "persistent": "false",
-          "distance": "7"
+          "waterlogged": "false"
         }
       }
     },
     "trunk_placer": {
-      "type": "eco:straight_branching_trunk_placer",
-      "base_height": 14,
-      "height_rand_a": 5,
-      "height_rand_b": 2,
-      "max_branch_height": 4
+      "type": "minecraft:straight_trunk_placer",
+      "base_height": 5,
+      "height_rand_a": 2,
+      "height_rand_b": 6
     },
     "foliage_placer": {
       "type": "eco:tall_foliage_placer",
       "radius": 2,
       "offset": 2,
-      "height": 4
+      "height": 5
     },
     "decorators": [
       {
-        "type": "minecraft:trunk_vine"
-      },
-      {
-        "type": "minecraft:alter_ground",
-        "provider": {
-          "type": "minecraft:weighted_state_provider",
-          "entries": [
-            {
-              "weight": 416,
-              "data": {
-                "Name": "minecraft:grass_block",
-                "Properties": {
-                  "snowy": "false"
-                }
-              }
-            },
-            {
-              "weight": 3,
-              "data": {
-                "Name": "minecraft:moss_block"
-              }
-            }
-          ]
-        }
+        "type": "minecraft:beehive",
+        "probability": 0.002
       }
     ]
   }

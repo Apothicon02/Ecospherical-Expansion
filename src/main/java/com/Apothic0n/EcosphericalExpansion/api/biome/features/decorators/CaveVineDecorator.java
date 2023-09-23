@@ -35,16 +35,21 @@ public class CaveVineDecorator extends TreeDecorator {
         list.forEach(blockPos -> {
             if (randomSource.nextFloat() >= 0.1) {
                 for (int i = 1; i < 32; i++) {
-                    if (level.isStateAtPosition(blockPos, BlockStatePredicate.forBlock(Blocks.AIR))) {
-                        if (level.isStateAtPosition(blockPos.above(), BlockBehaviour.BlockStateBase::isSolid) || level.isStateAtPosition(blockPos.above(), BlockStatePredicate.forBlock(Blocks.OAK_LEAVES).or(BlockStatePredicate.forBlock(Blocks.DARK_OAK_LEAVES))
-                                .or(BlockStatePredicate.forBlock(Blocks.BIRCH_LEAVES)).or(BlockStatePredicate.forBlock(Blocks.SPRUCE_LEAVES)).or(BlockStatePredicate.forBlock(Blocks.ACACIA_LEAVES)).or(BlockStatePredicate.forBlock(Blocks.JUNGLE_LEAVES))
-                                .or(BlockStatePredicate.forBlock(Blocks.MANGROVE_LEAVES)).or(BlockStatePredicate.forBlock(Blocks.CHERRY_LEAVES)))) {
-                            context.setBlock(blockPos.below(i), randomVine());
+                    if (level.isStateAtPosition(blockPos.below(i), BlockStatePredicate.forBlock(Blocks.AIR))) {
+                        if (level.isStateAtPosition(blockPos.below(i).above(), BlockStatePredicate.forBlock(Blocks.OAK_LEAVES).or(BlockStatePredicate.forBlock(Blocks.DARK_OAK_LEAVES))
+                                .or(BlockStatePredicate.forBlock(Blocks.BIRCH_LEAVES)).or(BlockStatePredicate.forBlock(Blocks.SPRUCE_LEAVES)).or(BlockStatePredicate.forBlock(Blocks.ACACIA_LEAVES))
+                                .or(BlockStatePredicate.forBlock(Blocks.JUNGLE_LEAVES)).or(BlockStatePredicate.forBlock(Blocks.MANGROVE_LEAVES)).or(BlockStatePredicate.forBlock(Blocks.CHERRY_LEAVES))
+                                .or(BlockStatePredicate.forBlock(Blocks.AZALEA_LEAVES)).or(BlockStatePredicate.forBlock(Blocks.FLOWERING_AZALEA_LEAVES)).or(BlockStatePredicate.forBlock(Blocks.CAVE_VINES_PLANT)))) {
+                            BlockState blockState = randomVine();
+                            if (blockState.getBlock().equals(Blocks.CAVE_VINES)) {
+                                i = 32;
+                            }
+                            context.setBlock(blockPos.below(i), blockState);
                         } else {
                             i = 32;
                         }
                     } else {
-                        i=32;
+                        i = 32;
                     }
                 }
             }
