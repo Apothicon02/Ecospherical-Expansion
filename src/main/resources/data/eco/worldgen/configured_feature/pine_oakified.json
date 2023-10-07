@@ -40,7 +40,7 @@
       "base_height": 6,
       "height_rand_a": 4,
       "height_rand_b": 0,
-      "max_branch_height": -3
+      "max_branch_height": 3
     },
     "foliage_placer": {
       "type": "minecraft:pine_foliage_placer",

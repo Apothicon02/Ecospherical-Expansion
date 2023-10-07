@@ -40,7 +40,7 @@
       "base_height": 20,
       "height_rand_a": 4,
       "height_rand_b": 21,
-      "max_branch_height": -24
+      "max_branch_height": 24
     },
     "foliage_placer": {
       "type": "eco:giant_pine_foliage_placer",
