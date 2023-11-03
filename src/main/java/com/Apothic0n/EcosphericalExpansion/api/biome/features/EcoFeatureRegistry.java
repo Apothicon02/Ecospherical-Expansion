@@ -118,6 +118,9 @@ public abstract class EcoFeatureRegistry {
 
     public static final RegistryObject<Feature<DoubleBlockConfiguration>> POND_FEATURE = FEATURES.register("pond", () ->
             new PondFeature(DoubleBlockConfiguration.CODEC));
+
+    public static final RegistryObject<Feature<DiskConfiguration>> SUPPORTED_DISK_FEATURE = FEATURES.register("supported_disk", () ->
+            new SupportedDiskFeature(DiskConfiguration.CODEC));
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
     }
