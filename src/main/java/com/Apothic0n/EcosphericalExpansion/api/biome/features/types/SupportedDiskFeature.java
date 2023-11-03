@@ -4,6 +4,7 @@ import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
@@ -42,7 +43,7 @@ public class SupportedDiskFeature extends Feature<DiskConfiguration> {
 
         for(int i = j; i > k; --i) {
             blockPos.setY(i);
-            if (pContext.target().test(worldGenLevel, blockPos) && !worldGenLevel.getBlockState(blockPos.below()).isAir()) {
+            if (pContext.target().test(worldGenLevel, blockPos) && (worldGenLevel.getBlockState(blockPos.below()).isSolid() || worldGenLevel.getBlockState(blockPos.below()).is(Blocks.WATER))) {
                 BlockState blockstate = pContext.stateProvider().getState(worldGenLevel, random, blockPos);
                 worldGenLevel.setBlock(blockPos, blockstate, 2);
                 this.markAboveForPostProcessing(worldGenLevel, blockPos);

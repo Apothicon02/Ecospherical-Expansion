@@ -1,5 +1,5 @@
 {
-  "type": "minecraft:disk",
+  "type": "eco:supported_disk",
   "config": {
     "state_provider": {
       "fallback": {
