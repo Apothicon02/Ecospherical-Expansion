@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "features": [
+      {
+        "chance": 0.5,
+        "feature": "eco:super_birch_bees_0002"
+      }
+    ],
+    "default": "minecraft:birch_bees_0002"
+  }
+}

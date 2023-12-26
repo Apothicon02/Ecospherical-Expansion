@@ -13,74 +13,41 @@ import net.minecraft.world.level.levelgen.feature.trunkplacers.TrunkPlacerType;
 
 public abstract class EcoFeatureRegistry {
     public static final Feature<RockConfiguration> SPHEROID_ROCK = new SpheroidRockFeature(RockConfiguration.CODEC);
-
     public static final Feature<VerticalBlobConfiguration> ADDITIVE_BLOB = new AdditiveBlobFeature(VerticalBlobConfiguration.CODEC);
-
     public static final Feature<VerticalBlobConfiguration> ADDITIVE_GROUND_BLOB = new AdditiveGroundBlobFeature(VerticalBlobConfiguration.CODEC);
-
     public static final Feature<FloatingBlobConfiguration> FLOATING_BLOB = new FloatingBlobFeature(FloatingBlobConfiguration.CODEC);
-
     public static final Feature<CatchingFallConfiguration> CATCHING_FALL = new CatchingFallFeature(CatchingFallConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_BASALT_PILLAR = new LargeBasaltPillarFeature(LargeDripstoneConfiguration.CODEC);
-    
     public static final Feature<LargeDripstoneConfiguration> LARGE_DEEPSLATE_PILLAR = new LargeDeepslatePillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_OBSIDIAN_PILLAR = new LargeObsidianPillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_ICE_PILLAR = new LargeIcePillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_HONEY_PILLAR = new LargeHoneyPillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_HONEYCOMB_PILLAR = new LargeHoneycombPillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_GRANITE_PILLAR = new LargeGranitePillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_PRISMARINE_PILLAR = new LargePrismarinePillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_DARK_PRISMARINE_PILLAR = new LargeDarkPrismarinePillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_SLIME_PILLAR = new LargeSlimePillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_BLUE_ICE_PILLAR = new LargeBlueIcePillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_PACKED_ICE_PILLAR = new LargePackedIcePillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> THIN_BLACKSTONE_PILLAR = new LargeBlackstonePillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<LargeDripstoneConfiguration> LARGE_CALCITE_PILLAR = new LargeCalcitePillarFeature(LargeDripstoneConfiguration.CODEC);
-
     public static final Feature<VerticalBlobConfiguration> CRYSTAL_SPIKE = new CrystalSpikeFeature(VerticalBlobConfiguration.CODEC);
-
     public static final Feature<SpiralConfiguration> SPIRAL = new SpiralFeature(SpiralConfiguration.CODEC);
-
     public static final Feature<FloodConfiguration> FLOOD = new FloodFeature(FloodConfiguration.CODEC);
-
     public static final Feature<VegetationPatchConfiguration> NON_FLOATING_PATCH = new NonFloatingPatchFeature(VegetationPatchConfiguration.CODEC);
-
     public static final Feature<NoneFeatureConfiguration> CAVE_KELP_FEATURE = new CaveKelpFeature(NoneFeatureConfiguration.CODEC);
-
     public static final Feature<NoneFeatureConfiguration> CAVE_PICKLE_FEATURE = new CavePickleFeature(NoneFeatureConfiguration.CODEC);
-
     public static final Feature<ProbabilityFeatureConfiguration> CAVE_SEAGRASS_FEATURE = new CaveSeagrassFeature(ProbabilityFeatureConfiguration.CODEC);
-
     public static final Feature<FallenTreeConfiguration> THIN_FALLEN_TREE_FEATURE = new ThinFallenTreeFeature(FallenTreeConfiguration.CODEC);
-
     public static final Feature<FallenTreeConfiguration> THICK_FALLEN_TREE_FEATURE = new ThickFallenTreeFeature(FallenTreeConfiguration.CODEC);
-
     public static final Feature<AnvilRockConfiguration> ANVIL_ROCK_FEATURE = new AnvilRockFeature(AnvilRockConfiguration.CODEC);
-
     public static final Feature<NoneFeatureConfiguration> AMETHYST_BLOCK_CLUSTER_FEATURE = new AmethystBlockClusterFeature(NoneFeatureConfiguration.CODEC);
-
     public static final Feature<SimpleBlockConfiguration> STEMMED_2X2X2_CUBE_FEATURE = new Stemmed2x2x2CubeFeature(SimpleBlockConfiguration.CODEC);
-
     public static final Feature<SimpleIntConfiguration> THIN_BUSH_FEATURE = new ThinBushFeature(SimpleIntConfiguration.CODEC);
-
     public static final Feature<SimpleIntConfiguration> THICK_BUSH_FEATURE = new ThickBushFeature(SimpleIntConfiguration.CODEC);
-
     public static final Feature<WaterloggableRandomPatchConfiguration> WATERLOGGABLE_RANDOM_PATCH_FEATURE = new WaterloggableRandomPatchFeature(WaterloggableRandomPatchConfiguration.CODEC);
-
     public static final Feature<DoubleBlockConfiguration> POND_FEATURE = new PondFeature(DoubleBlockConfiguration.CODEC);
+    public static final Feature<DiskConfiguration> SUPPORTED_DISK_FEATURE = new SupportedDiskFeature(DiskConfiguration.CODEC);
 
     public static void register() {
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "spheroid_rock"), SPHEROID_ROCK);
@@ -118,5 +85,6 @@ public abstract class EcoFeatureRegistry {
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "thick_bush"), THICK_BUSH_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "waterloggable_random_patch"), WATERLOGGABLE_RANDOM_PATCH_FEATURE);
         Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "pond"), POND_FEATURE);
+        Registry.register(BuiltInRegistries.FEATURE, new ResourceLocation(EcosphericalExpansion.MODID, "supported_disk"), SUPPORTED_DISK_FEATURE);
     }
 }

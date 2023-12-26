@@ -892,6 +892,222 @@
                         }
                       ]
                     }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": -0.069,
+                      "max_threshold": 0.0420
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:swamp",
+                              "minecraft:mangrove_swamp",
+                              "minecraft:mushroom_fields"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:mud"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:jungle",
+                              "minecraft:sparse_jungle",
+                              "minecraft:bamboo_jungle",
+                              "minecraft:ocean",
+                              "minecraft:deep_ocean",
+                              "minecraft:lukewarm_ocean",
+                              "minecraft:deep_lukewarm_ocean"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:sand"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:ocean",
+                              "minecraft:deep_ocean"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:red_sand"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:savanna",
+                              "minecraft:savanna_plateau",
+                              "minecraft:windswept_savanna"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:coarse_dirt"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:badlands",
+                              "minecraft:eroded_badlands",
+                              "minecraft:wooded_badlands"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:red_sandstone"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:desert",
+                              "minecraft:beach"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:sandstone"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:stony_shore",
+                              "minecraft:stony_peaks"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:deepslate"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:snowy_slopes",
+                              "minecraft:snowy_beach",
+                              "minecraft:snowy_taiga",
+                              "minecraft:snowy_plains",
+                              "minecraft:frozen_peaks",
+                              "minecraft:jagged_peaks",
+                              "minecraft:ice_spikes",
+                              "minecraft:grove",
+                              "minecraft:frozen_river",
+                              "minecraft:frozen_ocean",
+                              "minecraft:deep_frozen_ocean"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:packed_ice"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:cherry_grove",
+                              "minecraft:birch_forest",
+                              "minecraft:old_growth_birch_forest",
+                              "minecraft:meadow",
+                              "minecraft:windswept_forest",
+                              "minecraft:cold_ocean",
+                              "minecraft:deep_cold_ocean"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:calcite"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:dark_forest",
+                              "minecraft:taiga",
+                              "minecraft:old_growth_pine_taiga",
+                              "minecraft:old_growth_spruce_taiga"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:podzol"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "minecraft:flower_forest",
+                              "minecraft:forest",
+                              "minecraft:sunflower_plains",
+                              "minecraft:plains"
+                            ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:moss_block"
+                            }
+                          }
+                        }
+                      ]
+                    }
                   }
                 ]
               }

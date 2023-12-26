@@ -19,7 +19,6 @@
       "com.Apothic0n.EcosphericalExpansion"
     ],
     "client": [
-      "com.Apothic0n.ECOClient"
     ]
   },
   "mixins": [

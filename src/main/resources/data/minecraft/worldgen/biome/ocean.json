@@ -123,7 +123,6 @@
   },
   "features": [
     [
-      "eco:flood_water"
     ],
     [
       "minecraft:lake_lava_underground",
@@ -140,7 +139,7 @@
       "minecraft:monster_room_deep"
     ],
     [
-      "eco:cave_floor_sand",
+
       "eco:dense_dark_prismarine_water_fall"
     ],
     [],

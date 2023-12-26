@@ -19,7 +19,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:birch_wood",
+        "Name": "minecraft:cherry_log",
         "Properties": {
           "axis": "y"
         }
@@ -51,15 +51,17 @@
       ]
     },
     "trunk_placer": {
-      "type": "minecraft:forking_trunk_placer",
+      "type": "eco:straight_branching_trunk_placer",
       "base_height": 7,
       "height_rand_a": 8,
-      "height_rand_b": 5
+      "height_rand_b": 5,
+      "max_branch_height": 4
     },
     "foliage_placer": {
-      "type": "minecraft:dark_oak_foliage_placer",
-      "radius": 1,
-      "offset": 0
+      "type": "eco:tall_foliage_placer",
+      "radius": 2,
+      "offset": 2,
+      "height": 4
     },
     "decorators": [
       {

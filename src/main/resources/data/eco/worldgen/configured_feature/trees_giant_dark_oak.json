@@ -99,7 +99,7 @@
       },
       {
         "type": "eco:cave_vines",
-        "probability": 0.8
+        "probability": 0.4
       }
     ]
   }

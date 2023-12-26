@@ -1,9 +1,11 @@
 package com.Apothic0n.api.biome.features.types;
 
-import com.Apothic0n.core.objects.EcoBlocks;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.WorldGenLevel;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.feature.Feature;
@@ -20,7 +22,11 @@ public class AmethystBlockClusterFeature extends Feature<NoneFeatureConfiguratio
         BlockPos blockpos = pContext.origin();
         BlockState BuddingAmethyst = Blocks.BUDDING_AMETHYST.defaultBlockState();
         BlockState AmethystBlock = Blocks.AMETHYST_BLOCK.defaultBlockState();
-        BlockState GlowingAmethyst = EcoBlocks.GLOWING_AMETHYST.defaultBlockState();
+        BlockState GlowingAmethyst = Blocks.AMETHYST_CLUSTER.defaultBlockState();
+        Block BioxGlowingAmethyst =  BuiltInRegistries.BLOCK.get(new ResourceLocation("biox", "glowing_amethyst"));
+        if (!BioxGlowingAmethyst.equals(Blocks.AIR)) {
+            GlowingAmethyst = BioxGlowingAmethyst.defaultBlockState();
+        }
         if (worldgenlevel.isEmptyBlock(blockpos.below())) {
             return false;
         } else {

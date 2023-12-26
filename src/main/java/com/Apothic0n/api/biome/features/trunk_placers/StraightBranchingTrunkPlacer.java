@@ -8,7 +8,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.LevelSimulatedReader;
-import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -41,20 +40,10 @@ public class StraightBranchingTrunkPlacer extends TrunkPlacer {
     public List<FoliagePlacer.FoliageAttachment> placeTrunk(LevelSimulatedReader level, BiConsumer<BlockPos, BlockState> blockSetter, RandomSource random, int freeTreeHeight, BlockPos pos, TreeConfiguration config) {
         StraightTrunkPlacer.setDirtAt(level, blockSetter, random, pos.below(), config);
         int maxHeight = maxBranchHeight.sample(random);
-        boolean isSpruce = false;
-        if (maxHeight < 0) {
-            isSpruce = true;
-            maxHeight = freeTreeHeight+maxHeight;
-        }
+        maxHeight = freeTreeHeight-maxHeight;
         for (int i = 0; i < freeTreeHeight; ++i) {
             this.placeLog(level, blockSetter, random, pos.above(i), config);
-            boolean makeBranches = false;
-            if (!isSpruce && maxHeight < i) {
-                makeBranches = true;
-            } else if (isSpruce && maxHeight > i) {
-                makeBranches = true;
-            }
-            if (i > 2 && makeBranches) {
+            if (i > 2 && maxHeight > i) {
                 int randomNumber = (int) (Math.random() * (30) + 1);
                 if (randomNumber < 2) {
                     placeBranch(level, blockSetter, random, pos.above(i).north(), config, Direction.Axis.Z);

@@ -40,7 +40,7 @@
       "base_height": 11,
       "height_rand_a": 6,
       "height_rand_b": 1,
-      "max_branch_height": -5
+      "max_branch_height": 5
     },
     "foliage_placer": {
       "type": "minecraft:spruce_foliage_placer",

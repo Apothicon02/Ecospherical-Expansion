@@ -1,5 +1,6 @@
 package com.Apothic0n.api.biome.features.trunk_placers;
 
+import com.Apothic0n.api.biome.features.trunk_placers.EcoTrunkPlacerType;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.DataResult;
 import com.mojang.serialization.codecs.RecordCodecBuilder;

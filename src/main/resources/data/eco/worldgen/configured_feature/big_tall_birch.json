@@ -43,7 +43,7 @@
       "max_branch_height": 4
     },
     "foliage_placer": {
-      "type": "minecraft:fancy_foliage_placer",
+      "type": "eco:tall_foliage_placer",
       "radius": 2,
       "offset": 2,
       "height": 4

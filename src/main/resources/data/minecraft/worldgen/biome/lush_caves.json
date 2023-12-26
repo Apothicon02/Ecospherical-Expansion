@@ -148,7 +148,6 @@
       "minecraft:ore_iron_upper",
       "minecraft:ore_iron_middle",
       "minecraft:ore_iron_small",
-      "eco:ore_gold_extra",
       "minecraft:ore_gold_lower",
       "minecraft:ore_redstone",
       "minecraft:ore_redstone_lower",
@@ -162,8 +161,7 @@
       "minecraft:ore_clay",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
-      "minecraft:disk_gravel",
-      "eco:ore_emerald_extra"
+      "minecraft:disk_gravel"
     ],
     [],
     [
