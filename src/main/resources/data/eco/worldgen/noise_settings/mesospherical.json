@@ -44,7 +44,33 @@
     },
     "continents": 0.115,
     "erosion": "minecraft:overworld_large_biomes/erosion",
-    "depth": "minecraft:overworld_large_biomes/depth",
+    "depth": {
+      "type": "minecraft:add",
+      "argument1": {
+        "type": "minecraft:y_clamped_gradient",
+        "from_y": -55,
+        "to_y": -54,
+        "from_value": 0,
+        "to_value": 0.05
+      },
+      "argument2": {
+        "type": "minecraft:add",
+        "argument1": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_y": -45,
+          "to_y": -44,
+          "from_value": 0,
+          "to_value": 0.05
+        },
+        "argument2": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_y": -35,
+          "to_y": -34,
+          "from_value": 0,
+          "to_value": 0.9
+        }
+      }
+    },
     "ridges": "minecraft:overworld/ridges",
     "initial_density_without_jaggedness": 0,
     "final_density": {
