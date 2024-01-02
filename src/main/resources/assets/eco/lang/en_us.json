@@ -1,4 +1,5 @@
 {
+  "generator.eco.exospherical": "Exospherical",
   "generator.eco.thermospherical": "Thermospherical",
   "generator.eco.mesospherical": "Mesospherical",
   "generator.eco.stratospherical": "Stratospherical",
