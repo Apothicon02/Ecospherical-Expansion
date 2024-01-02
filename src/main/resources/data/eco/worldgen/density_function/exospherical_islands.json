@@ -1,68 +1,17 @@
 {
   "type": "minecraft:max",
-  "argument1": 0,
-  "argument2": {
+  "argument1": {
     "type": "minecraft:max",
     "argument1": {
-      "type": "minecraft:max",
+      "type": "minecraft:add",
       "argument1": {
-        "type": "minecraft:add",
-        "argument1": {
-          "type": "minecraft:shifted_noise",
-          "noise": "minecraft:cave_entrance",
-          "xz_scale": 0.5,
-          "y_scale": 0.5,
-          "shift_x": 0,
-          "shift_y": 500,
-          "shift_z": 0
-        },
-        "argument2": {
-          "type": "minecraft:min",
-          "argument1": {
-            "type": "minecraft:add",
-            "argument1": {
-              "type": "minecraft:add",
-              "argument1": -1,
-              "argument2": {
-                "type": "minecraft:mul",
-                "argument1": 2,
-                "argument2": {
-                  "type": "minecraft:add",
-                  "argument1": {
-                    "type": "minecraft:y_clamped_gradient",
-                    "from_y": 69,
-                    "to_y": 156,
-                    "from_value": 0.76,
-                    "to_value": 0
-                  },
-                  "argument2": 0.1
-                }
-              }
-            },
-            "argument2": {
-              "type": "minecraft:noise",
-              "noise": "minecraft:gravel",
-              "xz_scale": 0.08,
-              "y_scale": 0.16
-            }
-          },
-          "argument2": {
-            "type": "minecraft:add",
-            "argument1": {
-              "type": "minecraft:y_clamped_gradient",
-              "from_y": 64,
-              "to_y": 192,
-              "from_value": -1,
-              "to_value": 0.1
-            },
-            "argument2": {
-              "type": "minecraft:noise",
-              "noise": "minecraft:gravel",
-              "xz_scale": 0.5,
-              "y_scale": 0.5
-            }
-          }
-        }
+        "type": "minecraft:shifted_noise",
+        "noise": "minecraft:cave_entrance",
+        "xz_scale": 0.5,
+        "y_scale": 0.5,
+        "shift_x": 0,
+        "shift_y": 500,
+        "shift_z": 0
       },
       "argument2": {
         "type": "minecraft:min",
@@ -90,29 +39,25 @@
           "argument2": {
             "type": "minecraft:noise",
             "noise": "minecraft:gravel",
-            "xz_scale": 0.38,
+            "xz_scale": 0.08,
             "y_scale": 0.16
           }
         },
         "argument2": {
           "type": "minecraft:add",
           "argument1": {
-            "type": "minecraft:add",
-            "argument1": {
-              "type": "minecraft:y_clamped_gradient",
-              "from_y": 64,
-              "to_y": 192,
-              "from_value": -1,
-              "to_value": 1.5
-            },
-            "argument2": {
-              "type": "minecraft:noise",
-              "noise": "minecraft:gravel",
-              "xz_scale": 2,
-              "y_scale": 0.5
-            }
+            "type": "minecraft:y_clamped_gradient",
+            "from_y": 64,
+            "to_y": 192,
+            "from_value": -1,
+            "to_value": 0.1
           },
-          "argument2": "eco:lowered_anti_mountains"
+          "argument2": {
+            "type": "minecraft:noise",
+            "noise": "minecraft:gravel",
+            "xz_scale": 0.5,
+            "y_scale": 0.5
+          }
         }
       }
     },
@@ -130,8 +75,8 @@
               "type": "minecraft:add",
               "argument1": {
                 "type": "minecraft:y_clamped_gradient",
-                "from_y": 92,
-                "to_y": 207,
+                "from_y": 69,
+                "to_y": 156,
                 "from_value": 0.76,
                 "to_value": 0
               },
@@ -142,7 +87,7 @@
         "argument2": {
           "type": "minecraft:noise",
           "noise": "minecraft:gravel",
-          "xz_scale": 0.08,
+          "xz_scale": 0.38,
           "y_scale": 0.16
         }
       },
@@ -153,22 +98,73 @@
           "argument1": {
             "type": "minecraft:y_clamped_gradient",
             "from_y": 64,
-            "to_y": 320,
+            "to_y": 192,
             "from_value": -1,
-            "to_value": 0.5
+            "to_value": 1.5
           },
           "argument2": {
-            "type": "minecraft:shifted_noise",
+            "type": "minecraft:noise",
             "noise": "minecraft:gravel",
-            "xz_scale": 0.5,
-            "y_scale": 0.5,
-            "shift_x": -250,
-            "shift_y": 45,
-            "shift_z": 75
+            "xz_scale": 2,
+            "y_scale": 0.5
           }
         },
         "argument2": "eco:lowered_anti_mountains"
       }
+    }
+  },
+  "argument2": {
+    "type": "minecraft:min",
+    "argument1": {
+      "type": "minecraft:add",
+      "argument1": {
+        "type": "minecraft:add",
+        "argument1": -1,
+        "argument2": {
+          "type": "minecraft:mul",
+          "argument1": 2,
+          "argument2": {
+            "type": "minecraft:add",
+            "argument1": {
+              "type": "minecraft:y_clamped_gradient",
+              "from_y": 92,
+              "to_y": 207,
+              "from_value": 0.76,
+              "to_value": 0
+            },
+            "argument2": 0.1
+          }
+        }
+      },
+      "argument2": {
+        "type": "minecraft:noise",
+        "noise": "minecraft:gravel",
+        "xz_scale": 0.08,
+        "y_scale": 0.16
+      }
+    },
+    "argument2": {
+      "type": "minecraft:add",
+      "argument1": {
+        "type": "minecraft:add",
+        "argument1": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_y": 64,
+          "to_y": 320,
+          "from_value": -1,
+          "to_value": 0.5
+        },
+        "argument2": {
+          "type": "minecraft:shifted_noise",
+          "noise": "minecraft:gravel",
+          "xz_scale": 0.5,
+          "y_scale": 0.5,
+          "shift_x": -250,
+          "shift_y": 45,
+          "shift_z": 75
+        }
+      },
+      "argument2": "eco:lowered_anti_mountains"
     }
   }
 }
