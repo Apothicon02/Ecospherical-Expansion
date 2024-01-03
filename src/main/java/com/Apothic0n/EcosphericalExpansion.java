@@ -5,15 +5,25 @@ import com.Apothic0n.api.biome.features.EcoFeatureRegistry;
 import com.Apothic0n.api.biome.features.decorators.EcoTreeDecoratorType;
 import com.Apothic0n.api.biome.features.foliage_placers.EcoFoliagePlacerType;
 import com.Apothic0n.api.biome.features.trunk_placers.EcoTrunkPlacerType;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonWriter;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.storage.LevelResource;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import static net.minecraft.world.level.block.Block.UPDATE_ALL;
 
@@ -32,6 +42,25 @@ public class EcosphericalExpansion implements ModInitializer {
             BlockPos pos = entity.blockPosition();
             if (entity instanceof Player) {
                 if (level.dimension().equals(Level.OVERWORLD)) {
+                    boolean hasSpawnPlatformGeneratedBefore = true;
+                    final Path hasSpawnPlatformGenerated = Path.of(world.getServer().getWorldPath(LevelResource.LEVEL_DATA_FILE).getParent().toString() + "/hasSpawnPlatformGenerated");
+                    Gson gson = new Gson();
+                    if (!Files.exists(hasSpawnPlatformGenerated)) {
+                        JsonWriter writer = null;
+                        try {
+                            writer = new JsonWriter(new FileWriter(hasSpawnPlatformGenerated.toString()));
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        JsonObject defaultData = gson.fromJson("{\"values\":[\"delete\",\"file\",\"to\",\"regenerate\",\"spawn\",\"platform\"]}", JsonObject.class);
+                        gson.toJson(defaultData, writer);
+                        try {
+                            writer.close();
+                            hasSpawnPlatformGeneratedBefore = false;
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
                     if (pos.getY() >= level.getMaxBuildHeight() && level.getBlockState(pos.below()).is(Blocks.BEDROCK)) {
                         pos = pos.below(64);
                         generateSquare(level, pos.below(2), Blocks.OAK_WOOD.defaultBlockState());
@@ -40,7 +69,7 @@ public class EcosphericalExpansion implements ModInitializer {
                         generateSquare(level, pos.above(), Blocks.AIR.defaultBlockState());
                         level.setBlock(pos, Blocks.TORCH.defaultBlockState(), UPDATE_ALL);
                         entity.teleportRelative(0, -64, 0);
-                    } else {
+                    } else if (!hasSpawnPlatformGeneratedBefore) {
                         boolean overVoid = true;
                         for (int i = level.getMinBuildHeight() - 1; i < level.getMaxBuildHeight(); i++) {
                             if (!level.getBlockState(new BlockPos(pos.getX(), i, pos.getZ())).isAir()) {
