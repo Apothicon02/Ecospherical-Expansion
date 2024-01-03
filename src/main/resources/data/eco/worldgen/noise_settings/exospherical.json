@@ -74,7 +74,7 @@
     "ridges": "minecraft:overworld/ridges",
     "initial_density_without_jaggedness": 0,
     "final_density": {
-      "type": "minecraft:add",
+      "type": "minecraft:max",
       "argument1": "eco:exospherical_islands",
       "argument2": "eco:pointy_tropospherical_islands"
     },
