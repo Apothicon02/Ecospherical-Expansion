@@ -1,6 +1,9 @@
 package com.Apothic0n.EcosphericalExpansion.core.events;
 
 import com.Apothic0n.EcosphericalExpansion.EcosphericalExpansion;
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonWriter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvents;
@@ -14,9 +17,15 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.storage.LevelResource;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 import static net.minecraft.world.level.block.Block.UPDATE_ALL;
 
@@ -28,6 +37,25 @@ public class CommonModEvents {
         Entity entity = event.entity;
         BlockPos pos = entity.blockPosition();
         if (entity instanceof Player && level.dimension().equals(Level.OVERWORLD)) {
+            boolean hasSpawnPlatformGeneratedBefore = true;
+            final Path hasSpawnPlatformGenerated = Path.of(level.getServer().getWorldPath(LevelResource.LEVEL_DATA_FILE).getParent().toString() + "/hasSpawnPlatformGenerated");
+            Gson gson = new Gson();
+            if (!Files.exists(hasSpawnPlatformGenerated)) {
+                JsonWriter writer = null;
+                try {
+                    writer = new JsonWriter(new FileWriter(hasSpawnPlatformGenerated.toString()));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+                JsonObject defaultData = gson.fromJson("{\"values\":[\"delete\",\"file\",\"to\",\"regenerate\",\"spawn\",\"platform\"]}", JsonObject.class);
+                gson.toJson(defaultData, writer);
+                try {
+                    writer.close();
+                    hasSpawnPlatformGeneratedBefore = false;
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            }
             int y = level.getMaxBuildHeight();
             if (pos.getY() == y && level.getBlockState(pos.below()).is(Blocks.BEDROCK)) {
                 pos = pos.below(64);
@@ -37,7 +65,7 @@ public class CommonModEvents {
                 generateSquare(level, pos.above(), Blocks.AIR.defaultBlockState());
                 level.setBlock(pos, Blocks.TORCH.defaultBlockState(), UPDATE_ALL);
                 entity.teleportRelative(0, -64, 0);
-            } else {
+            } else if (!hasSpawnPlatformGeneratedBefore) {
                 boolean overVoid = true;
                 for (int i = level.getMinBuildHeight() - 1; i < level.getMaxBuildHeight(); i++) {
                     if (!level.getBlockState(new BlockPos(pos.getX(), i, pos.getZ())).isAir()) {
