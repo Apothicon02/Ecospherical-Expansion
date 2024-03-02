@@ -22,10 +22,10 @@
       }
     },
     "minecraft:the_nether": {
-      "type": "eco:the_enclosed_nether",
+      "type": "minecraft:the_nether",
       "generator": {
         "type": "minecraft:noise",
-        "settings": "eco:asthenospherical_nether",
+        "settings": "minecraft:nether",
         "biome_source": {
           "type": "minecraft:multi_noise",
           "preset": "minecraft:nether"
