@@ -3,14 +3,38 @@
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 2
+      "count": 6
     },
     {
       "type": "minecraft:in_square"
     },
     {
-      "type": "minecraft:heightmap",
-      "heightmap": "WORLD_SURFACE_WG"
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "above_bottom": 128
+        },
+        "max_inclusive": {
+          "below_top": 64
+        }
+      }
+    },
+    {
+      "type": "minecraft:environment_scan",
+      "direction_of_search": "down",
+      "max_steps": 32,
+      "target_condition": {
+        "type": "minecraft:would_survive",
+        "offset": [
+          0,
+          0,
+          0
+        ],
+        "state": {
+          "Name": "minecraft:grass"
+        }
+      }
     },
     {
       "type": "minecraft:biome"
