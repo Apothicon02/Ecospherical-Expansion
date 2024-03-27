@@ -399,7 +399,7 @@
                             "type": "minecraft:biome",
                             "biome_is": [
                               "minecraft:snowy_slopes",
-                              "minecraft:snowy_beach",
+                "minecraft:snowy_beach",
                               "minecraft:snowy_taiga",
                               "minecraft:snowy_plains",
                               "minecraft:frozen_peaks",
@@ -533,7 +533,7 @@
                             "type": "minecraft:biome",
                             "biome_is": [
                               "minecraft:snowy_slopes",
-                              "minecraft:snowy_beach",
+                "minecraft:snowy_beach",
                               "minecraft:snowy_taiga",
                               "minecraft:snowy_plains",
                               "minecraft:frozen_peaks",
@@ -664,7 +664,7 @@
                             "type": "minecraft:biome",
                             "biome_is": [
                               "minecraft:snowy_slopes",
-                              "minecraft:snowy_beach",
+                "minecraft:snowy_beach",
                               "minecraft:snowy_taiga",
                               "minecraft:snowy_plains",
                               "minecraft:frozen_peaks",
@@ -795,7 +795,7 @@
                             "type": "minecraft:biome",
                             "biome_is": [
                               "minecraft:snowy_slopes",
-                              "minecraft:snowy_beach",
+                "minecraft:snowy_beach",
                               "minecraft:snowy_taiga",
                               "minecraft:snowy_plains",
                               "minecraft:frozen_peaks",

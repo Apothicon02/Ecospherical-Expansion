@@ -1,7 +1,6 @@
 {
   "replace": false,
   "values": [
-    "eco:the_enclosed_nether",
     "eco:the_open_nether"
   ]
 }
