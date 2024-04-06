@@ -1,0 +1,7 @@
+{
+  "parent": "eco:block/leaves_height2",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "texture": "minecraft:block/acacia_leaves"
+  }
+}

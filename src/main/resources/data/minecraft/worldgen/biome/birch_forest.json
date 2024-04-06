@@ -1,5 +1,5 @@
 {
-  "temperature": 0.6,
+  "temperature": -0.38,
   "downfall": 0.6,
   "has_precipitation": true,
   "category": "forest",
@@ -9,10 +9,10 @@
     "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.flower_forest"
     },
     "music": {
       "sound": "minecraft:music.overworld.forest",
@@ -130,31 +130,17 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "eco:sparse_calcite_pillar"
+      "biox:calcite_cubes"
     ],
     [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
     ],
     [
-      "eco:clay_water_fall"
     ],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -169,11 +155,7 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:ore_copper"
     ],
     [],
     [
@@ -186,7 +168,7 @@
       "eco:calcite_pond_extra",
       "eco:calcite_pool",
       "eco:trees_sparse_branching_oak",
-      "eco:trees_tall_birch",
+      "biox:trees_tall_birch",
       "eco:trees_azalea",
       "eco:bushes_dense",
       "eco:purple_flowers",
@@ -196,19 +178,7 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "eco:large_pumpkin",
-      "minecraft:patch_berry_rare",
-      "minecraft:warm_ocean_vegetation",
-      "eco:dense_rooted_azalea_trees",
-      "eco:rooted_big_tall_birch_trees",
-      "eco:rooted_tilted_tall_birch_trees",
-      "eco:rooted_normal_tall_birch_trees",
-      "minecraft:lush_caves_ceiling_vegetation",
-      "minecraft:cave_vines",
-      "eco:lush_cave_vines",
-      "eco:clay_pool_with_dripleaves",
-      "eco:lush_caves_vegetation",
-      "eco:lush_spore_blossom",
-      "minecraft:classic_vines_cave_feature"
+      "minecraft:patch_berry_rare"
     ],
     [
       "minecraft:freeze_top_layer"

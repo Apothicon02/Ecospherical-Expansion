@@ -2,21 +2,16 @@
   "feature": "eco:mountainous_snow_pile",
   "placement": [
     {
-      "type": "minecraft:random_offset",
-      "xz_spread": 0,
-      "y_spread": -4
-    },
-    {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
         "type": "minecraft:matching_blocks",
         "offset": [
           0,
-          3,
+          -1,
           0
         ],
         "blocks": [
-          "minecraft:stone"
+          "minecraft:snow_block"
         ]
       }
     }

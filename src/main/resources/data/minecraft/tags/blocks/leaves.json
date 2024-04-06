@@ -1,0 +1,24 @@
+{
+  "values": [
+    "eco:oak_leaves_wall",
+    "eco:dark_oak_leaves_wall",
+    "eco:birch_leaves_wall",
+    "eco:spruce_leaves_wall",
+    "eco:jungle_leaves_wall",
+    "eco:acacia_leaves_wall",
+    "eco:mangrove_leaves_wall",
+    "eco:cherry_leaves_wall",
+    "eco:azalea_leaves_wall",
+    "eco:flowering_azalea_leaves_wall",
+    "eco:oak_leaves_pile",
+    "eco:dark_oak_leaves_pile",
+    "eco:birch_leaves_pile",
+    "eco:spruce_leaves_pile",
+    "eco:jungle_leaves_pile",
+    "eco:acacia_leaves_pile",
+    "eco:mangrove_leaves_pile",
+    "eco:cherry_leaves_pile",
+    "eco:azalea_leaves_pile",
+    "eco:flowering_azalea_leaves_pile"
+  ]
+}

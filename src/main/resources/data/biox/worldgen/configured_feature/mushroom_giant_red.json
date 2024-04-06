@@ -1,0 +1,117 @@
+{
+  "type": "minecraft:tree",
+  "config": {
+    "ignore_vines": true,
+    "force_dirt": false,
+    "minimum_size": {
+      "type": "minecraft:two_layers_feature_size",
+      "limit": 1,
+      "lower_size": 0,
+      "upper_size": 2
+    },
+    "dirt_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:dirt"
+      }
+    },
+    "trunk_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:mushroom_stem",
+        "Properties": {
+          "axis": "y"
+        }
+      }
+    },
+    "foliage_provider": {
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:red_mushroom_block",
+        "Properties": {
+          "down": "false",
+          "east": "true",
+          "north": "true",
+          "south": "true",
+          "up": "true",
+          "west": "true"
+        }
+      }
+    },
+    "root_placer": {
+      "type": "minecraft:mangrove_root_placer",
+      "root_provider": {
+        "type": "minecraft:simple_state_provider",
+        "state": {
+          "Name": "minecraft:mushroom_stem"
+        }
+      },
+      "trunk_offset_y": 2,
+      "mangrove_root_placement": {
+        "max_root_width": 3,
+        "max_root_length": 6,
+        "random_skew_chance": 0.3,
+        "can_grow_through": "#minecraft:leaves",
+        "muddy_roots_in": "#minecraft:dirt",
+        "muddy_roots_provider": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "minecraft:mushroom_stem"
+          }
+        }
+      }
+    },
+    "trunk_placer": {
+      "type": "eco:branching_trunk_placer",
+      "base_height": 8,
+      "height_rand_a": 5,
+      "height_rand_b": 0,
+      "branch_count": 2,
+      "amount_of_branches": 8,
+      "branch_horizontal_length": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 4,
+          "max_inclusive": 8
+        }
+      },
+      "branch_start_offset_from_top": {
+        "min_inclusive": -9,
+        "max_inclusive": -3
+      },
+      "branch_end_height": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 7,
+          "max_inclusive": 10
+        }
+      }
+    },
+    "foliage_placer": {
+      "type": "eco:spherical_cap_foliage_placer",
+      "radius": 3,
+      "offset": 3,
+      "height": 4
+    },
+    "decorators": [
+      {
+        "type": "eco:trunk_wooden_roots",
+        "probability": 0.8,
+        "wall_state": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "eco:mushroom_stem_wall"
+          }
+        }
+      },
+      {
+        "type": "eco:trunk_mushrooms",
+        "probability": 1
+      },
+      {
+        "type": "eco:mushrooms",
+        "probability": 1
+      }
+    ]
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "temperature": 2,
+  "temperature": 0.75,
   "downfall": 0,
   "has_precipitation": false,
   "category": "desert",
@@ -7,13 +7,11 @@
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
-    "water_fog_color": 272948,
-    "foliage_color": 9883965,
-    "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2
+    "water_fog_color": 272948,"mood_sound": {
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.flower_forest"
     },
     "music": {
       "sound": "minecraft:music.overworld.desert",
@@ -119,32 +117,17 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
     ],
     [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
     ],
     [
-      "eco:clay_water_fall"
     ],
     [
-      "eco:sand_patches"
     ],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -160,11 +143,7 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:ore_gold_extra",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:ore_gold_extra"
     ],
     [],
     [
@@ -177,20 +156,14 @@
       "eco:grassy_terracotta",
       "eco:terracotta_pond",
       "eco:grassy_terracotta_pool",
-      "eco:trees_mega_savanna",
+      "biox:trees_giant_palm",
       "eco:bushes_clustered",
       "eco:trees_flooded_mangrove",
       "eco:tall_cactus",
       "eco:red_flowers",
       "eco:basic_grass",
       "eco:tall_grass",
-      "minecraft:patch_sugar_cane",
-      "minecraft:warm_ocean_vegetation",
-      "minecraft:sea_pickle",
-      "eco:large_dripstone",
-      "eco:dripstone_cluster",
-      "eco:pointed_dripstone",
-      "eco:clay_pool_with_dripleaves"
+      "minecraft:patch_sugar_cane"
     ],
     [
       "minecraft:freeze_top_layer"

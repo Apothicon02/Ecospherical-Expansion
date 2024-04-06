@@ -1,0 +1,60 @@
+{
+  "type": "eco:ore_spike",
+  "config": {
+    "upperState": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 2,
+          "data": {
+            "Name": "minecraft:diamond_ore"
+          }
+        },
+        {
+          "weight": 8,
+          "data": {
+            "Name": "minecraft:stone"
+          }
+        }
+      ]
+    },
+    "lowerState": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 3,
+          "data": {
+            "Name": "minecraft:deepslate_diamond_ore"
+          }
+        },
+        {
+          "weight": 7,
+          "data": {
+            "Name": "minecraft:deepslate"
+          }
+        }
+      ]
+    },
+    "blobMass": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 2,
+        "max_inclusive": 6
+      }
+    },
+    "blobWidth": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 6,
+        "max_inclusive": 9
+      }
+    },
+    "blobHeight": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 6,
+        "max_inclusive": 9
+      }
+    }
+  }
+}

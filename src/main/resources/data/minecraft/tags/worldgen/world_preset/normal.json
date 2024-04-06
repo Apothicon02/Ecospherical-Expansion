@@ -1,13 +1,7 @@
 {
   "replace": false,
   "values": [
-    "eco:exospherical",
-    "eco:thermospherical",
-    "eco:mesospherical",
-    "eco:stratospherical",
-    "eco:ogstratospherical",
-    "eco:tropospherical",
-    "eco:lithospherical",
-    "eco:asthenospherical"
+    "eco:biocubical",
+    "eco:biocubical_large_biomes"
   ]
 }

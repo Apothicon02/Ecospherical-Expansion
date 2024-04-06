@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "wall": "minecraft:block/jungle_leaves"
+  }
+}

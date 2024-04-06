@@ -1,0 +1,16 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "biox:giant_spruce",
+        "chance": 0.57
+      },
+      {
+        "feature": "biox:secondary_giant_spruce",
+        "chance": 0.43
+      }
+    ],
+    "default": "biox:giant_spruce"
+  },
+  "type": "minecraft:random_selector"
+}

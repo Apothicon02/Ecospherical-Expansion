@@ -17,7 +17,7 @@ apply plugin: 'maven-publish'
 // MixinGradle:
 apply plugin: 'org.spongepowered.mixin'
 
-version = '2.4.6'
+version = '3.0.0'
 group = 'com.Apothic0n.EcosphericalExpansion' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'ecosphericalexpansion'
 
@@ -108,7 +108,7 @@ minecraft {
             //property 'forge.logging.console.level', 'debug'
 
             // Specify the modid for data generation, where to output the resulting resource, and where to look for existing resources.
-            args '--mod', 'archivesBaseName', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'eco', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
 
             mods {
                 ecosphericalexpansion {
@@ -127,6 +127,19 @@ repositories {
     // ForgeGradle automatically adds the Forge maven and Maven Central for you
 
     // If you have mod jar dependencies in ./libs, you can declare them as a repository like so:
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = "Modrinth"
+                url = "https://api.modrinth.com/maven"
+            }
+        }
+        forRepositories(fg.repository) // Only add this if you're using ForgeGradle, otherwise remove this line
+        filter {
+            includeGroup "maven.modrinth"
+        }
+    }
+    maven { url "https://cubicinterpolation.net/maven/" }
     maven {
         // location of the maven that hosts JEI files
         name = "Progwml6 maven"
@@ -158,6 +171,8 @@ dependencies {
 
     // Examples using mod jars from ./libs
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
+    implementation fg.deobf("commoble.databuddy:databuddy-${databuddy_mc_version}:${databuddy_version}")
+    jarJar(group: "commoble.databuddy", name: "databuddy-${databuddy_mc_version}", version: "[${databuddy_version}, ${databuddy_next_version})")
 
     // Apply Mixin AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

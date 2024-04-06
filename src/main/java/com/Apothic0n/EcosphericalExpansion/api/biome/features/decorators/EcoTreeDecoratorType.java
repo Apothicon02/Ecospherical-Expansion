@@ -19,9 +19,15 @@ public abstract class EcoTreeDecoratorType<P extends TreeDecorator> {
 
     public static final RegistryObject<TreeDecoratorType<MushroomsDecorator>> MUSHROOMS = TREE_DECORATOR_TYPE.register("mushrooms", () ->
             new TreeDecoratorType<>(MushroomsDecorator.CODEC));
-
     public static final RegistryObject<TreeDecoratorType<CaveVineDecorator>> CAVE_VINES = TREE_DECORATOR_TYPE.register("cave_vines", () ->
             new TreeDecoratorType<>(CaveVineDecorator.CODEC));
+    public static final RegistryObject<TreeDecoratorType<TrunkMushroomsDecorator>> TRUNK_MUSHROOMS = TREE_DECORATOR_TYPE.register("trunk_mushrooms", () ->
+            new TreeDecoratorType<>(TrunkMushroomsDecorator.CODEC));
+    public static final RegistryObject<TreeDecoratorType<HangingLeavesDecorator>> HANGING_LEAVES = TREE_DECORATOR_TYPE.register("hanging_leaves", () ->
+            new TreeDecoratorType<>(HangingLeavesDecorator.CODEC));
+    public static final RegistryObject<TreeDecoratorType<TrunkWoodenRootsDecorator>> TRUNK_WOODEN_ROOTS = TREE_DECORATOR_TYPE.register("trunk_wooden_roots", () ->
+            new TreeDecoratorType<>(TrunkWoodenRootsDecorator.CODEC));
+
     public static void register(IEventBus eventBus) {
         TREE_DECORATOR_TYPE.register(eventBus);
     }

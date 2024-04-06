@@ -1,0 +1,60 @@
+{
+  "type": "eco:ore_spike",
+  "config": {
+    "upperState": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 5,
+          "data": {
+            "Name": "minecraft:copper_ore"
+          }
+        },
+        {
+          "weight": 5,
+          "data": {
+            "Name": "minecraft:stone"
+          }
+        }
+      ]
+    },
+    "lowerState": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 4,
+          "data": {
+            "Name": "minecraft:deepslate_copper_ore"
+          }
+        },
+        {
+          "weight": 6,
+          "data": {
+            "Name": "minecraft:deepslate"
+          }
+        }
+      ]
+    },
+    "blobMass": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 14
+      }
+    },
+    "blobWidth": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 6,
+        "max_inclusive": 9
+      }
+    },
+    "blobHeight": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 1,
+        "max_inclusive": 13
+      }
+    }
+  }
+}

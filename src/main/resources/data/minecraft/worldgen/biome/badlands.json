@@ -1,5 +1,5 @@
 {
-  "temperature": 2,
+  "temperature": 0.9,
   "downfall": 0,
   "has_precipitation": false,
   "category": "forest",
@@ -8,13 +8,11 @@
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "grass_color": 9470285,
-    "foliage_color": 10387789,
     "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.flower_forest"
     },
     "music": {
       "sound": "minecraft:music.overworld.badlands",
@@ -107,36 +105,18 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface",
-      "eco:delta"
+      "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "eco:small_basalt_columns",
-      "eco:large_basalt_columns",
-      "eco:sparse_smooth_basalt_pillar"
     ],
     [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
     ],
     [
-      "eco:lava_fall"
     ],
     [
       "eco:shallow_mud_patches"
     ],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -153,10 +133,7 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "minecraft:ore_gold_extra",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:ore_gold_extra"
     ],
     [],
     [
@@ -174,12 +151,7 @@
       "eco:red_flowers",
       "eco:basic_grass",
       "eco:fern_grass",
-      "minecraft:patch_sugar_cane",
-      "minecraft:warm_ocean_vegetation",
-      "minecraft:sea_pickle",
-      "minecraft:spring_delta",
-      "minecraft:ore_magma",
-      "minecraft:spring_closed_double"
+      "minecraft:patch_sugar_cane"
     ],
     [
       "minecraft:freeze_top_layer"

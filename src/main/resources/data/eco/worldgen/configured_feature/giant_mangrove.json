@@ -25,26 +25,14 @@
       }
     },
     "foliage_provider": {
-      "type": "minecraft:weighted_state_provider",
-      "entries": [
-        {
-          "weight": 4,
-          "data": {
-            "Name": "minecraft:mangrove_leaves",
-            "Properties": {
-              "distance": "7",
-              "persistent": "true",
-              "waterlogged": "false"
-            }
-          }
-        },
-        {
-          "weight": 1,
-          "data": {
-            "Name": "minecraft:air"
-          }
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:mangrove_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false"
         }
-      ]
+      }
     },
     "root_placer": {
       "type": "minecraft:mangrove_root_placer",
@@ -107,6 +95,28 @@
     },
     "decorators": [
       {
+        "type": "eco:trunk_wooden_roots",
+        "probability": 0.5,
+        "wall_state": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "eco:mangrove_wood_wall",
+            "Properties": {
+              "east": "tall",
+              "north": "tall",
+              "south": "tall",
+              "up": "true",
+              "waterlogged": "false",
+              "west": "tall"
+            }
+          }
+        }
+      },
+      {
+        "type": "eco:trunk_mushrooms",
+        "probability": 0.66
+      },
+      {
         "type": "eco:mushrooms",
         "probability": 0.9
       },
@@ -148,8 +158,8 @@
         ]
       },
       {
-        "type": "minecraft:trunk_vine",
-        "probability": 0.37
+        "type": "eco:hanging_leaves",
+        "probability": 0.8
       },
       {
         "type": "minecraft:cocoa",

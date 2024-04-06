@@ -1,0 +1,20 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "biox:mushroom_giant_red",
+        "chance": 0.32
+      },
+      {
+        "feature": "biox:secondary_mushroom_giant_red",
+        "chance": 0.25
+      },
+      {
+        "feature": "biox:mushroom_giant_brown",
+        "chance": 0.43
+      }
+    ],
+    "default": "biox:mushroom_giant_red"
+  },
+  "type": "minecraft:random_selector"
+}

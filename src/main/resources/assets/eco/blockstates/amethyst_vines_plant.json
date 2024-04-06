@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "berries=false": {
+      "model": "eco:block/amethyst_vines_plant"
+    },
+    "berries=true": {
+      "model": "eco:block/amethyst_vines_plant_ripe"
+    }
+  }
+}

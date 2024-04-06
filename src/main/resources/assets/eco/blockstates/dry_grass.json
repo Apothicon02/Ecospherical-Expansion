@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "eco:block/dry_grass_middle"
+    },
+    "half=top": {
+      "model": "eco:block/dry_grass"
+    }
+  }
+}

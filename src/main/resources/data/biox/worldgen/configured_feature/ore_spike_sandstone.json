@@ -1,0 +1,60 @@
+{
+  "type": "eco:unlimited_ore_spike",
+  "config": {
+    "upperState": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:sand"
+          }
+        },
+        {
+          "weight": 49,
+          "data": {
+            "Name": "minecraft:sandstone"
+          }
+        }
+      ]
+    },
+    "lowerState": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "weight": 1,
+          "data": {
+            "Name": "minecraft:sand"
+          }
+        },
+        {
+          "weight": 99,
+          "data": {
+            "Name": "minecraft:sandstone"
+          }
+        }
+      ]
+    },
+    "blobMass": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 12,
+        "max_inclusive": 14
+      }
+    },
+    "blobWidth": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 4,
+        "max_inclusive": 5
+      }
+    },
+    "blobHeight": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 6,
+        "max_inclusive": 32
+      }
+    }
+  }
+}

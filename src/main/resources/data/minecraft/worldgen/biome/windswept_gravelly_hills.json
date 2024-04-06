@@ -1,5 +1,5 @@
 {
-  "temperature": 0.2,
+  "temperature": -0.415,
   "downfall": 0.3,
   "has_precipitation": true,
   "effects": {
@@ -8,10 +8,10 @@
     "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.flower_forest"
     }
   },
   "spawners": {
@@ -129,32 +129,16 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "eco:sparse_deepslate_pillar",
-      "eco:sparse_thin_obsidian_pillar"
     ],
     [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
     ],
     [
-      "eco:crying_obsidian_water_fall"
     ],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -171,16 +155,11 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel",
       "minecraft:ore_emerald"
     ],
     [
       "minecraft:ore_infested",
-      "eco:emerald_rocks",
-      "eco:sculk_vein",
-      "eco:sculk_patch_deep_dark"
+      "eco:emerald_rocks"
     ],
     [
       "minecraft:spring_water",
@@ -188,8 +167,10 @@
     ],
     [
       "minecraft:glow_lichen",
+      "biox:dense_mushroom_giant_brown",
+      "eco:mossy_stone_filler",
+      "biox:mossy_cobblestone_moss_stones",
       "eco:gray_stones",
-      "eco:mossy_pond",
       "eco:wild_flower_patch",
       "minecraft:trees_windswept_hills",
       "eco:sparse_tall_red_mushrooms",

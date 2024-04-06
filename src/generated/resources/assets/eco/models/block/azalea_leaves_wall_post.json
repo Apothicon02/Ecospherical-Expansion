@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_wall_post",
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "wall": "minecraft:block/azalea_leaves"
+  }
+}

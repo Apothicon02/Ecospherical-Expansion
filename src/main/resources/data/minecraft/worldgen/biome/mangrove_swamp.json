@@ -1,5 +1,5 @@
 {
-  "temperature": 0.8,
+  "temperature": 0.85,
   "downfall": 0.9,
   "has_precipitation": true,
   "effects": {
@@ -7,13 +7,11 @@
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "foliage_color": 9285927,
-    "grass_color_modifier": "swamp",
     "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.flower_forest"
     },
     "music": {
       "sound": "minecraft:music.overworld.swamp",
@@ -126,30 +124,17 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
     ],
     [
       "minecraft:fossil_upper",
-      "minecraft:fossil_lower",
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
+      "minecraft:fossil_lower"
     ],
     [],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -164,10 +149,7 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:disk_grass",
-      "minecraft:disk_clay"
+      "minecraft:ore_copper"
     ],
     [],
     [
@@ -176,7 +158,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:trees_giant_mangrove",
+      "biox:trees_dense_giant_mangrove",
       "minecraft:trees_mangrove",
       "eco:mud_pond_extra",
       "eco:tuff",
@@ -192,20 +174,7 @@
       "eco:overworld_mushrooms",
       "eco:nether_mushrooms",
       "minecraft:seagrass_swamp",
-      "minecraft:warm_ocean_vegetation",
-      "eco:dense_rooted_azalea_trees",
-      "eco:rooted_towering_jungle_trees",
-      "eco:rooted_branching_jungle_trees",
-      "eco:rooted_jungle_bushes",
-      "minecraft:lush_caves_ceiling_vegetation",
-      "eco:hanging_bee_hive",
-      "eco:cave_ceiling_shrubbery",
-      "eco:cave_leaf_vines",
-      "eco:lush_cave_vines",
-      "eco:dirt_pool_with_dripleaves",
-      "eco:sparse_lush_caves_vegetation",
-      "eco:lush_spore_blossom",
-      "minecraft:classic_vines_cave_feature"
+      "minecraft:warm_ocean_vegetation"
     ],
     [
       "minecraft:freeze_top_layer"

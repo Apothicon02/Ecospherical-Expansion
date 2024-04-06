@@ -26,29 +26,14 @@
       }
     },
     "foliage_provider": {
-      "type": "minecraft:weighted_state_provider",
-      "entries": [
-        {
-          "weight": 7,
-          "data": {
-            "Name": "minecraft:oak_leaves",
-            "Properties": {
-              "distance": "7",
-              "persistent": "false"
-            }
-          }
-        },
-        {
-          "weight": 2,
-          "data": {
-            "Name": "minecraft:jungle_leaves",
-            "Properties": {
-              "distance": "7",
-              "persistent": "false"
-            }
-          }
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:oak_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false"
         }
-      ]
+      }
     },
     "trunk_placer": {
       "type": "minecraft:fancy_trunk_placer",

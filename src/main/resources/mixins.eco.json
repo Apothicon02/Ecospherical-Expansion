@@ -7,11 +7,19 @@
     "defaultRequire": 1
   },
   "mixins": [
+    "BeehiveDecoratorMixin",
+    "BiomeMixin",
+    "BiomeSpecialEffectsGrassMixin",
+    "DimensionTypeMixin",
     "DripstoneUtilsMixin",
     "GrowingPlantBlockMixin",
-    "ServerLevelEntityCallbacksMixin"
+    "LevelChunkMixin",
+    "NoiseChunkGeneratorMixin",
+    "ServerLevelEntityCallbacksMixin",
+    "UtilMixin"
   ],
   "client": [
+    "BiomeColorsMixin"
   ],
   "server": [
   ]
