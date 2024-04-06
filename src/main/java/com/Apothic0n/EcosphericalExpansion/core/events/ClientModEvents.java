@@ -98,6 +98,11 @@ public class ClientModEvents {
                 return new AzaleaLeavesParticle(level, x, y, z, spriteSet);
             };
         });
+        event.registerSpriteSet(EcoParticleTypes.FIRE_FLIES.get(), (spriteSet) -> {
+            return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
+                return new FireFliesParticle(level, x, y, z, spriteSet);
+            };
+        });
     }
 
     private static final PerlinSimplexNoise SATURATION_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(2345L)), ImmutableList.of(0));

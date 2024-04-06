@@ -9,17 +9,19 @@
   "mixins": [
     "BeehiveDecoratorMixin",
     "BiomeMixin",
-    "BiomeSpecialEffectsGrassMixin",
-    "DimensionTypeMixin",
     "DripstoneUtilsMixin",
     "GrowingPlantBlockMixin",
     "LevelChunkMixin",
     "NoiseChunkGeneratorMixin",
     "ServerLevelEntityCallbacksMixin",
+    "TallGrassBlockMixin",
     "UtilMixin"
   ],
   "client": [
-    "BiomeColorsMixin"
+    "DimensionTypeMixin",
+    "BiomeColorsMixin",
+    "BiomeSpecialEffectsGrassMixin",
+    "BiomeClientMixin"
   ],
   "server": [
   ]

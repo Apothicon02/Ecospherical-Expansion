@@ -21,5 +21,6 @@ public final class EcoParticleTypes {
     public static final RegistryObject<SimpleParticleType> MANGROVE_LEAVES = PARTICLE_TYPES.register("mangrove_leaves", () -> new SimpleParticleType(false));
     public static final RegistryObject<SimpleParticleType> AZALEA_LEAVES = PARTICLE_TYPES.register("azalea_leaves", () -> new SimpleParticleType(false));
     public static final RegistryObject<SimpleParticleType> FLOWERING_AZALEA_LEAVES = PARTICLE_TYPES.register("flowering_azalea_leaves", () -> new SimpleParticleType(false));
+    public static final RegistryObject<SimpleParticleType> FIRE_FLIES = PARTICLE_TYPES.register("fire_flies", () -> new SimpleParticleType(false));
 
 }
