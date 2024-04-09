@@ -22,7 +22,7 @@ public class NoiseChunkGeneratorMixin {
         if (p_249264_.noiseSettings().minY() < -64) {
             y = -116;
         }
-        Aquifer.FluidStatus aquifer$fluidstatus = new Aquifer.FluidStatus(y, Blocks.LAVA.defaultBlockState());
+        Aquifer.FluidStatus aquifer$fluidstatus = new Aquifer.FluidStatus(y, Blocks.KELP_PLANT.defaultBlockState());
         int i = p_249264_.seaLevel();
         Aquifer.FluidStatus aquifer$fluidstatus1 = new Aquifer.FluidStatus(i, p_249264_.defaultFluid());
         int finalY = y;

@@ -1,32 +1,42 @@
 {
-  "type": "minecraft:add",
-  "argument1": {
+  "type": "minecraft:range_choice",
+  "input": "eco:rivers",
+  "min_inclusive": -100,
+  "max_exclusive": 0,
+  "when_in_range": -1,
+  "when_out_of_range": {
     "type": "minecraft:max",
-    "argument1": -0.2,
-    "argument2": "eco:base_terrain"
-  },
-  "argument2": {
-    "type": "minecraft:range_choice",
-    "input": "eco:rivers",
-    "min_inclusive": -10000,
-    "max_exclusive": 0,
-    "when_in_range": 0,
-    "when_out_of_range": {
-      "type": "minecraft:add",
-      "argument1": "eco:swamps",
-      "argument2": {
-        "type": "minecraft:max",
-        "argument1": "eco:calderas",
+    "argument1": {
+      "type": "minecraft:interpolated",
+      "argument": {
+        "type": "minecraft:add",
+        "argument1": {
+          "type": "minecraft:add",
+          "argument1": "eco:oceans",
+          "argument2": "eco:base_terrain"
+        },
         "argument2": {
-          "type": "minecraft:max",
-          "argument1": "eco:volcanoes",
-          "argument2": {
-            "type": "minecraft:max",
-            "argument1": "eco:badlands",
-            "argument2": "eco:cliffs"
+          "type": "minecraft:range_choice",
+          "input": {
+            "type": "eco:flatten",
+            "input": "eco:oceans",
+            "at_y": 63
+          },
+          "min_inclusive": -100,
+          "max_exclusive": -0.01,
+          "when_in_range": 0,
+          "when_out_of_range": {
+            "type": "minecraft:add",
+            "argument1": "eco:swamps",
+            "argument2": {
+              "type": "minecraft:max",
+              "argument1": "eco:calderas",
+              "argument2": "eco:volcanoes"
+            }
           }
         }
       }
-    }
+    },
+    "argument2": "eco:cubical"
   }
 }

@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "minecraft:block/wet_sponge"
+      },
+      {
+        "model": "minecraft:block/wet_sponge",
+        "y": 180
+      }
+    ]
+  }
+}

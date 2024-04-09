@@ -1,6 +1,6 @@
 package com.Apothic0n.EcosphericalExpansion.mixin;
 
-import com.Apothic0n.EcosphericalExpansion.api.ColorHelper;
+import com.Apothic0n.EcosphericalExpansion.api.EcoColorHelper;
 import com.Apothic0n.EcosphericalExpansion.api.EcoDensityFunctions;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
@@ -24,7 +24,7 @@ public abstract class BiomeColorsMixin {
             int x = blockPos.getX();
             int y = blockPos.getY();
             int z = blockPos.getZ();
-            ci.setReturnValue(ColorHelper.tintFoliageOrGrass(blockAndTintGetter.getBlockState(blockPos), x, y, z, EcoDensityFunctions.temperature.compute(new DensityFunction.SinglePointContext(x, y, z)),
+            ci.setReturnValue(EcoColorHelper.tintFoliageOrGrass(blockAndTintGetter.getBlockState(blockPos), x, y, z, EcoDensityFunctions.temperature.compute(new DensityFunction.SinglePointContext(x, y, z)),
                     EcoDensityFunctions.humidity.compute(new DensityFunction.SinglePointContext(x, y, z)), true));
         }
     }

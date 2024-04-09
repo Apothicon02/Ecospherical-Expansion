@@ -8,10 +8,8 @@
     "when_in_range": {
       "type": "minecraft:range_choice",
       "input": {
-        "type": "minecraft:shifted_noise",
-        "noise": "eco:oceans",
-        "xz_scale": 1,
-        "y_scale": 0,
+        "type": "eco:shift",
+        "input": "eco:ocean_ridges",
         "shift_x": 0,
         "shift_y": 72,
         "shift_z": 0

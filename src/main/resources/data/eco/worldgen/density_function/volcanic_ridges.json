@@ -2,8 +2,8 @@
   "type": "minecraft:flat_cache",
   "argument": {
     "type": "minecraft:noise",
-    "noise": "minecraft:ridge",
-    "xz_scale": 0.32,
-    "y_scale": 1
+    "noise": "eco:volcanoes",
+    "xz_scale": 1,
+    "y_scale": 0
   }
 }

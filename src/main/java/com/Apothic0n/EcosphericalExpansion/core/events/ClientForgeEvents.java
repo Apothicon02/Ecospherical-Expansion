@@ -3,9 +3,13 @@ package com.Apothic0n.EcosphericalExpansion.core.events;
 import com.Apothic0n.EcosphericalExpansion.EcosphericalExpansion;
 import com.Apothic0n.EcosphericalExpansion.api.EcoDensityFunctions;
 import com.Apothic0n.EcosphericalExpansion.api.EcoMath;
+import com.Apothic0n.EcosphericalExpansion.mixin.DimensionTypeMixin;
 import com.mojang.blaze3d.shaders.FogShape;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
+import net.minecraft.util.Mth;
+import net.minecraft.world.level.LightLayer;
+import net.minecraft.world.level.dimension.DimensionType;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import net.minecraft.world.level.material.FogType;
 import net.minecraftforge.api.distmarker.Dist;
@@ -49,10 +53,10 @@ public class ClientForgeEvents {
                 event.setGreen((Math.max(yScale, event.getGreen()) - (Math.min(yScale, event.getGreen()) * yScale) + Math.min(yScale, event.getGreen())) * (invYScale + 0.2F));
                 event.setBlue((Math.max(yScale, event.getBlue()) - (Math.min(yScale, event.getBlue()) * yScale) + Math.min(yScale, event.getBlue())) * (invYScale + 0.2F));
             }
-        } else if (event.getCamera().getFluidInCamera() == FogType.WATER) {
-            event.setRed((float) EcoMath.getMiddleDouble(event.getRed(), 0.025));
-            event.setGreen((float) EcoMath.getMiddleDouble(event.getGreen(), 0.175));
-            event.setBlue((float) EcoMath.getMiddleDouble(event.getBlue(), 0.175));
+        } else if (level != null && event.getCamera().getFluidInCamera() == FogType.WATER) {
+            event.setRed((float) Mth.clamp((EcoMath.getMiddleDouble(event.getRed(), 0.025)/15), 0.025, 0.05));
+            event.setGreen((float) Mth.clamp((EcoMath.getMiddleDouble(event.getGreen(), 0.175)/15), 0.175, 0.35));
+            event.setBlue((float) Mth.clamp((EcoMath.getMiddleDouble(event.getBlue(), 0.175)/15), 0.175, 0.35));
         }
     }
 

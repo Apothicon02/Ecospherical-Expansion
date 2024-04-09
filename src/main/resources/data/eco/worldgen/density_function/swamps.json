@@ -46,7 +46,7 @@
                     "argument2": {
                       "type": "minecraft:add",
                       "argument1": 0.249,
-                      "argument2": "eco:accurate_temperature"
+                      "argument2": "eco:temperature"
                     }
                   }
                 }
@@ -75,7 +75,7 @@
                     "argument2": {
                       "type": "minecraft:add",
                       "argument1": -0.799,
-                      "argument2": "eco:accurate_vegetation"
+                      "argument2": "eco:vegetation"
                     }
                   }
                 }
@@ -107,7 +107,7 @@
                     "argument2": {
                       "type": "minecraft:add",
                       "argument1": 0.255,
-                      "argument2": "eco:accurate_temperature"
+                      "argument2": "eco:temperature"
                     }
                   }
                 }
@@ -136,7 +136,7 @@
                     "argument2": {
                       "type": "minecraft:add",
                       "argument1": -0.792,
-                      "argument2": "eco:accurate_vegetation"
+                      "argument2": "eco:vegetation"
                     }
                   }
                 }
@@ -167,10 +167,13 @@
                 "argument2": {
                   "type": "minecraft:abs",
                   "argument": {
-                    "type": "minecraft:noise",
-                    "noise": "minecraft:gravel",
-                    "xz_scale": 5,
-                    "y_scale": 1
+                    "type": "minecraft:flat_cache",
+                    "argument": {
+                      "type": "minecraft:noise",
+                      "noise": "minecraft:gravel",
+                      "xz_scale": 5,
+                      "y_scale": 1
+                    }
                   }
                 }
               }

@@ -71,61 +71,65 @@ public final class EcoBlocks {
     public static void generateStairsSlabsWalls() {
         for (int i = 0; i < blocksWithStairsSlabsAndWalls.size(); i++) {
             Block baseBlock = blocksWithStairsSlabsAndWalls.get(i);
-            wallBlocks.add(createWallBlocks(baseBlock));
-            stairBlocks.add(createStairBlocks(baseBlock));
-            slabBlocks.add(createSlabBlocks(baseBlock));
+            int bright = 0;
+            if (baseBlock.defaultBlockState().is(RED_MUSHROOM_BLOCK)) {
+                bright = 13;
+            }
+            wallBlocks.add(createWallBlocks(baseBlock, bright));
+            stairBlocks.add(createStairBlocks(baseBlock, bright));
+            slabBlocks.add(createSlabBlocks(baseBlock, bright));
         }
         for (int i = 0; i < blocksWithWalls.size(); i++) {
             Block baseBlock = blocksWithWalls.get(i);
-            wallBlocks.add(createWallBlocks(baseBlock));
+            wallBlocks.add(createWallBlocks(baseBlock, 0));
         }
         for (int i = 0; i < blocksWithFragileWalls.size(); i++) {
             Block baseBlock = blocksWithFragileWalls.get(i);
-            wallBlocks.add(createFragileWallBlocks(baseBlock));
+            wallBlocks.add(createFragileWallBlocks(baseBlock, 0));
         }
         for (int i = 0; i < blocksWithPiles.size(); i++) {
             Block baseBlock = blocksWithPiles.get(i);
-            pileBlocks.add(createPileBlocks(baseBlock));
+            pileBlocks.add(createPileBlocks(baseBlock, 0));
         }
     }
 
-    public static Map<Block, RegistryObject<Block>> createPileBlocks(Block baseBlock) {
+    public static Map<Block, RegistryObject<Block>> createPileBlocks(Block baseBlock, int brightness) {
         String name = baseBlock.toString();
         return Map.of(
                 baseBlock, BLOCKS.register(name.substring(16, name.length() - 1) + "_pile", () ->
-                        new CollisionlessLayerBlock(BlockBehaviour.Properties.copy(baseBlock).forceSolidOff().noCollission().noOcclusion().replaceable().instabreak()))
+                        new CollisionlessLayerBlock(BlockBehaviour.Properties.copy(baseBlock).forceSolidOff().noCollission().noOcclusion().replaceable().instabreak().lightLevel((something) -> brightness)))
         );
     }
 
-    public static Map<Block, RegistryObject<Block>> createFragileWallBlocks(Block baseBlock) {
+    public static Map<Block, RegistryObject<Block>> createFragileWallBlocks(Block baseBlock, int brightness) {
         String name = baseBlock.toString();
         return Map.of(
                 baseBlock, BLOCKS.register(name.substring(16, name.length() - 1) + "_wall", () ->
-                        new FragileWallBlock(BlockBehaviour.Properties.copy(baseBlock).forceSolidOff().noCollission().noOcclusion().replaceable().instabreak()))
+                        new FragileWallBlock(BlockBehaviour.Properties.copy(baseBlock).forceSolidOff().noCollission().noOcclusion().replaceable().instabreak().lightLevel((something) -> brightness)))
         );
     }
 
-    public static Map<Block, RegistryObject<Block>> createWallBlocks(Block baseBlock) {
+    public static Map<Block, RegistryObject<Block>> createWallBlocks(Block baseBlock, int brightness) {
         String name = baseBlock.toString();
         return Map.of(
                 baseBlock, BLOCKS.register(name.substring(16, name.length() - 1) + "_wall", () ->
-                        new WallBlock(BlockBehaviour.Properties.copy(baseBlock)))
+                        new WallBlock(BlockBehaviour.Properties.copy(baseBlock).lightLevel((something) -> brightness)))
         );
     }
 
-    public static Map<Block, RegistryObject<Block>> createStairBlocks(Block baseBlock) {
+    public static Map<Block, RegistryObject<Block>> createStairBlocks(Block baseBlock, int brightness) {
         String name = baseBlock.toString();
         return Map.of(
                 baseBlock, BLOCKS.register(name.substring(16, name.length() - 1) + "_stairs", () ->
-                        new StairBlock(baseBlock.defaultBlockState(), BlockBehaviour.Properties.copy(baseBlock)))
+                        new StairBlock(baseBlock.defaultBlockState(), BlockBehaviour.Properties.copy(baseBlock).lightLevel((something) -> brightness)))
         );
     }
 
-    public static Map<Block, RegistryObject<Block>> createSlabBlocks(Block baseBlock) {
+    public static Map<Block, RegistryObject<Block>> createSlabBlocks(Block baseBlock, int brightness) {
         String name = baseBlock.toString();
         return Map.of(
                 baseBlock, BLOCKS.register(name.substring(16, name.length() - 1) + "_slab", () ->
-                        new SlabBlock(BlockBehaviour.Properties.copy(baseBlock)))
+                        new SlabBlock(BlockBehaviour.Properties.copy(baseBlock).lightLevel((something) -> brightness)))
         );
     }
 }

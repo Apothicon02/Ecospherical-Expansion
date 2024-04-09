@@ -97,6 +97,8 @@ public abstract class EcoFeatureRegistry {
             new DryGrassFeature(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<SimpleBlockConfiguration>> ARCH_FEATURE = FEATURES.register("arch", () ->
             new ArchFeature(SimpleBlockConfiguration.CODEC));
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> CAVE_RIVER_FEATURE = FEATURES.register("cave_river", () ->
+            new CaveRiverFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
