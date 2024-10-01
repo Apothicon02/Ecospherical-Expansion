@@ -1,9 +1,12 @@
 package com.Apothic0n.EcosphericalExpansion.mixin;
 
+import com.Apothic0n.EcosphericalExpansion.api.EcoDensityFunctions;
 import net.minecraft.core.BlockPos;
+import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.BiomeSpecialEffects;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.spongepowered.asm.mixin.*;
@@ -13,7 +16,20 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(value = Biome.class, priority = 69420)
 public abstract class BiomeMixin {
+    @Shadow
+    @Final
+    private BiomeSpecialEffects specialEffects;
+    @Shadow protected abstract int getGrassColorFromTexture();
     @Shadow @Deprecated protected abstract float getTemperature(BlockPos p_47506_);
+
+    @Unique
+    private int biox$getGrassColorFromTexture() {
+        if (EcoDensityFunctions.temperature != null) {
+            return GrassColor.get(1D, 1D);
+        } else {
+            return getGrassColorFromTexture();
+        }
+    }
     @Unique
     public boolean eco$warmEnoughToRain(BlockPos p_198907_) {
         return this.getTemperature(p_198907_) >= -0.8F;
@@ -46,5 +62,15 @@ public abstract class BiomeMixin {
         } else {
             ci.setReturnValue(false);
         }
+    }
+
+    /**
+     * @author Apothicon
+     * @reason Infinite color blending not dependant on biomes.
+     */
+    @Overwrite
+    public int getGrassColor(double posX, double posZ) {
+        int i = this.specialEffects.getGrassColorOverride().orElseGet(this::biox$getGrassColorFromTexture);
+        return this.specialEffects.getGrassColorModifier().modifyColor(posX, posZ, i);
     }
 }
