@@ -27,16 +27,4 @@ public class EcoMath {
     public static double progressBetweenInts(int min, int max, int value) {
         return (double) value / (max + min);
     }
-
-    public static float getClosenessToNight(double timeOfDay) {
-        if (timeOfDay > 0.305 && timeOfDay < 0.694) {
-            return 0.0F;
-        } else {
-            if (timeOfDay < 0.305) {
-                return (float) (0.305-timeOfDay)*5;
-            } else {
-                return (float) (timeOfDay-0.694)*5;
-            }
-        }
-    }
 }

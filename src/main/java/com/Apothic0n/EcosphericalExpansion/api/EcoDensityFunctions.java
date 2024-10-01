@@ -20,8 +20,6 @@ public final class EcoDensityFunctions {
     public static final DeferredRegister<Codec<? extends DensityFunction>> DENSITY_FUNCTION_TYPES = DeferredRegister.create(Registries.DENSITY_FUNCTION_TYPE, EcosphericalExpansion.MODID);
 
     public static final RegistryObject<Codec<? extends DensityFunction>> TO_HEIGHTMAP_DENSITY_FUNCTION_TYPE = DENSITY_FUNCTION_TYPES.register("to_heightmap", ToHeightmap.CODEC::codec);
-    public static final RegistryObject<Codec<? extends DensityFunction>> SHIFT_DENSITY_FUNCTION_TYPE = DENSITY_FUNCTION_TYPES.register("shift", Shift.CODEC::codec);
-    public static final RegistryObject<Codec<? extends DensityFunction>> FLATTEN_DENSITY_FUNCTION_TYPE = DENSITY_FUNCTION_TYPES.register("flatten", Flatten.CODEC::codec);
     public static final RegistryObject<Codec<? extends DensityFunction>> STORE_TEMPERATURE_DENSITY_FUNCTION_TYPE = DENSITY_FUNCTION_TYPES.register("store_temperature", StoreTemperature.CODEC::codec);
     public static final RegistryObject<Codec<? extends DensityFunction>> STORE_HUMIDITY_DENSITY_FUNCTION_TYPE = DENSITY_FUNCTION_TYPES.register("store_humidity", StoreHumidity.CODEC::codec);
 
@@ -33,82 +31,6 @@ public final class EcoDensityFunctions {
     public static DensityFunction temperature;
     public static DensityFunction humidity;
 
-    protected record Shift(DensityFunction input, int shiftX, int shiftY, int shiftZ) implements DensityFunction {
-        private static final MapCodec<Shift> DATA_CODEC = RecordCodecBuilder.mapCodec((data) -> {
-            return data.group(DensityFunction.HOLDER_HELPER_CODEC.fieldOf("input").forGetter(Shift::input), Codec.INT.fieldOf("shift_x").forGetter(Shift::shiftX), Codec.INT.fieldOf("shift_y").forGetter(Shift::shiftY), Codec.INT.fieldOf("shift_z").forGetter(Shift::shiftZ)).apply(data, Shift::new);
-        });
-        public static final KeyDispatchDataCodec<Shift> CODEC = EcoDensityFunctions.makeCodec(DATA_CODEC);
-
-        @Override
-        public double compute(@NotNull FunctionContext context) {
-            return input.compute(new DensityFunction.SinglePointContext(context.blockX()+shiftX(), context.blockY()+shiftY(), context.blockZ()+shiftZ()));
-        }
-
-        @Override
-        public void fillArray(double @NotNull [] densities, ContextProvider context) {
-            context.fillAllDirectly(densities, this);
-        }
-
-        @Override
-        public @NotNull DensityFunction mapAll(Visitor visitor) {
-            return visitor.apply(new StoreTemperature(this.input().mapAll(visitor)));
-        }
-
-        @Override
-        public double minValue() {
-            return -1875000d;
-        }
-
-        @Override
-        public double maxValue() {
-            return 1875000d;
-        }
-
-        @Override
-        public KeyDispatchDataCodec<? extends DensityFunction> codec() {
-            return CODEC;
-        }
-
-    }
-
-    protected record Flatten(DensityFunction input, int atY) implements DensityFunction {
-        private static final MapCodec<Flatten> DATA_CODEC = RecordCodecBuilder.mapCodec((data) -> {
-            return data.group(DensityFunction.HOLDER_HELPER_CODEC.fieldOf("input").forGetter(Flatten::input), Codec.INT.fieldOf("at_y").forGetter(Flatten::atY)).apply(data, Flatten::new);
-        });
-        public static final KeyDispatchDataCodec<Flatten> CODEC = EcoDensityFunctions.makeCodec(DATA_CODEC);
-
-        @Override
-        public double compute(@NotNull FunctionContext context) {
-            return input.compute(new DensityFunction.SinglePointContext(context.blockX(), atY(), context.blockZ()));
-        }
-
-        @Override
-        public void fillArray(double @NotNull [] densities, ContextProvider context) {
-            context.fillAllDirectly(densities, this);
-        }
-
-        @Override
-        public @NotNull DensityFunction mapAll(Visitor visitor) {
-            return visitor.apply(new StoreTemperature(this.input().mapAll(visitor)));
-        }
-
-        @Override
-        public double minValue() {
-            return -1875000d;
-        }
-
-        @Override
-        public double maxValue() {
-            return 1875000d;
-        }
-
-        @Override
-        public KeyDispatchDataCodec<? extends DensityFunction> codec() {
-            return CODEC;
-        }
-
-    }
-
     protected record StoreTemperature(DensityFunction input) implements DensityFunction {
         private static final MapCodec<StoreTemperature> DATA_CODEC = RecordCodecBuilder.mapCodec((data) -> {
             return data.group(DensityFunction.HOLDER_HELPER_CODEC.fieldOf("input").forGetter(StoreTemperature::input)).apply(data, StoreTemperature::new);
@@ -117,9 +39,7 @@ public final class EcoDensityFunctions {
 
         @Override
         public double compute(@NotNull FunctionContext context) {
-            if (temperature == null) {
-                temperature = input();
-            }
+            temperature = input();
             return input.compute(context);
         }
 
@@ -157,9 +77,7 @@ public final class EcoDensityFunctions {
 
         @Override
         public double compute(@NotNull FunctionContext context) {
-            if (humidity == null) {
-                humidity = input();
-            }
+            humidity = input();
             return input.compute(context);
         }
 

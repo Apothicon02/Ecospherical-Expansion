@@ -1,7 +1,7 @@
 package com.Apothic0n.EcosphericalExpansion.mixin;
 
 import com.Apothic0n.EcosphericalExpansion.api.EcoDensityFunctions;
-import com.Apothic0n.EcosphericalExpansion.api.EcoColorHelper;
+import com.Apothic0n.EcosphericalExpansion.api.ColorHelper;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.DensityFunction;
 import org.spongepowered.asm.mixin.Mixin;
@@ -19,7 +19,7 @@ public class BiomeSpecialEffectsGrassMixin {
     @Inject(at = @At("RETURN"), method = "modifyColor", cancellable = true)
     private void modifyColor(double x, double z, int unusedColor, CallbackInfoReturnable<Integer> cir) {
         if (EcoDensityFunctions.temperature != null && EcoDensityFunctions.humidity != null) {
-            cir.setReturnValue(EcoColorHelper.tintFoliageOrGrass(Blocks.GRASS_BLOCK.defaultBlockState(), (int) x, 0, (int) z, EcoDensityFunctions.temperature.compute(new DensityFunction.SinglePointContext((int) x, 0, (int) z)),
+            cir.setReturnValue(ColorHelper.tintFoliageOrGrass(Blocks.GRASS_BLOCK.defaultBlockState(), (int) x, 0, (int) z, EcoDensityFunctions.temperature.compute(new DensityFunction.SinglePointContext((int) x, 0, (int) z)),
                     EcoDensityFunctions.humidity.compute(new DensityFunction.SinglePointContext((int) x, 0, (int) z)), false));
         }
     }

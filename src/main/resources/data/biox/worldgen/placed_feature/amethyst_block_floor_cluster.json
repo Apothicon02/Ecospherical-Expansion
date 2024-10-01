@@ -3,9 +3,19 @@
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 75,
-      "noise_factor": 12,
-      "noise_offset": 0.66
+      "noise_to_count_ratio": 1,
+      "noise_factor": 1,
+      "noise_offset": -0.1
+    },
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 60,
+          "max_inclusive": 120
+        }
+      }
     },
     {
       "type": "minecraft:in_square"
@@ -27,16 +37,7 @@
       "direction_of_search": "down",
       "max_steps": 32,
       "target_condition": {
-        "type": "minecraft:matching_blocks",
-        "offset": [
-          0,
-          -1,
-          0
-        ],
-        "blocks": "minecraft:amethyst_block"
-      },
-      "allowed_search_condition": {
-        "type": "minecraft:replaceable"
+        "type": "minecraft:solid"
       }
     },
     {

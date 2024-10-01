@@ -40,8 +40,8 @@
         "to_value": 0
       },
       "argument2": {
-        "type": "minecraft:range_choice",
-        "input": {
+        "type": "minecraft:max",
+        "argument1": {
           "type": "minecraft:range_choice",
           "input": {
             "type": "minecraft:y_clamped_gradient",
@@ -54,22 +54,21 @@
           "max_exclusive": 10,
           "when_in_range": {
             "type": "minecraft:range_choice",
-            "input": {
-              "type": "eco:flatten",
-              "input": "eco:rivers",
-              "at_y": 62
-            },
-            "min_inclusive": -100,
+            "input": "eco:rivers",
+            "min_inclusive": -10000,
             "max_exclusive": 0,
-            "when_in_range": 1,
+            "when_in_range": {
+              "type": "minecraft:y_clamped_gradient",
+              "from_y": 63,
+              "to_y": 64,
+              "from_value": 1.2,
+              "to_value": 0.3
+            },
             "when_out_of_range": 0
           },
           "when_out_of_range": 0
         },
-        "min_inclusive": 0.99,
-        "max_exclusive": 1,
-        "when_in_range": 0,
-        "when_out_of_range": {
+        "argument2": {
           "type": "eco:to_heightmap",
           "input": "eco:normal",
           "min_y": 16,
@@ -91,13 +90,7 @@
       "min_inclusive": 0,
       "max_exclusive": 0.1,
       "when_in_range": 1,
-      "when_out_of_range": {
-        "type": "eco:shift",
-        "input": "eco:normal",
-        "shift_x": 0,
-        "shift_y": -4,
-        "shift_z": 0
-      }
+      "when_out_of_range": "eco:normal"
     },
     "final_density": {
       "type": "minecraft:min",
@@ -112,10 +105,7 @@
         },
         "min_inclusive": 0,
         "max_exclusive": 0.1,
-        "when_in_range": {
-          "type": "minecraft:interpolated",
-          "argument": "eco:caves"
-        },
+        "when_in_range": "eco:caves",
         "when_out_of_range": {
           "type": "minecraft:range_choice",
           "input": {
@@ -129,7 +119,12 @@
             },
             "argument2": {
               "type": "minecraft:range_choice",
-              "input": "eco:volcanic_ridges",
+              "input": {
+                "type": "minecraft:noise",
+                "noise": "eco:volcanoes",
+                "xz_scale": 1,
+                "y_scale": 0
+              },
               "min_inclusive": 0.82,
               "max_exclusive": 100,
               "when_in_range": 0,

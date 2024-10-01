@@ -1,10 +1,6 @@
 package com.Apothic0n.EcosphericalExpansion.mixin;
 
-import com.Apothic0n.EcosphericalExpansion.api.EcoMath;
-import net.minecraft.client.Minecraft;
 import net.minecraft.util.Mth;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.level.LightLayer;
 import net.minecraft.world.level.dimension.DimensionType;
 import org.spongepowered.asm.mixin.*;
 import org.spongepowered.asm.mixin.injection.At;
@@ -30,19 +26,11 @@ public abstract class DimensionTypeMixin {
      */
     @Inject(method = "ambientLight", at = @At("HEAD"), cancellable = true)
     public void ambientLight(CallbackInfoReturnable<Float> ci) {
-        Minecraft minecraft = Minecraft.getInstance();
         float ambient = this.ambientLight;
         if (this.hasSkyLight) {
-            ambient = (float) Math.min(eco$closenessToNight - 0.33, ambient);
-        }
-        float skyMultiplier = 1;
-        if (minecraft.level != null && minecraft.player != null && minecraft.player.blockPosition().getY() < 10) {
-            skyMultiplier = minecraft.level.getBrightness(LightLayer.SKY, minecraft.player.blockPosition()) / 15F;
-        }
-        if (minecraft.player != null && minecraft.player.hasEffect(MobEffects.NIGHT_VISION)) {
-            ci.setReturnValue(0F);
+            ci.setReturnValue((float) Math.min(eco$closenessToNight-0.33, ambient));
         } else {
-            ci.setReturnValue(ambient * skyMultiplier);
+            ci.setReturnValue(ambient);
         }
     }
 
@@ -51,6 +39,14 @@ public abstract class DimensionTypeMixin {
         double d0 = Mth.frac((double)this.fixedTime.orElse(time) / 24000.0 - 0.25);
         double d1 = 0.5 - Math.cos(d0 * Math.PI) / 2.0;
         double newTime = (float)(d0 * 2.0 + d1) / 3.0F;
-        eco$closenessToNight = EcoMath.getClosenessToNight(newTime);
+        if (newTime > 0.305 && newTime < 0.694) {
+            eco$closenessToNight = 0.0F;
+        } else {
+            if (newTime < 0.305) {
+                eco$closenessToNight = (float) (0.305-newTime)*5;
+            } else {
+                eco$closenessToNight = (float) (newTime-0.694)*5;
+            }
+        }
     }
 }

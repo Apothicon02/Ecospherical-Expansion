@@ -9,7 +9,7 @@ import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 import org.spongepowered.asm.mixin.Unique;
 
-public class EcoColorHelper {
+public class ColorHelper {
     @Unique
     private static final PerlinSimplexNoise SATURATION_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(2345L)), ImmutableList.of(0));
     @Unique

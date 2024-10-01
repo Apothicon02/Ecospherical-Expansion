@@ -49,9 +49,6 @@ public class EcosphericalExpansion {
             addLight(Blocks.TALL_GRASS.getStateDefinition().getPossibleStates(), 8);
             addLight(Blocks.TORCHFLOWER.getStateDefinition().getPossibleStates(), 9);
             addLight(Blocks.TORCHFLOWER_CROP.getStateDefinition().getPossibleStates(), 9);
-            addLight(Blocks.RED_MUSHROOM.getStateDefinition().getPossibleStates(), 9);
-            addLight(Blocks.RED_MUSHROOM_BLOCK.getStateDefinition().getPossibleStates(), 13);
-            addLight(Blocks.MAGMA_BLOCK.getStateDefinition().getPossibleStates(), 13);
         });
     }
 
