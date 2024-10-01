@@ -13,7 +13,7 @@ public class FloodConfiguration implements FeatureConfiguration {
             return v.material;
         }), BlockStateProvider.CODEC.optionalFieldOf("frozenMaterial", BlockStateProvider.simple(Blocks.VOID_AIR.defaultBlockState())).forGetter((v) -> {
             return v.frozenMaterial;
-        }), IntProvider.codec(-420, 318).fieldOf("elevation").forGetter((v) -> {
+        }), IntProvider.codec(-62, 318).fieldOf("elevation").forGetter((v) -> {
             return v.elevation;
         }), Codec.BOOL.fieldOf("frozen").orElse(false).forGetter((v) -> {
             return v.frozen;

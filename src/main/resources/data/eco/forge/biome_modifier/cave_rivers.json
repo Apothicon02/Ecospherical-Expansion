@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": "#minecraft:is_cave",
+  "biomes": "#minecraft:is_overworld",
   "features": "eco:cave_rivers",
   "step": "raw_generation"
 }

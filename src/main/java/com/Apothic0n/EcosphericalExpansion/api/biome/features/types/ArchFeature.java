@@ -85,7 +85,7 @@ public class ArchFeature extends Feature<SimpleBlockConfiguration> {
                                         placeState = maybeNewState;
                                     }
                                 } else if (y >= 62) {
-                                    placeState = Blocks.DIORITE.defaultBlockState();
+                                    placeState = getLowerSurfaceBlock(biome, biomeName, x, y, z);
                                 } else {
                                     BlockState maybeNewState = getLowerOceanBlock(biome, biomeName);
                                     if (!maybeNewState.isAir()) {
@@ -99,7 +99,7 @@ public class ArchFeature extends Feature<SimpleBlockConfiguration> {
                                         placeState = maybeNewState;
                                     }
                                 } else if (y >= 62) {
-                                    placeState = Blocks.CALCITE.defaultBlockState();
+                                    placeState = getSurfaceBlock(biome, biomeName, x, y, z);
                                     if (random.nextInt(1, 10) == 1) {
                                         addCaveVine = true;
                                     }
@@ -165,6 +165,23 @@ public class ArchFeature extends Feature<SimpleBlockConfiguration> {
         }
         return Blocks.AIR.defaultBlockState();
     }
+
+    private BlockState getLowerSurfaceBlock(Holder<Biome> biome, String biomeName, int x, int y, int z) {
+        if (biomeName.contains("desert") || biome.is(BiomeTags.IS_BADLANDS) || biome.is(BiomeTags.IS_SAVANNA) || biome.is(Biomes.WARM_OCEAN) || biome.is(Biomes.LUKEWARM_OCEAN) || biome.is(Biomes.DEEP_LUKEWARM_OCEAN)) {
+            return Blocks.LIGHT_GRAY_TERRACOTTA.defaultBlockState();
+        } else {
+            return Blocks.DIORITE.defaultBlockState();
+        }
+    }
+
+    private BlockState getSurfaceBlock(Holder<Biome> biome, String biomeName, int x, int y, int z) {
+        if (biomeName.contains("desert") || biome.is(BiomeTags.IS_BADLANDS) || biome.is(BiomeTags.IS_SAVANNA) || biome.is(Biomes.WARM_OCEAN) || biome.is(Biomes.LUKEWARM_OCEAN) || biome.is(Biomes.DEEP_LUKEWARM_OCEAN)) {
+            return Blocks.WHITE_TERRACOTTA.defaultBlockState();
+        } else {
+            return Blocks.CALCITE.defaultBlockState();
+        }
+    }
+
     private BlockState getLowerCaveBlock(Holder<Biome> biome, String biomeName, BlockState beingReplaced) {
         if (biomeName.contains("glacial_caves")) {
             return Blocks.BLUE_ICE.defaultBlockState();
