@@ -1,17 +1,18 @@
 {
-  "temperature": -0.9,
+  "temperature": 0.5,
   "downfall": 0.5,
   "has_precipitation": true,
+  "temperature_modifier": "frozen",
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.flower_forest"
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
     }
   },
   "spawners": {
@@ -124,21 +125,39 @@
   },
   "features": [
     [
+      "eco:underwater_blue_ice",
+      "eco:underwater_noise_ice_rocks"
     ],
     [
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
     ],
     [
-      "biox:blue_ice_cubes",
       "minecraft:iceberg_packed",
-      "minecraft:iceberg_blue"
+      "minecraft:iceberg_blue",
+      "minecraft:amethyst_geode",
+      "eco:sparse_packed_ice_pillar",
+      "eco:sparse_thin_blue_ice_pillar",
+      "eco:sparse_dark_prismarine_pillar"
     ],
     [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [
       "minecraft:blue_ice"
     ],
     [],
     [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -154,7 +173,10 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma"
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
@@ -162,8 +184,24 @@
       "minecraft:spring_lava"
     ],
     [
+      "minecraft:glow_lichen",
+      "minecraft:trees_water",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_badlands",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
+      "eco:amethyst_spiral",
+      "eco:cave_seagrass_warm",
+      "eco:cave_pickle",
+      "eco:snowy_pool_with_ice",
+      "eco:powdered_snow_pool",
+      "eco:patch_snow_layer"
     ],
     [
+      "eco:dense_powdered_snow_fall",
       "minecraft:freeze_top_layer"
     ]
   ]

@@ -1,5 +1,5 @@
 {
-  "temperature": -0.575,
+  "temperature": 0.3,
   "downfall": 0.8,
   "has_precipitation": true,
   "category": "taiga",
@@ -8,11 +8,13 @@
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
+    "grass_color": 13733683,
+    "foliage_color": 13718835,
     "mood_sound": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.flower_forest"
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
     },
     "music": {
       "sound": "minecraft:music.overworld.old_growth_taiga",
@@ -148,16 +150,35 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface",
+      "eco:delta"
     ],
     [
+      "minecraft:amethyst_geode",
+      "minecraft:forest_rock",
+      "eco:small_basalt_columns",
+      "eco:large_basalt_columns",
+      "eco:sparse_smooth_basalt_pillar"
     ],
     [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [
+      "eco:lava_fall"
     ],
     [],
     [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -172,7 +193,11 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper"
+      "minecraft:ore_copper",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
@@ -186,23 +211,29 @@
       "eco:mossy_stone_filler",
       "eco:moss_stones",
       "eco:gray_stones",
+      "eco:mossy_pond",
       "minecraft:patch_large_fern",
       "eco:wild_flower_patch",
-      "biox:trees_dense_giant_spruce",
+      "eco:trees_old_growth_pine_taiga",
+      "eco:trees_giant_spruce",
       "eco:fallen_trees_spruce",
-      "biox:bushes_taiga",
+      "eco:bushes_taiga",
       "eco:basic_flowers",
-      "biox:patch_grass_taiga",
       "minecraft:patch_dead_bush",
       "minecraft:brown_mushroom_old_growth",
       "minecraft:red_mushroom_old_growth",
       "minecraft:brown_mushroom_normal",
       "minecraft:red_mushroom_normal",
-      "biox:trees_pine_taiga",
+      "eco:basic_grass",
+      "eco:fern_grass",
+      "eco:trees_pine_taiga",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "eco:large_pumpkin",
-      "biox:patch_berry"
+      "minecraft:patch_berry_common",
+      "minecraft:spring_delta",
+      "minecraft:ore_magma",
+      "minecraft:spring_closed_double"
     ],
     [
       "minecraft:freeze_top_layer"

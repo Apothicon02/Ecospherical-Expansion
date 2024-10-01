@@ -58,7 +58,7 @@
       }
     },
     "trunk_placer": {
-      "type": "eco:giant_canopied_trunk_placer",
+      "type": "eco:giant_branching_trunk_placer",
       "base_height": 16,
       "height_rand_a": 5,
       "height_rand_b": 0,
@@ -79,7 +79,7 @@
         "type": "minecraft:uniform",
         "value": {
           "min_inclusive": 7,
-          "max_inclusive": 8
+          "max_inclusive": 12
         }
       }
     },
@@ -90,38 +90,16 @@
     },
     "decorators": [
       {
-        "type": "eco:trunk_wooden_roots",
-        "probability": 0.66,
-        "wall_state": {
-          "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "eco:dark_oak_wood_wall",
-            "Properties": {
-              "east": "tall",
-              "north": "tall",
-              "south": "tall",
-              "up": "true",
-              "waterlogged": "false",
-              "west": "tall"
-            }
-          }
-        }
-      },
-      {
-        "type": "eco:trunk_mushrooms",
-        "probability": 0.66
-      },
-      {
         "type": "eco:mushrooms",
         "probability": 0.9
       },
       {
-        "type": "eco:hanging_leaves",
-        "probability": 0.8
-      },
-      {
         "type": "minecraft:beehive",
         "probability": 0.6
+      },
+      {
+        "type": "eco:cave_vines",
+        "probability": 0.4
       }
     ]
   }

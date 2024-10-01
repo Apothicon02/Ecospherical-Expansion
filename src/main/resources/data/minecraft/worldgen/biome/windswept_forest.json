@@ -1,17 +1,19 @@
 {
-  "temperature": 0.255,
+  "temperature": 0.2,
   "downfall": 0.3,
   "has_precipitation": true,
+  "category": "forest",
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
+    "grass_color_modifier": "dark_forest",
     "mood_sound": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.flower_forest"
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
     }
   },
   "spawners": {
@@ -129,13 +131,32 @@
   "features": [
     [],
     [
+      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
-    [],
-    [],
-    [],
+    [
+      "minecraft:amethyst_geode",
+      "eco:sparse_deepslate_pillar",
+      "eco:sparse_thin_obsidian_pillar"
+    ],
+    [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
+    [
+      "eco:crying_obsidian_water_fall"
+    ],
     [],
     [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -150,34 +171,34 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper"
+      "minecraft:ore_copper",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
-    [],
+    [
+      "eco:sculk_vein",
+      "eco:sculk_patch_deep_dark",
+      "eco:amethyst_block_cluster"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
       "minecraft:glow_lichen",
-      "eco:gray_standalone_cliffs",
-      "eco:mossy_stone_filler",
-      "biox:mossy_cobblestone_moss_stones",
-      "eco:gray_stones",
+      "eco:grassy_ice",
+      "eco:grassy_ice_pool",
       "minecraft:bamboo_light",
-      "eco:bamboo_cluster",
       "eco:wild_flower_patch",
-      "biox:trees_giant_oak",
-      "eco:trees_sparse_lush_oak",
-      "biox:trees_sparse_tall_oak",
-      "eco:fallen_trees_birch_and_oak",
-      "eco:noise_tall_red_mushrooms",
-      "eco:sparse_tall_brown_mushrooms",
-      "eco:basic_flowers",
-      "biox:dense_overworld_mushrooms",
-      "eco:basic_grass",
-      "eco:tall_grass",
-      "eco:fern_grass",
-      "minecraft:patch_sugar_cane"
+      "eco:trees_big_dark_oak",
+      "eco:trees_normal_dark_oak",
+      "eco:trees_small_dark_oak",
+      "minecraft:patch_sugar_cane",
+      "minecraft:seagrass_warm",
+      "minecraft:sea_pickle",
+      "minecraft:kelp_cold"
     ],
     [
       "minecraft:freeze_top_layer"

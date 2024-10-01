@@ -11,11 +11,9 @@ public class EcoFoliagePlacerType {
 
     public static final RegistryObject<FoliagePlacerType<GiantPineFoliagePlacer>> GIANT_PINE_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPE.register("giant_pine_foliage_placer", () ->
             new FoliagePlacerType<>(GiantPineFoliagePlacer.CODEC));
+
     public static final RegistryObject<FoliagePlacerType<TallFoliagePlacer>> TALL_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPE.register("tall_foliage_placer", () ->
             new FoliagePlacerType<>(TallFoliagePlacer.CODEC));
-    public static final RegistryObject<FoliagePlacerType<SphericalCapFoliagePlacer>> SPHERICAL_CAP_FOLIAGE_PLACER = FOLIAGE_PLACER_TYPE.register("spherical_cap_foliage_placer", () ->
-            new FoliagePlacerType<>(SphericalCapFoliagePlacer.CODEC));
-
 
     public static void register(IEventBus eventBus) {
         FOLIAGE_PLACER_TYPE.register(eventBus);

@@ -107,34 +107,8 @@
     },
     "decorators": [
       {
-        "type": "eco:trunk_wooden_roots",
-        "probability": 0.2,
-        "wall_state": {
-          "type": "minecraft:simple_state_provider",
-          "state": {
-            "Name": "eco:cherry_wood_wall",
-            "Properties": {
-              "east": "tall",
-              "north": "tall",
-              "south": "tall",
-              "up": "true",
-              "waterlogged": "false",
-              "west": "tall"
-            }
-          }
-        }
-      },
-      {
-        "type": "eco:trunk_mushrooms",
-        "probability": 0.2
-      },
-      {
         "type": "eco:mushrooms",
         "probability": 0.25
-      },
-      {
-        "type": "eco:hanging_leaves",
-        "probability": 0.4
       },
       {
         "type": "minecraft:beehive",

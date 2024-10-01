@@ -1,11 +1,41 @@
 {
-  "type": "eco:basic_3x2x3_cube",
+  "type": "eco:supported_disk",
   "config": {
-    "to_place": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "minecraft:diorite"
+    "state_provider": {
+      "fallback": {
+        "type": "minecraft:weighted_state_provider",
+        "entries": [
+          {
+            "weight": 19,
+            "data": {
+              "Name": "minecraft:diorite"
+            }
+          },
+          {
+            "weight": 1,
+            "data": {
+              "Name": "minecraft:air"
+            }
+          }
+        ]
+      },
+      "rules": []
+    },
+    "target": {
+      "type": "minecraft:inside_world_bounds",
+      "offset": [
+        0,
+        1,
+        0
+      ]
+    },
+    "radius": {
+      "type": "minecraft:uniform",
+      "value": {
+        "min_inclusive": 3,
+        "max_inclusive": 4
       }
-    }
+    },
+    "half_height": 1
   }
 }

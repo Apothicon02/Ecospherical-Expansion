@@ -8,15 +8,15 @@
         "distribution": [
           {
             "weight": 2,
-            "data": 14
+            "data": 7
           },
           {
             "weight": 1,
-            "data": 26
+            "data": 13
           },
           {
             "weight": 7,
-            "data": 6
+            "data": 3
           },
           {
             "weight": 13,
@@ -33,10 +33,10 @@
       "height": {
         "type": "minecraft:uniform",
         "min_inclusive": {
-          "above_bottom": 44
+          "absolute": -48
         },
         "max_inclusive": {
-          "absolute": 0
+          "absolute": 60
         }
       }
     },

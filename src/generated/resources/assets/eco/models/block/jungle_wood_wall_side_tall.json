@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/template_wall_side_tall",
-  "render_type": "minecraft:solid",
-  "textures": {
-    "wall": "minecraft:block/jungle_log"
-  }
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "eco:block/leaves_height8",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "texture": "minecraft:block/azalea_leaves"
-  }
-}

@@ -1,5 +1,5 @@
 {
-  "temperature": 0.125,
+  "temperature": 0.5,
   "downfall": 0.5,
   "has_precipitation": true,
   "category": "river",
@@ -9,10 +9,10 @@
     "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.flower_forest"
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
     }
   },
   "spawners": {
@@ -119,15 +119,30 @@
   "features": [
     [],
     [
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
     ],
     [
+      "minecraft:amethyst_geode"
     ],
     [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [
+      "eco:clay_water_fall"
     ],
     [],
     [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -143,7 +158,10 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma"
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
@@ -151,8 +169,22 @@
       "minecraft:spring_lava"
     ],
     [
+      "minecraft:glow_lichen",
+      "eco:river_rocks",
+      "minecraft:trees_water",
+      "eco:bushes_super_dense",
+      "eco:basic_flowers",
+      "eco:overworld_mushrooms",
+      "eco:tall_grass",
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "minecraft:seagrass_river",
-      "minecraft:sea_pickle"
+      "minecraft:sea_pickle",
+      "eco:large_dripstone",
+      "eco:dripstone_cluster",
+      "eco:pointed_dripstone",
+      "eco:clay_pool_with_dripleaves"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -1,5 +1,5 @@
 {
-  "temperature": 0.65,
+  "temperature": 0.5,
   "downfall": 0.5,
   "has_precipitation": true,
   "effects": {
@@ -37,32 +37,7 @@
         "maxCount": 6
       }
     ],
-    "creature": [
-      {
-        "type": "minecraft:donkey",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 3
-      },
-      {
-        "type": "minecraft:sheep",
-        "weight": 2,
-        "minCount": 3,
-        "maxCount": 5
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 4,
-        "minCount": 4,
-        "maxCount": 7
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 3,
-        "minCount": 2,
-        "maxCount": 4
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
@@ -143,7 +118,8 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground"
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
     ],
     [
       "minecraft:amethyst_geode",
@@ -158,6 +134,15 @@
     ],
     [],
     [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -172,7 +157,11 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma"
+      "minecraft:underwater_magma",
+      "minecraft:ore_clay",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
@@ -181,6 +170,7 @@
     ],
     [
       "minecraft:glow_lichen",
+      "minecraft:patch_tall_grass_2",
       "eco:dense_rooted_azalea_trees",
       "eco:rooted_big_tall_birch_trees",
       "eco:rooted_tilted_tall_birch_trees",

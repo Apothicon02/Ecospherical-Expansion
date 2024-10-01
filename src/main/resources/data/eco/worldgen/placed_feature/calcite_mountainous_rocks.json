@@ -1,4 +1,25 @@
 {
   "feature": "eco:calcite_mountainous_rocks",
-  "placement": []
+  "placement": [
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": 0,
+      "y_spread": -4
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:matching_blocks",
+        "offset": [
+          0,
+          3,
+          0
+        ],
+        "blocks": [
+          "minecraft:stone",
+          "minecraft:gravel"
+        ]
+      }
+    }
+  ]
 }

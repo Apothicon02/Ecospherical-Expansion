@@ -9,10 +9,10 @@
     "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.flower_forest"
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
     }
   },
   "spawners": {
@@ -148,16 +148,33 @@
   "features": [
     [],
     [
+      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
+      "minecraft:amethyst_geode",
+      "eco:sparse_granite_pillar",
+      "eco:sparse_honeycomb_pillar",
+      "eco:thin_honey_pillar"
     ],
     [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [
+      "eco:clay_water_fall"
     ],
     [],
     [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -173,7 +190,10 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma"
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
@@ -187,24 +207,37 @@
       "eco:mossy_stone_filler",
       "eco:gray_stones",
       "eco:mud_pond_extra",
-      "minecraft:patch_melon",
-      "eco:large_melon",
       "eco:tuff",
       "eco:tuff_pool",
       "minecraft:bamboo_light",
-      "biox:trees_dense_giant_jungle",
-      "biox:trees_sparse_branching_oak",
-      "biox:trees_sparse_lush_jungle",
+      "eco:trees_giant_jungle",
+      "eco:trees_branching_oak",
+      "eco:trees_lush_jungle",
       "eco:trees_azalea",
-      "eco:noise_tall_red_mushrooms",
-      "eco:sparse_tall_brown_mushrooms",
+      "eco:clustered_tall_mushrooms",
       "eco:dense_bushes_clustered",
       "eco:dense_jungle_bushes",
       "eco:red_flowers",
       "eco:purple_flowers",
       "eco:dense_grass",
       "eco:tall_grass",
-      "minecraft:patch_sugar_cane"
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_melon",
+      "eco:large_melon",
+      "minecraft:warm_ocean_vegetation",
+      "eco:dense_rooted_azalea_trees",
+      "eco:rooted_towering_jungle_trees",
+      "eco:rooted_branching_jungle_trees",
+      "eco:rooted_jungle_bushes",
+      "minecraft:lush_caves_ceiling_vegetation",
+      "eco:hanging_bee_hive",
+      "eco:cave_ceiling_shrubbery",
+      "eco:cave_leaf_vines",
+      "eco:lush_cave_vines",
+      "eco:dirt_pool_with_dripleaves",
+      "eco:sparse_lush_caves_vegetation",
+      "eco:lush_spore_blossom",
+      "minecraft:classic_vines_cave_feature"
     ],
     [
       "minecraft:freeze_top_layer"

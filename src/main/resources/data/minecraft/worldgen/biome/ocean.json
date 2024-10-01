@@ -1,5 +1,5 @@
 {
-  "temperature": 0,
+  "temperature": 0.5,
   "downfall": 0.5,
   "has_precipitation": true,
   "effects": {
@@ -8,10 +8,10 @@
     "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.flower_forest"
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
     }
   },
   "spawners": {
@@ -125,14 +125,34 @@
     [
     ],
     [
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
     ],
     [
+      "minecraft:amethyst_geode",
+      "eco:sparse_prismarine_pillar",
+      "eco:sparse_dark_prismarine_pillar",
+      "eco:thin_slime_pillar"
     ],
     [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
+    [
+
+      "eco:dense_dark_prismarine_water_fall"
     ],
     [],
-    [],
     [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -148,18 +168,47 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma"
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [
+      "eco:ceiling_dripstone"
     ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
+      "minecraft:glow_lichen",
+      "minecraft:trees_water",
+      "eco:bushes_super_dense",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_badlands",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
       "minecraft:seagrass_normal",
       "minecraft:seagrass_simple",
-      "minecraft:kelp_cold"
+      "minecraft:kelp_cold",
+      "eco:cave_ceiling_shrubbery",
+      "eco:cave_leaf_vines",
+      "eco:sparse_aquatic_vines",
+      "eco:hanging_sea_lantern",
+      "eco:cave_brain_coral",
+      "eco:cave_bubble_coral",
+      "eco:cave_tube_coral",
+      "eco:cave_fire_coral",
+      "eco:cave_slime_vines",
+      "eco:prismarine_pool_with_dripleaves",
+      "eco:cave_seagrass_warm",
+      "eco:cave_kelp_warm",
+      "eco:cave_pickle",
+      "eco:lush_spore_blossom",
+      "minecraft:classic_vines_cave_feature"
     ],
     [
       "minecraft:freeze_top_layer"

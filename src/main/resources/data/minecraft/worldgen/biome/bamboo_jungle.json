@@ -1,5 +1,5 @@
 {
-  "temperature": 0.775,
+  "temperature": 0.95,
   "downfall": 0.9,
   "has_precipitation": true,
   "effects": {
@@ -8,10 +8,10 @@
     "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.flower_forest"
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
     },
     "music": {
       "sound": "minecraft:music.overworld.bamboo_jungle",
@@ -153,15 +153,28 @@
   "features": [
     [],
     [
+      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
+      "minecraft:amethyst_geode"
     ],
     [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [],
     [],
     [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -177,7 +190,10 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma"
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
@@ -188,8 +204,6 @@
       "minecraft:glow_lichen",
       "eco:grass_rocks",
       "eco:mud_pond",
-      "minecraft:patch_melon",
-      "eco:large_melon",
       "eco:tuff",
       "eco:tuff_pool",
       "eco:dense_bamboo",
@@ -203,7 +217,23 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "eco:large_pumpkin",
-      "minecraft:vines"
+      "minecraft:vines",
+      "minecraft:patch_melon",
+      "eco:large_melon",
+      "minecraft:warm_ocean_vegetation",
+      "eco:dense_rooted_azalea_trees",
+      "eco:rooted_towering_jungle_trees",
+      "eco:rooted_branching_jungle_trees",
+      "eco:rooted_jungle_bushes",
+      "minecraft:lush_caves_ceiling_vegetation",
+      "eco:hanging_bee_hive",
+      "eco:cave_ceiling_shrubbery",
+      "eco:cave_leaf_vines",
+      "eco:lush_cave_vines",
+      "eco:dirt_pool_with_dripleaves",
+      "eco:sparse_lush_caves_vegetation",
+      "eco:lush_spore_blossom",
+      "minecraft:classic_vines_cave_feature"
     ],
     [
       "minecraft:freeze_top_layer"

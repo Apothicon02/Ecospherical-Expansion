@@ -8,11 +8,12 @@
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
+    "foliage_color": 12636477,
     "mood_sound": {
-      "max_delay": 24000,
-      "min_delay": 12000,
-      "replace_current_music": false,
-      "sound": "minecraft:music.overworld.flower_forest"
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
     }
   },
   "spawners": {
@@ -136,15 +137,28 @@
   "features": [
     [],
     [
+      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
+      "minecraft:amethyst_geode"
     ],
     [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [],
     [],
     [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -160,7 +174,11 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:ore_gold_extra"
+      "minecraft:underwater_magma",
+      "minecraft:ore_gold_extra",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
@@ -175,13 +193,29 @@
       "eco:grassy_terracotta_pool",
       "eco:wild_flower_patch",
       "eco:sparse_trees_branching_oak",
-      "biox:trees_giant_acacia",
-      "biox:mangrove_bushes_noise_dense",
+      "eco:trees_mega_savanna",
+      "eco:mangrove_bushes_noise_dense",
       "eco:sparse_sunflowers",
       "eco:extra_lily_flower_patch",
       "eco:red_flowers",
-      "biox:dry_grass",
-      "minecraft:patch_sugar_cane"
+      "eco:dense_grass",
+      "eco:tall_grass",
+      "minecraft:patch_sugar_cane",
+      "minecraft:warm_ocean_vegetation",
+      "minecraft:sea_pickle",
+      "eco:dense_rooted_azalea_trees",
+      "eco:rooted_towering_jungle_trees",
+      "eco:rooted_branching_jungle_trees",
+      "eco:rooted_jungle_bushes",
+      "minecraft:lush_caves_ceiling_vegetation",
+      "eco:hanging_bee_hive",
+      "eco:cave_ceiling_shrubbery",
+      "eco:cave_leaf_vines",
+      "eco:lush_cave_vines",
+      "eco:dirt_pool_with_dripleaves",
+      "eco:sparse_lush_caves_vegetation",
+      "eco:lush_spore_blossom",
+      "minecraft:classic_vines_cave_feature"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -1,7 +1,0 @@
-{
-  "parent": "eco:block/leaves_height4",
-  "render_type": "minecraft:cutout",
-  "textures": {
-    "texture": "minecraft:block/birch_leaves"
-  }
-}
